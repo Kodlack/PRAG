@@ -1,0 +1,19 @@
+{
+  "ide": "TT1101",
+  "type": "QCM",
+  "enonce": "Completez en écrivant la bonne réponse.",
+  "niveau": 1,
+  "theme": "accords",
+  "regle": "On accorde le participe passé en genre et en nombre.",
+  "lienE": "https://ntm.com",
+  "questions": [
+    {
+      "idq": 1,
+      "explication": "Parce que.",
+      "lienQ": "https://ntm.com",
+      "question": "Des fleurs",
+      "reponses": ["rouges tomate.", "rouge tomate.", "rouges tomates."],
+      "correction": 0
+    }
+  ]
+}
