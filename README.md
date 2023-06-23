@@ -28,19 +28,13 @@ Liste des fonctionnalités :
 ## Fonctionnalité 3 : Quand l’utilisateur a fini de répondre à une question, il clique sur un bouton
 « valider », ce qui affiche automatiquement le corrigé correspondant. La page « corrigé » contient
 aussi le rappel des règles.
-## Fonctionnalité 4 : Le site propose des séries d’exercices composées automatiquement en puisant,
-de manière aléatoire, des exercices du niveau et de la catégorie souhaités, dans une banque
-d’exercices alimentée par le service du dictionnaire.
-## Fonctionnalité 5 : L’utilisateur peut choisir de travailler selon un premier mode, qui est fonction de
-la difficulté des exercices (« facile », « moyen », « difficile »), la longueur des séries pouvant être
-ajustée à chaque niveau, par exemple :
+## Fonctionnalité 4 : Le site propose des séries d’exercices composées automatiquement en puisant, de manière aléatoire, des exercices du niveau et de la catégorie souhaités, dans une banque d’exercices alimentée par le service du dictionnaire.
+## Fonctionnalité 5 : L’utilisateur peut choisir de travailler selon un premier mode, qui est fonction de la difficulté des exercices (« facile », « moyen », « difficile »), la longueur des séries pouvant être ajustée à chaque niveau, par exemple :
 - « facile » : 1 série de 15 exercices (mélangeant différentes catégories)
 - « moyen » : 1 série de 20 exercices (mélangeant différentes catégories)
 - « difficile » : 1 série de 25 exercices (mélangeant différentes catégories).
 Remarque : le nombre de niveaux est fini (3).
-## Fonctionnalité 6 : L’utilisateur peut choisir de travailler selon un deuxième mode, par catégories
-thématiques (notions linguistiques), par exemple : grammaire, orthographe, vocabulaire, accord du
-participe passé, anglicismes, etc.
+## Fonctionnalité 6 : L’utilisateur peut choisir de travailler selon un deuxième mode, par catégories thématiques (notions linguistiques), par exemple : grammaire, orthographe, vocabulaire, accord du participe passé, anglicismes, etc.
 ### Remarque : l’administrateur doit pouvoir créer de nouvelles catégories.
 Dans ce mode, l’utilisateur dispose, pour chaque catégorie thématique, d’une série « facile », par
 exemple de 10 exercices. S’il obtient 70 % de réponses justes ou plus, il passe à une série « moyen »
@@ -48,18 +42,13 @@ exemple de 10 exercices. S’il obtient 70 % de réponses justes ou plus, il pas
 progression dans l’apprentissage de chaque catégorie. Si l’utilisateur obtient un résultat inférieur à
 70 % de bonnes réponses à la fin d’une série, une nouvelle série de même niveau lui est
 automatiquement proposée.
-## Fonctionnalité 7 : A la fin de chaque série d’exercices réalisée, quel que soit le mode choisi, un
-tableau récapitule le pourcentage de fautes et de bonnes réponses. Si l’utilisateur obtient 70 % ou
-plus de bonnes réponses, la série est considérée comme réussie. L’utilisateur peut alors soit cliquer
-pour commencer une nouvelle série, soit retourner à la page d’accueil du site.
-## Fonctionnalité 8 : la page d’accueil du site doit permettre d’accéder soit au mode par niveau, soit
-au mode par catégorie.
+## Fonctionnalité 7 : A la fin de chaque série d’exercices réalisée, quel que soit le mode choisi, un tableau récapitule le pourcentage de fautes et de bonnes réponses. Si l’utilisateur obtient 70 % ou plus de bonnes réponses, la série est considérée comme réussie. L’utilisateur peut alors soit cliquer pour commencer une nouvelle série, soit retourner à la page d’accueil du site.
+## Fonctionnalité 8 : la page d’accueil du site doit permettre d’accéder soit au mode par niveau, soit au mode par catégorie.
 ## Fonctionnalité 9 : les pages du site doivent pouvoir se charger rapidement.
-## Fonctionnalité 10 : le site doit être accessible depuis les moteurs de recherche usuels (Google
-Chrome, Firefox, Microsoft Edge).
+## Fonctionnalité 10 : le site doit être accessible depuis les moteurs de recherche usuels (Google Chrome, Firefox, Microsoft Edge).
 ## Fonctionnalité 11 : Le contenu du site doit être adaptatif (pour tablette ou téléphone portable).
-## Fonctionnalité 12 : le compte administrateur doit permettre, grâce à une interface facile
-d’utilisation :
+## Fonctionnalité 12 : le compte administrateur doit permettre, grâce à une interface facile d’utilisation :
 - de créer de nouvelles catégories
 - d’ajouter de nouveaux exercices accompagnés de leurs corrigés et des règles correspondantes.
-
+###Liens utiles
+Vers le Drive Google : https://drive.google.com/drive/folders/1I-_yem_UkbF4aMWeVbsuc6q0Fxig3bxD?usp=drive_link
