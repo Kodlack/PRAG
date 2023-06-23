@@ -50,5 +50,12 @@ automatiquement proposée.
 ## Fonctionnalité 12 : le compte administrateur doit permettre, grâce à une interface facile d’utilisation :
 - de créer de nouvelles catégories
 - d’ajouter de nouveaux exercices accompagnés de leurs corrigés et des règles correspondantes.
+
+##Charte graphique
+Utilisation d'une police serif pour l'ensemble du texte :
+Utilisation de deux polices sans serif pour les titres et sous titre :
+Utilisation de l'italique pour les réponses possibles/proposées
+Utilisation du surlignage/du gras, pour la sélection d'un mot avant validation (durant un exercice de repérage par exemple)
+
 ###Liens utiles
 Vers le Drive Google : https://drive.google.com/drive/folders/1I-_yem_UkbF4aMWeVbsuc6q0Fxig3bxD?usp=drive_link
