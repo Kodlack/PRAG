@@ -1,3 +1,7 @@
+const fs = require("fs");
+const testbd = fs.readFileSync("./server/test.json");
+const jokes = JSON.parse(testbd);
+console.log(jokes.question);
 const { MongoClient } = require("mongodb");
 
 async function database() {
