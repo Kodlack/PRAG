@@ -1,0 +1,32 @@
+#logoAcFr {
+  height: 65px;
+  margin: 10px 10px 10px 17px;
+}
+
+#titreSite {
+  height: 55px;
+  font-family: Calibri;
+  margin: 0px 10px;
+}
+
+#pages {
+  text-align: right;
+  font-family: Calibri;
+  margin-right: 15px;
+}
+
+#lien {
+  padding: 10px;
+  margin-top: 100px;
+  background-color: #f8f5f2;
+  background-color: #376f98;
+  font-family: Calibri;
+  text-decoration: none;
+  color: white;
+  border-radius: 15px 15px 0px 0px;
+}
+
+#lien:hover {
+  background-color: #f8f5f2;
+  color: black;
+}

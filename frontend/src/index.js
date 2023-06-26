@@ -1,27 +1,26 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./css/index.css";
-import App from "./App";
-import Exercice from "./component/Exercice";
-import Navbar from "./component/Navbar";
+import Exercice from "./component/Exercices";
+import Navigation from "./component/Navigation";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
+import Accueil from "./component/Acceuil";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Accueil />,
   },
   {
-    path: "/exercice",
+    path: "/exercices",
     element: <Exercice />,
   },
 ]);
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Navbar />
+    <Navigation />
     <RouterProvider router={router} />
   </React.StrictMode>
 );

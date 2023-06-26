@@ -1,9 +1,6 @@
-const express = require("express");
+const http = require("http");
+const app = require("./acces.js");
+const port = 8000;
 
-const PORT = process.env.PORT || 3001;
-
-const app = express();
-
-app.listen(PORT, () => {
-  console.log(`Server listening on ${PORT}`);
-});
+const server = http.createServer(app);
+server.listen(port, () => console.log("Connecter au localhost : " + port));
