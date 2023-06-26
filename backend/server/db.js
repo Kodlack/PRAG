@@ -1,19 +1,34 @@
+const fs = require("fs");
+const testbd = fs.readFileSync("./server/test.json");
+const jokes = JSON.parse(testbd);
+
 const { MongoClient } = require("mongodb");
 
-async function database() {
-  const url = "mongodb://localhost:27017/academieFr";
-  const client = new MongoClient(url);
+const url = "mongodb+srv://admin:SDq6U1eTSGypImn5@testacad.a4jfm6i.mongodb.net/?retryWrites=true&w=majority";
+const client = new MongoClient(url);
 
+async function database() {
   try {
     // Connexion au serveur
     await client.connect();
-    return client.db();
+    console.log('Connexion Ok');
+    const db = client.db('testDb');
+    const collection = db.collection('exo1');
+    const insertStuff = await collection.insertMany([jokes]);
+    console.log(`Documents insérés => ${insertStuff}`);
+    return 'done';
+    //return client.db();
   } catch (e) {
     console.error(e);
     throw e;
   }
 }
 
-database().catch(console.error);
+//database().catch(console.error);
 
-module.exports = { database };
+//module.exports = { database };
+
+database()
+    .then(console.log)
+    .catch(console.error)
+    .finally(()=> client.close());
