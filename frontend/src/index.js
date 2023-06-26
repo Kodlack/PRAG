@@ -6,6 +6,8 @@ import Navigation from "./component/Navigation";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import Accueil from "./component/Acceuil";
+import AdminLog from "./component/AdminLog";
+import EspaceAdmin from "./component/EspaceAdmin";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +17,14 @@ const router = createBrowserRouter([
   {
     path: "/exercices",
     element: <Exercice />,
+  },
+  {
+    path: "/adminlog",
+    element: <AdminLog />,
+  },
+  {
+    path: "/admin",
+    element: <EspaceAdmin />,
   },
 ]);
 

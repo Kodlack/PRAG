@@ -1,12 +1,32 @@
 #logoAcFr {
   height: 65px;
-  margin: 10px 10px 10px 17px;
+  margin: 10px 10px 0px 17px;
 }
 
 #titreSite {
   height: 55px;
   font-family: Calibri;
   margin: 0px 10px;
+}
+
+#liensAcadem {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: block;
+}
+
+#liensAcadem > a {
+  text-decoration: none;
+  color: #376f98;
+}
+
+#liensAcadem > a:hover {
+  color: #79aacd;
+}
+
+#logoAcadem1 {
+  margin: 10px;
 }
 
 #pages {
@@ -20,7 +40,7 @@
   margin-top: 100px;
   background-color: #f8f5f2;
   background-color: #376f98;
-  font-family: Calibri;
+  font-family: Georgia, "Times New Roman", Times, serif;
   text-decoration: none;
   color: white;
   border-radius: 15px 15px 0px 0px;
