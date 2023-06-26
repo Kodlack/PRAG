@@ -35,7 +35,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.get("/exercices", (req, res) => {
+router.get("/exercices", (req, res) => {
   console.log("bd");
   res.status(200).json({ test: "OK" });
 });

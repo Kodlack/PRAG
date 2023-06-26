@@ -10,15 +10,9 @@ function Exercice() {
   function recupExo() {
     console.log("icoi");
     axios
-      .get("http://localhost:8000/exercices", {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        withCredentials: true,
-        credentials: "include",
-      })
+      .get("http://localhost:8000/exercices")
       .then((res) => {
-        setExos(res.data);
+        exos.push(1);
         console.log("res");
       })
       .catch((err) => {
@@ -37,7 +31,6 @@ function Exercice() {
       <Button
         variant="contained"
         sx={{ margin: "7px 0px 0px 10px", background: "#376f98" }}
-        onClick={() => recupExo()}
       >
         Valider
       </Button>
@@ -74,7 +67,10 @@ function Exercice() {
         variant="contained"
         type="submit"
         sx={{ margin: "7px 0px 0px 10px", background: "#376f98" }}
-        // onClick={recupExo}
+        onClick={() => {
+          recupExo();
+          console.log(exos);
+        }}
       >
         Valider
       </Button>
