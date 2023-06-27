@@ -1,28 +1,48 @@
 {
-  "exercises": [
+  "data": [
     {
       "theme": "syntaxe",
-      "subtheme": "homonyme",
-      "level": "1",
-      "type": "QCM",
-      "exercices": {
-        "exercice": {
-          "id": 1,
-          "statement": "Conjuguez le verbe 'aller' au présent de l'indicatif.",
-          "correctAnswer": "Je vais, Tu vas, Il/Elle/On va, Nous allons, Vous allez, Ils/Elles vont",
-          "wrongAnswers": [],
-          "lienExt": "www.truc.fr"
+      "exercices": [
+        {
+          "ide": 1,
+          "subtheme": "homonyme",
+          "level": 1,
+          "type": "QCM",
+          "Consigne": "Conjuguez le verbe 'aller' au présent de l'indicatif.",
+          "Explication": "Patati patata",
+          "lienExo": "www.truc.fr",
+          "questions": [
+            {
+              "idq": 1,
+              "enonce": "Conjuguez le verbe 'aller' au présent de l'indicatif.",
+              "correctAnswer": [],
+              "wrongAnswers": [],
+              "regle": "OUI BONJOUR",
+              "lienQ": "www.truc.fr"
+            },
+            {
+              "idq": 2,
+              "enonce": "Conjuguez le verbe 'aller' au présent de l'indicatif.",
+              "correctAnswer": [],
+              "wrongAnswers": [],
+              "regle": "OUI BONJOUR",
+              "lienQ": "www.truc.fr"
+            }
+          ]
         }
-      }
+      ]
     },
     {
-      "theme": "Vocabulaire",
+      "ide": 2,
       "subtheme": "Animaux",
-      "level": "Intermédiaire",
+      "level": 2,
       "type": "Association",
+      "Consigne": "Conjuguez le verbe 'aller' au présent de l'indicatif.",
+      "Explication": "Patati patata",
+      "lienExo": "www.truc.fr",
       "content": {
-        "statement": "Associez chaque animal à sa description.",
-        "correctAnswer": "Chien: Animal domestique loyal et fidèle; Chat: Animal indépendant et agile; Oiseau: Animal volant avec des plumes",
+        "enonce": "Associez chaque animal à sa description.",
+        "correctAnswer": [],
         "wrongAnswers": []
       }
     },
@@ -32,8 +52,8 @@
       "level": "Avancé",
       "type": "Débat",
       "content": {
-        "statement": "Discutez des avantages et des inconvénients de l'apprentissage d'une langue étrangère.",
-        "correctAnswer": "",
+        "enonce": "Discutez des avantages et des inconvénients de l'apprentissage d'une langue étrangère.",
+        "correctAnswer": [],
         "wrongAnswers": []
       }
     }
