@@ -1,18 +1,20 @@
 {
-  "exercises": [
+  "data": [
     {
       "theme": "syntaxe",
-      "subtheme": "homonyme",
-      "level": "1",
-      "type": "QCM",
       "exercices": {
-        "exercice":{
-          "id":1,
+        "ide":1,
+        "subtheme": "homonyme",
+        "level": "1",
+        "type": "QCM",
+        "questions":{
+          "idq":1,
           "statement": "Conjuguez le verbe 'aller' au présent de l'indicatif.",
           "correctAnswer": "Je vais, Tu vas, Il/Elle/On va, Nous allons, Vous allez, Ils/Elles vont",
           "wrongAnswers": [],
           "lienExt":"www.truc.fr"
         }
+        
       }
     },
     {
