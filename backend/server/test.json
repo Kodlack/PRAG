@@ -1,19 +1,41 @@
 {
-  "ide": "TT1101",
-  "type": "QCM",
-  "enonce": "Completez en écrivant la bonne réponse.",
-  "niveau": 1,
-  "theme": "accords",
-  "regle": "On accorde le participe passé en genre et en nombre.",
-  "lienE": "https://ntm.com",
-  "questions": [
+  "exercises": [
     {
-      "idq": 1,
-      "explication": "Parce que.",
-      "lienQ": "https://ntm.com",
-      "question": "Des fleurs",
-      "reponses": ["rouges tomate.", "rouge tomate.", "rouges tomates."],
-      "correction": 0
+      "theme": "syntaxe",
+      "subtheme": "homonyme",
+      "level": "1",
+      "type": "QCM",
+      "exercices": {
+        "exercice":{
+          "id":1,
+          "statement": "Conjuguez le verbe 'aller' au présent de l'indicatif.",
+          "correctAnswer": "Je vais, Tu vas, Il/Elle/On va, Nous allons, Vous allez, Ils/Elles vont",
+          "wrongAnswers": [],
+          "lienExt":"www.truc.fr"
+        }
+      }
+    },
+    {
+      "theme": "Vocabulaire",
+      "subtheme": "Animaux",
+      "level": "Intermédiaire",
+      "type": "Association",
+      "content": {
+        "statement": "Associez chaque animal à sa description.",
+        "correctAnswer": "Chien: Animal domestique loyal et fidèle; Chat: Animal indépendant et agile; Oiseau: Animal volant avec des plumes",
+        "wrongAnswers": []
+      }
+    },
+    {
+      "theme": "Expression orale",
+      "subtheme": "Conversation",
+      "level": "Avancé",
+      "type": "Débat",
+      "content": {
+        "statement": "Discutez des avantages et des inconvénients de l'apprentissage d'une langue étrangère.",
+        "correctAnswer": "",
+        "wrongAnswers": []
+      }
     }
   ]
 }
