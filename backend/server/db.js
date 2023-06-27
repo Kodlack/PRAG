@@ -2,7 +2,6 @@ const fs = require("fs");
 const testbd = fs.readFileSync("./server/test.json");
 const jokes = JSON.parse(testbd);
 
-console.log(jokes.question);
 const { MongoClient } = require("mongodb");
 
 const url =
@@ -26,11 +25,24 @@ async function database() {
   }
 }
 
-//database().catch(console.error);
-
-//module.exports = { database };
-
 database()
   .then(console.log)
   .catch(console.error)
   .finally(() => client.close());
+
+var express = require("express");
+var path = require("path");
+var app = express();
+const bodyParser = require("body-parser");
+const router = require("express").Router();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+router.get("/exercices", (req, res) => {
+  console.log("bd");
+  res.status(200).json({ test: "OK" });
+});

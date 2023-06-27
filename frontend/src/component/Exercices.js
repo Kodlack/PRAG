@@ -8,7 +8,7 @@ function Exercice() {
   const [exos, setExos] = useState([]);
 
   function recupExo() {
-    console.log("icoi");
+    console.log("ici");
     axios
       .get("http://localhost:8000/exercices")
       .then((res) => {
@@ -19,6 +19,8 @@ function Exercice() {
         console.log(err);
       });
   }
+
+  recupExo();
 
   return (
     <div id="background">
@@ -67,10 +69,6 @@ function Exercice() {
         variant="contained"
         type="submit"
         sx={{ margin: "7px 0px 0px 10px", background: "#376f98" }}
-        onClick={() => {
-          recupExo();
-          console.log(exos);
-        }}
       >
         Valider
       </Button>

@@ -1,19 +1,67 @@
 {
-  "ide": "TT1101",
-  "type": "QCM",
-  "enonce": "Completez en écrivant la bonne réponse.",
-  "niveau": 1,
-  "theme": "accords",
-  "regle": "On accorde le participe passé en genre et en nombre.",
-  "lienE": "https://ntm.com",
-  "questions": [
+  "theme": [
     {
-      "idq": 1,
-      "explication": "Parce que.",
-      "lienQ": "https://ntm.com",
-      "question": "Des fleurs",
-      "reponses": ["rouges tomate.", "rouge tomate.", "rouges tomates."],
-      "correction": 0
+      "syntaxe": {
+        "ide": "TT1101",
+        "type": "adjectif couleur",
+        "typeExo": "QCM",
+        "enonce": "Completez en écrivant la bonne réponse.",
+        "niveau": 1,
+        "regle": "On accorde le participe passé en genre et en nombre.",
+        "lienE": "https://ntm.com",
+        "questions": [
+          {
+            "idq": 1,
+            "explication": "Parce que.",
+            "lienQ": "https://ntm.com",
+            "question": "Des fleurs",
+            "reponses": ["rouges tomate.", "rouge tomate.", "rouges tomates."],
+            "correction": 0
+          }
+        ]
+      }
+    },
+    {
+      "lexique": {
+        "ide": "TT1101",
+        "type": "adjectif couleur",
+        "typeExo": "QCM",
+        "enonce": "Completez en écrivant la bonne réponse.",
+        "niveau": 1,
+        "regle": "On accorde le participe passé en genre et en nombre.",
+        "lienE": "https://ntm.com",
+        "questions": [
+          {
+            "idq": 1,
+            "explication": "Parce que.",
+            "lienQ": "https://ntm.com",
+            "question": "Des fleurs",
+            "reponses": ["rouges tomate.", "rouge tomate.", "rouges tomates."],
+            "correction": 0
+          }
+        ]
+      }
+    },
+    {
+      "morphologie": {
+        "ide": "TT1101",
+        "type": "adjectif couleur",
+        "typeExo": "QCM",
+        "enonce": "Completez en écrivant la bonne réponse.",
+        "niveau": 1,
+        "regle": "On accorde le participe passé en genre et en nombre.",
+        "lienE": "https://ntm.com",
+        "questions": [
+          {
+            "idq": 1,
+            "explication": "Parce que.",
+            "lienQ": "https://ntm.com",
+            "question": "Des fleurs",
+            "reponses": ["rouges tomate.", "rouge tomate.", "rouges tomates."],
+            "correction": 0
+          }
+        ]
+      }
     }
   ]
 }
