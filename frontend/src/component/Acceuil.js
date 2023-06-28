@@ -14,33 +14,13 @@ function Accueil() {
       </Box>
       <Box
         sx={{
-          margin: "70px",
-          display: "inline-block",
           textAlign: "center",
         }}
       >
-        <p id="sousTexte">Pour le mode interro</p>
-        <Button
-          variant="contained"
-          sx={{
-            margin: "7px 0px 0px 10px",
-            background: "#D9D9D9",
-            color: "#6A6A6A",
-          }}
-        >
-          <a id="lienBouton" href={`/interrogation`}>
-            Mode interrogatoire
-          </a>
-        </Button>
-      </Box>
-      <Box
-        sx={{
-          margin: "70px",
-          display: "inline-block",
-          textAlign: "center",
-        }}
-      >
-        <p id="sousTexte">Pour le mode entrainement</p>
+        <p id="sousTexte">
+          Vous venez pour vous exercer sans aucune préférence et idée préalable
+          de ce sur quoi vous voulez travailler !
+        </p>
         <Button
           variant="contained"
           sx={{
@@ -48,20 +28,23 @@ function Accueil() {
             background: "#D9D9D9",
           }}
         >
-          <a id="lienBouton" href={`/entrainement`}>
-            Mode entrainement
+          <a id="lienBouton" href={`/aleatoire`}>
+            Exercices aléatoires
           </a>
         </Button>
       </Box>
       <Box sx={{ textAlign: "center" }}>
         <hr id="barre"></hr>
-        <p id="sousTexte">blablabla</p>
+        <p id="sousTexte">
+          Vos difficultés ont été identifiés et vous voulez travailler
+          spécifiquement sur certaines notions !
+        </p>
         <Button
           variant="contained"
           sx={{ margin: "7px 0px 0px 10px", background: "#376f98" }}
         >
           <a id="lienBouton" href={`/exercices`}>
-            Tous les exercices
+            Exercices ciblés
           </a>
         </Button>
       </Box>

@@ -1,61 +1,74 @@
 {
   "data": [
     {
-      "theme": "syntaxe",
+      "theme": "Syntaxe",
       "exercices": [
         {
           "ide": 1,
-          "subtheme": "homonyme",
+          "subtheme": "Accord du participe passé",
           "level": 1,
           "type": "QCM",
-          "Consigne": "Conjuguez le verbe 'aller' au présent de l'indicatif.",
-          "Explication": "Patati patata",
-          "lienExo": "www.truc.fr",
+          "Consigne": "Choisissez une et une seule proposition de réponse.",
+          "Explication": "<p>Accord du participe pass&eacute;&nbsp;:</p>\n<p>&gt;Avec l&rsquo;auxiliaire <strong><em>&ecirc;tre,</em></strong></p>\n<p>le participe pass&eacute; s&rsquo;accorde en genre et en nombre avec le <strong>sujet</strong>.</p>\n<p>&gt;Avec l&rsquo;auxiliaire <strong><em>avoir,</em></strong> le participe pass&eacute; est <strong>invariable</strong> lorsqu&rsquo;il n&rsquo;y a pas de C.O.D. ou si le C.O.D. est plac&eacute; <strong>apr&egrave;s</strong> le verbe.</p>\n<p>Il <strong>s&rsquo;accorde</strong> avec<strong> le C.O.D.</strong> si celui-ci est plac&eacute; <strong>avant</strong> le verbe.</p>\n<p>Un C.O.D. plac&eacute; avant le verbe est soit le pronom relatif <strong><em>que</em></strong> (ou <strong><em>qu&rsquo;</em></strong>), soit un pronom personnel (<strong><em>me, te, le, la, l&rsquo;, nous, vous, les</em></strong>).</p>\n<p>Ce pronom renvoie &agrave; un mot ou &agrave; un groupe de mots d&eacute;j&agrave; pr&eacute;sent dans la phrase&nbsp;: c&rsquo;est ce mot ou ce groupe de mots qui d&eacute;termine l&rsquo;accord du participe pass&eacute; en genre et en nombre.</p>\n<p>Exemple&nbsp;:</p>\n<p><em>C&rsquo;est <u>la femme</u><strong>que</strong> j&rsquo;ai vue</em>.</p>\n<p>(<strong>que</strong> = C.O.D. plac&eacute; avant le participe pass&eacute; <em>vue</em>&nbsp;; <u>la femme</u> =mot qui d&eacute;termine l&rsquo;accord du participe pass&eacute;)</p>",
+          "lienExo": "https://www.academie-francaise.fr/questions-de-langue#64_strong-em-participe-pass-accord-em-strong",
           "questions": [
             {
               "idq": 1,
-              "enonce": "Conjuguez le verbe 'aller' au présent de l'indicatif.",
-              "correctAnswer": [],
-              "wrongAnswers": [],
-              "regle": "OUI BONJOUR",
-              "lienQ": "www.truc.fr"
+              "enonce": { "Debut": "Elle a mal", "Fin": "son affaire" },
+              "Answers": ["calculée", "calculé"],
+              "correctAnswer": [1],
+              "wrongAnswers": [0],
+              "regle": "<p id='vert'>(Le C.O.D. &laquo;&nbsp;son affaire&nbsp;&raquo; est plac&eacute; apr&egrave;s le verbe)</p>",
+              "lienQ": ""
             },
             {
               "idq": 2,
-              "enonce": "Conjuguez le verbe 'aller' au présent de l'indicatif.",
-              "correctAnswer": [],
-              "wrongAnswers": [],
-              "regle": "OUI BONJOUR",
-              "lienQ": "www.truc.fr"
+              "enonce": {
+                "Debut": "Mes soeurs sont",
+                "Fin": "ce matin en trottinette"
+              },
+              "Answers": ["parties", "parti"],
+              "correctAnswer": [0],
+              "wrongAnswers": [1],
+              "regle": "",
+              "lienQ": ""
+            },
+            {
+              "idq": 3,
+              "enonce": {
+                "Debut": "Les choses qu'elle m'a",
+                "Fin": "me déplaisent beaucoup"
+              },
+              "Answers": ["dit", "dites", "dite"],
+              "correctAnswer": [1],
+              "wrongAnswers": [0, 2],
+              "regle": "<p>(&laquo;&nbsp;qu&rsquo;&nbsp;&raquo; = C.O.D.&nbsp;; &laquo;&nbsp;Les choses&nbsp;&raquo; = mot qui d&eacute;termine l&rsquo;accord du participe pass&eacute;)</p>",
+              "lienQ": ""
+            },
+            {
+              "idq": 4,
+              "enonce": {
+                "Debut": "Marie est blesée, un chien l'a",
+                "Fin": "au bras"
+              },
+              "Answers": ["mordu", "mordue"],
+              "correctAnswer": [1],
+              "wrongAnswers": [0],
+              "regle": "<p>(&laquo;&nbsp;l&rsquo;&nbsp;&raquo; = C.O.D.&nbsp;; &laquo;&nbsp;Marie&nbsp;&raquo; = mot qui d&eacute;termine l&rsquo;accord du participe pass&eacute;)</p>",
+              "lienQ": ""
+            },
+            {
+              "idq": 5,
+              "enonce": { "Debut": "Elle est", "Fin": "cet après-midi" },
+              "Answers": ["arrivé", "arrivée"],
+              "correctAnswer": [1],
+              "wrongAnswers": [0],
+              "regle": "",
+              "lienQ": ""
             }
           ]
         }
       ]
-    },
-    {
-      "ide": 2,
-      "subtheme": "Animaux",
-      "level": 2,
-      "type": "Association",
-      "Consigne": "Conjuguez le verbe 'aller' au présent de l'indicatif.",
-      "Explication": "Patati patata",
-      "lienExo": "www.truc.fr",
-      "content": {
-        "enonce": "Associez chaque animal à sa description.",
-        "correctAnswer": [],
-        "wrongAnswers": []
-      }
-    },
-    {
-      "theme": "Expression orale",
-      "subtheme": "Conversation",
-      "level": "Avancé",
-      "type": "Débat",
-      "content": {
-        "enonce": "Discutez des avantages et des inconvénients de l'apprentissage d'une langue étrangère.",
-        "correctAnswer": [],
-        "wrongAnswers": []
-      }
     }
   ]
 }

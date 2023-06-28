@@ -1,32 +1,25 @@
-const path = require("path");
-const acces = require("./acces.js");
-const { database } = require("./db.js");
+var express = require("express");
+var app = express();
+var path = require("path");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const router = require("express").Router();
+const bd = require("./test.json");
 
-const basedir = path.normalize(path.dirname(__dirname));
+app.use(bodyParser.json());
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-//mécanisme de sécurité qui permet de contrôler l'accès aux ressources entre des domaines différents
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
-const express = require("express");
-const app = express();
+function appli() {
+  app.get("/exercices", (req, res) => {
+    console.log("bd");
+    res.send({ test: "OK" });
+  });
+}
 
-//Jamais apres les ROUTES, ne pas le deplacer, rajouter simplement a l'interieur si bsn, lors des cookies
+appli();
 
-(async () => {
-  const oui = await database();
-  app.use("/acces", acces.default(oui));
-})();
-
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:3000");
-  res.header("Access-Control-Allow-Credentials", "true");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
-
-// Démarre le serveur
-app.on("close", () => {});
-
-exports.default = app;
+exports.default = appli;
