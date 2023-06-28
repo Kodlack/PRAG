@@ -1,10 +1,8 @@
-var express = require("express");
-var app = express();
-var path = require("path");
+const express = require("express");
+const router = express.Router();
 const bodyParser = require("body-parser");
+var app = express();
 const cors = require("cors");
-const router = require("express").Router();
-const bd = require("./test.json");
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -13,13 +11,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-function appli() {
-  app.get("/exercices", (req, res) => {
-    console.log("bd");
-    res.send({ test: "OK" });
-  });
-}
+const fs = require("fs");
+const testbd = fs.readFileSync("./server/test.json");
+const jokes = JSON.parse(testbd);
 
-appli();
+router.get("/exercices", (req, res) => {
+  console.log("bd");
+  //   res.send(jokes);
+});
 
-exports.default = appli;
+module.exports = router;

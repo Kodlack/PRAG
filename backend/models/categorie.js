@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 
-const newCategorie = mongoose.Schema({
+const categorieSchema = mongoose.Schema({
   subtheme: String,
 });
 
-const categorie = mongoose.model("categorie", newCategorie);
+const categorieModel = mongoose.model("categorie", categorieSchema);
 
-exports.categorie = categorie;
+module.exports = categorieModel;

@@ -44,10 +44,6 @@ function Exercice() {
           })}
         </div>
       ))}
-      {/* {exos[0].questions.map((j, index) => {
-        console.log(j);
-        <p>{j.enonce.Debut}</p>;
-      })} */}
       <span id="exo"></span>
       <Button
         variant="contained"
@@ -82,29 +78,6 @@ function Exercice() {
         canart.
       </button>
       <br />
-      <h3>QCM</h3>
-      Des fleurs <br />
-      <input name="exo" type="radio"></input> rouges tomate.
-      <br />
-      <input name="exo" type="radio"></input> rouge tomate.
-      <br />
-      <input name="exo" type="radio"></input> rouges tomates.
-      <Button
-        variant="contained"
-        type="submit"
-        sx={{ margin: "7px 0px 0px 10px", background: "#376f98" }}
-      >
-        Valider
-      </Button>
-      <h3>Question/réponse</h3>
-      <br />
-      <Button
-        variant="contained"
-        type="submit"
-        sx={{ margin: "7px 0px 0px 10px", background: "#376f98" }}
-      >
-        Valider
-      </Button>
       <BasPage />
     </div>
   );
