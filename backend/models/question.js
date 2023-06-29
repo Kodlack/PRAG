@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const questionSchema = mongoose.Schema({
   idq: Number,
+  subtheme: String,
   enonce: { debut: String, fin: String },
   answers: [String],
   correctAnswer: [Number],

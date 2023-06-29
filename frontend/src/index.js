@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     element: <Accueil />,
   },
   {
-    path: "/exercices",
+    path: "/exercice/:ide",
     element: <Exercice />,
   },
   {

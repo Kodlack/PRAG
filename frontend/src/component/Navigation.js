@@ -34,7 +34,7 @@ function Navigation() {
         <Link id="lien" href="/entrainement">
           Mode entrainement
         </Link>
-        <Link id="lien" href="/exercices">
+        <Link id="lien" href="/exercice/:ide">
           Tous les exercices
         </Link>
       </nav>

@@ -2,11 +2,10 @@ const categorieModel = require("../models/categorie");
 var express = require("express");
 const router = express.Router();
 
-router.post("/admin/categorie", async (req, res) => {
-  const { _id, subtheme } = req.body;
+router.post("/categorie", async (req, res) => {
+  const { subtheme } = req.body;
 
   var categorie = new categorieModel({
-    _id,
     subtheme,
   });
 
@@ -19,23 +18,26 @@ router.post("/admin/categorie", async (req, res) => {
   }
 });
 
-router.get("/exercices", (req, res) => {
+router.get("/categorie", (req, res) => {
   categorieModel
     .find({ subtheme: "rien" })
     .then((thing) => res.status(200).json(thing))
     .catch((error) => res.status(404).json({ error }));
 });
 
-router.delete("/exercices", (req, res) => {
+router.delete("/categorie", (req, res) => {
   categorieModel
     .deleteAll()
     .then(() => res.status(200).json({ message: "Objet supprimé !" }))
     .catch((error) => res.status(400).json({ error }));
 });
 
-router.put("/exercices", (req, res) => {
+router.put("/categorie", (req, res) => {
   categorieModel
-    .updateOne({ subtheme: "rien" }, { ...req.body, subtheme: "tout" })
+    .updateOne(
+      { subtheme: "Accord du participe passé (avec l’auxiliaire avoir)" },
+      { ...req.body, _id: 6 }
+    )
     .then(() => res.status(200).json({ message: "Objet modifié !" }))
     .catch((error) => res.status(400).json({ error }));
 });

@@ -80,8 +80,11 @@
           "questions": [
             {
               "idq": 6,
-              "enonce": { "debut": "<p>Un chapeau noir.</p><p>Une casquette &hellip;&hellip;.</p>", "fin":""},
-              "answers": ["Une","casquette","noire."],
+              "enonce": {
+                "debut": "<p>Un chapeau noir.</p><p>Une casquette &hellip;&hellip;.</p>",
+                "fin": ""
+              },
+              "answers": ["Une", "casquette", "noire."],
               "correctAnswer": [2],
               "wrongAnswers": [],
               "regle": "",
@@ -89,8 +92,11 @@
             },
             {
               "idq": 7,
-              "enonce": { "debut": "<p>Un chien marron.</p><p>Une chienne &hellip;&hellip;</p>", "fin":""},
-              "answers": ["Une","chienne","marron."],
+              "enonce": {
+                "debut": "<p>Un chien marron.</p><p>Une chienne &hellip;&hellip;</p>",
+                "fin": ""
+              },
+              "answers": ["Une", "chienne", "marron."],
               "correctAnswer": [2],
               "wrongAnswers": [],
               "regle": "",
@@ -98,8 +104,11 @@
             },
             {
               "idq": 8,
-              "enonce": { "debut": "<p>Un gilet bleu.</p><p>Une veste &hellip;&hellip;</p>", "fin":""},
-              "answers": ["Une","veste","bleue."],
+              "enonce": {
+                "debut": "<p>Un gilet bleu.</p><p>Une veste &hellip;&hellip;</p>",
+                "fin": ""
+              },
+              "answers": ["Une", "veste", "bleue."],
               "correctAnswer": [2],
               "wrongAnswers": [],
               "regle": "",
@@ -107,8 +116,11 @@
             },
             {
               "idq": 9,
-              "enonce": { "debut": "<p>Un portail vert.</p><p>Des portes &hellip;&hellip;</p>", "fin":""},
-              "answers": ["Des","portes","vertes."],
+              "enonce": {
+                "debut": "<p>Un portail vert.</p><p>Des portes &hellip;&hellip;</p>",
+                "fin": ""
+              },
+              "answers": ["Des", "portes", "vertes."],
               "correctAnswer": [2],
               "wrongAnswers": [],
               "regle": "",
@@ -116,8 +128,11 @@
             },
             {
               "idq": 10,
-              "enonce": { "debut": "<p>Un mur topaze.</p><p>Des fa&ccedil;ades &hellip;&hellip;</p>", "fin":""},
-              "answers": ["Des","façades","topaze."],
+              "enonce": {
+                "debut": "<p>Un mur topaze.</p><p>Des fa&ccedil;ades &hellip;&hellip;</p>",
+                "fin": ""
+              },
+              "answers": ["Des", "façades", "topaze."],
               "correctAnswer": [2],
               "wrongAnswers": [],
               "regle": "",
@@ -126,149 +141,149 @@
           ]
         },
         {
-          "ide":3,
-          "theme":"",
-          "subtheme":"",
-          "level":"",
-          "type":"",
-          "consigne":"",
-          "explication":"",
-          "lenExo":"",
-          "questions":[
+          "ide": 3,
+          "theme": "",
+          "subtheme": "",
+          "level": "",
+          "type": "",
+          "consigne": "",
+          "explication": "",
+          "lenExo": "",
+          "questions": [
             {
-              "idq":,
-              "enonce":{"debut":"","fin":""},
-              "answers":[],
-              "correctAnswer":[],
-              "wrongAnswers":[],
-              "regle":"",
-              "lienQ":""
+              "idq": 11,
+              "enonce": { "debut": "", "fin": "" },
+              "answers": [],
+              "correctAnswer": [],
+              "wrongAnswers": [],
+              "regle": "",
+              "lienQ": ""
             }
           ]
         },
         {
-          "ide":4,
-          "theme":"",
-          "subtheme":"",
-          "level":"",
-          "type":"",
-          "consigne":"",
-          "explication":"",
-          "lenExo":"",
-          "questions":[
+          "ide": 4,
+          "theme": "",
+          "subtheme": "",
+          "level": "",
+          "type": "",
+          "consigne": "",
+          "explication": "",
+          "lenExo": "",
+          "questions": [
             {
-              "idq":,
-              "enonce":{"debut":"","fin":""},
-              "answers":[],
-              "correctAnswer":[],
-              "wrongAnswers":[],
-              "regle":"",
-              "lienQ":""
+              "idq": 12,
+              "enonce": { "debut": "", "fin": "" },
+              "answers": [],
+              "correctAnswer": [],
+              "wrongAnswers": [],
+              "regle": "",
+              "lienQ": ""
             }
           ]
         },
         {
-          "ide":5,
-          "theme":"",
-          "subtheme":"",
-          "level":"",
-          "type":"",
-          "consigne":"",
-          "explication":"",
-          "lenExo":"",
-          "questions":[
+          "ide": 5,
+          "theme": "",
+          "subtheme": "",
+          "level": "",
+          "type": "",
+          "consigne": "",
+          "explication": "",
+          "lenExo": "",
+          "questions": [
             {
-              "idq":,
-              "enonce":{"debut":"","fin":""},
-              "answers":[],
-              "correctAnswer":[],
-              "wrongAnswers":[],
-              "regle":"",
-              "lienQ":""
+              "idq": 13,
+              "enonce": { "debut": "", "fin": "" },
+              "answers": [],
+              "correctAnswer": [],
+              "wrongAnswers": [],
+              "regle": "",
+              "lienQ": ""
             }
           ]
         },
         {
-          "ide":6,
-          "theme":"",
-          "subtheme":"",
-          "level":"",
-          "type":"",
-          "consigne":"",
-          "explication":"",
-          "lenExo":"",
-          "questions":[
+          "ide": 6,
+          "theme": "",
+          "subtheme": "",
+          "level": "",
+          "type": "",
+          "consigne": "",
+          "explication": "",
+          "lenExo": "",
+          "questions": [
             {
-              "idq":,
-              "enonce":{"debut":"","fin":""},
-              "answers":[],
-              "correctAnswer":[],
-              "wrongAnswers":[],
-              "regle":"",
-              "lienQ":""
+              "idq": 14,
+              "enonce": { "debut": "", "fin": "" },
+              "answers": [],
+              "correctAnswer": [],
+              "wrongAnswers": [],
+              "regle": "",
+              "lienQ": ""
             }
           ]
         },
         {
-          "ide":7,
-          "theme":"",
-          "subtheme":"",
-          "level":"",
-          "type":"",
-          "consigne":"",
-          "explication":"",
-          "lenExo":"",
-          "questions":[
+          "ide": 7,
+          "theme": "",
+          "subtheme": "",
+          "level": "",
+          "type": "",
+          "consigne": "",
+          "explication": "",
+          "lenExo": "",
+          "questions": [
             {
-              "idq":,
-              "enonce":{"debut":"","fin":""},
-              "answers":[],
-              "correctAnswer":[],
-              "wrongAnswers":[],
-              "regle":"",
-              "lienQ":""
+              "idq": 15,
+              "enonce": { "debut": "", "fin": "" },
+              "answers": [],
+              "correctAnswer": [],
+              "wrongAnswers": [],
+              "regle": "",
+              "lienQ": ""
             }
           ]
         },
         {
-          "ide":8,
-          "theme":"",
-          "subtheme":"",
-          "level":"",
-          "type":"",
-          "consigne":"",
-          "explication":"",
-          "lenExo":"",
-          "questions":[
+          "ide": 8,
+          "theme": "",
+          "subtheme": "",
+          "level": "",
+          "type": "",
+          "consigne": "",
+          "explication": "",
+          "lenExo": "",
+          "questions": [
             {
-              "idq":,
-              "enonce":{"debut":"","fin":""},
-              "answers":[],
-              "correctAnswer":[],
-              "wrongAnswers":[],
-              "regle":"",
-              "lienQ":""
+              "idq": 16,
+              "enonce": { "debut": "", "fin": "" },
+              "answers": [],
+              "correctAnswer": [],
+              "wrongAnswers": [],
+              "regle": "",
+              "lienQ": ""
             }
           ]
         },
         {
-          "ide":9,
-          "theme":"",
-          "subtheme":"",
-          "level":"",
-          "type":"",
-          "consigne":"",
-          "explication":"",
-          "lenExo":"",
-          "questions":[
+          "ide": 9,
+          "theme": "",
+          "subtheme": "",
+          "level": "",
+          "type": "",
+          "consigne": "",
+          "explication": "",
+          "lenExo": "",
+          "questions": [
             {
-              "idq":,
-              "enonce":{"debut":"","fin":""},
-              "answers":[],
-              "correctAnswer":[],
-              "wrongAnswers":[],
-              "regle":"",
-              "lienQ":""
+              "idq": 17,
+              "enonce": { "debut": "", "fin": "" },
+              "answers": [],
+              "correctAnswer": [],
+              "wrongAnswers": [],
+              "regle": "",
+              "lienQ": ""
             }
           ]
         }

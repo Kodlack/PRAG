@@ -1,11 +1,13 @@
-import { Button } from "@mui/material";
+import { Button, DialogTitle, Tooltip } from "@mui/material";
 import "../css/background.css";
+import "../css/exercices.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import BasPage from "./BasPage";
 
 function Exercice() {
   const [exos, setExos] = useState([]);
+  const [questions, setQuestions] = useState([]);
 
   function toHtml(texte, id) {
     var x = document.getElementById(id);
@@ -13,12 +15,32 @@ function Exercice() {
     return x.innerHTML;
   }
 
+  // const envoieData = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     const res = await axios
+  //       .post("http://localhost:3000/formulaire", {
+  //         tab1,
+  //         dateChoisie,
+  //         activite,
+  //       })
+  //       .then((response) => {
+  //       });
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // };
+
+  const param = { ide: 1 };
+
   useEffect(() => {
     axios
-      .get("http://localhost:8000/exercices")
+      .post("http://localhost:3000/exercice/:ide", param)
       .then((res) => {
-        setExos(res.data.data[0].exercices);
-        console.log(res.data.data[0].exercices);
+        setExos(res.data);
+        setQuestions(res.data[0].questions);
+        console.log(questions);
+        console.log(exos);
       })
       .catch((err) => {
         console.log(err);
@@ -35,22 +57,29 @@ function Exercice() {
             {i.type} n°{inex + 1}
           </h3>
           <p>{i.consigne}</p>
-          {i.questions.map((j, nb) => {
-            {
-              j.Answers.map((k, nb) => {
-                <p key={nb}>{k}</p>;
-              });
-            }
-          })}
         </div>
       ))}
-      <span id="exo"></span>
+      {questions.map((j, inex) => (
+        <div key={inex}>
+          <p>{j.enonce.debut}</p>
+          {j.answers.map((k) => (
+            <div>
+              <label>
+                <input name="question" type="radio" />
+                {k}
+              </label>
+              <br />
+            </div>
+          ))}
+        </div>
+      ))}
+      <div id="explication"></div>
       <Button
         variant="contained"
         type="submit"
         sx={{ margin: "7px 0px 0px 10px", background: "#376f98" }}
         onClick={() => {
-          toHtml(exos[0].Explication, "exo");
+          toHtml(exos[0].questions[0].regle, "explication");
         }}
       >
         Valider
