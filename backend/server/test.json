@@ -127,22 +127,58 @@
         },
         {
           "ide":3,
-          "theme":"",
-          "subtheme":"",
-          "level":"",
-          "type":"",
-          "consigne":"",
+          "theme":"Lexique",
+          "subtheme":"Anglicismes",
+          "level":"1",
+          "type":"Énoncé fautif",
+          "consigne":"Parmi les propositions données pour remplacer l’anglicisme placé entre parenthèses, repérez si l’une d’entre elles n’est pas adéquate.",
           "explication":"",
           "lenExo":"",
           "questions":[
             {
-              "idq":,
+              "idq":11,
+              "enonce":{"debut":"<p>Le d&eacute;veloppement des r&eacute;seaux sociaux accro&icirc;t la diffusion des (<em>fake news</em>).","fin":""},
+              "answers":["des fausses informations","des informations mensong&egrave;res","des rumeurs infond&eacute;es"],
+              "correctAnswer":[],
+              "wrongAnswers":[],
+              "regle":"<p><em>Pas de faute.</em></p><p><em>&nbsp;</em></p><p>(Depuis plusieurs mois l&rsquo;expression <em>fake news</em> s&rsquo;est largement r&eacute;pandue en France. Pourtant, plusieurs termes fran&ccedil;ais peuvent &ecirc;tre employ&eacute;es, tels que <em>bobard, boniments, contre-v&eacute;rit&eacute;, mensonge, ragot, tromperie, trucage</em>, <em>information fallacieuse,</em> voire <em>infox.</em>)</p>",
+              "lienQ":"https://www.academie-francaise.fr/fake-news"
+            },
+            {
+              "idq":12,
+              "enonce":{"debut":"<p>Cette d&eacute;coration est tr&egrave;s r&eacute;ussie car les diff&eacute;rentes couleurs (<em>matchent</em>) bien ensemble.</p>","fin":""},
+              "answers":["se marient","s'accordent","s'arrangent"],
+              "correctAnswer":[2],
+              "wrongAnswers":[],
+              "regle":"<p>(Le substantif anglais <em>match </em>et le verbe correspondant <em>to match </em>peuvent traduire une id&eacute;e d&rsquo;affront, de rivalit&eacute;, de comp&eacute;tition (c&rsquo;est en ce sens que le substantif est entr&eacute; dans la langue fran&ccedil;aise), mais ils peuvent aussi &eacute;voquer une id&eacute;e d&rsquo;harmonie. Ainsi <em>to be a good match </em>signifie &laquo;&nbsp;aller bien ensemble&nbsp;&raquo;, et <em>to match well, </em>&laquo;&nbsp;&ecirc;tre bien assortis, faire la paire&nbsp;&raquo;. Comme on le voit, le fran&ccedil;ais dispose de nombreux mots et expressions pour rendre compte de cette id&eacute;e.)</p>",
+              "lienQ":"https://www.academie-francaise.fr/matcher"
+            },
+            {
+              "idq":13,
+              "enonce":{"debut":"<p>La journaliste a publi&eacute; des propos (<em>off record</em>) alors qu&rsquo;elle n&rsquo;en avait pas le droit.</p>","fin":""},
+              "answers":["mensongers","confidentiels","tenus hors micro"],
+              "correctAnswer":[2],
+              "wrongAnswers":[],
+              "regle":"<p>(Le substantif anglais <em>match </em>et le verbe correspondant <em>to match </em>peuvent traduire une id&eacute;e d&rsquo;affront, de rivalit&eacute;, de comp&eacute;tition (c&rsquo;est en ce sens que le substantif est entr&eacute; dans la langue fran&ccedil;aise), mais ils peuvent aussi &eacute;voquer une id&eacute;e d&rsquo;harmonie. Ainsi <em>to be a good match </em>signifie &laquo;&nbsp;aller bien ensemble&nbsp;&raquo;, et <em>to match well, </em>&laquo;&nbsp;&ecirc;tre bien assortis, faire la paire&nbsp;&raquo;. Comme on le voit, le fran&ccedil;ais dispose de nombreux mots et expressions pour rendre compte de cette id&eacute;e.)</p>",
+              "lienQ":"https://www.academie-francaise.fr/record-0"
+            },
+            {
+              "idq":14,
               "enonce":{"debut":"","fin":""},
               "answers":[],
               "correctAnswer":[],
               "wrongAnswers":[],
               "regle":"",
-              "lienQ":""
+              "lienQ":"https://www.academie-francaise.fr/conf"
+            },
+            {
+              "idq":15,
+              "enonce":{"debut":"","fin":""},
+              "answers":[],
+              "correctAnswer":[],
+              "wrongAnswers":[],
+              "regle":"",
+              "lienQ":"https://www.academie-francaise.fr/relooker"
             }
           ]
         },
@@ -157,7 +193,43 @@
           "lenExo":"",
           "questions":[
             {
-              "idq":,
+              "idq":16,
+              "enonce":{"debut":"","fin":""},
+              "answers":[],
+              "correctAnswer":[],
+              "wrongAnswers":[],
+              "regle":"",
+              "lienQ":""
+            },
+            {
+              "idq":17,
+              "enonce":{"debut":"","fin":""},
+              "answers":[],
+              "correctAnswer":[],
+              "wrongAnswers":[],
+              "regle":"",
+              "lienQ":""
+            },
+            {
+              "idq":18,
+              "enonce":{"debut":"","fin":""},
+              "answers":[],
+              "correctAnswer":[],
+              "wrongAnswers":[],
+              "regle":"",
+              "lienQ":""
+            },
+            {
+              "idq":19,
+              "enonce":{"debut":"","fin":""},
+              "answers":[],
+              "correctAnswer":[],
+              "wrongAnswers":[],
+              "regle":"",
+              "lienQ":""
+            },
+            {
+              "idq":20,
               "enonce":{"debut":"","fin":""},
               "answers":[],
               "correctAnswer":[],
@@ -178,7 +250,43 @@
           "lenExo":"",
           "questions":[
             {
-              "idq":,
+              "idq":21,
+              "enonce":{"debut":"","fin":""},
+              "answers":[],
+              "correctAnswer":[],
+              "wrongAnswers":[],
+              "regle":"",
+              "lienQ":""
+            },
+            {
+              "idq":22,
+              "enonce":{"debut":"","fin":""},
+              "answers":[],
+              "correctAnswer":[],
+              "wrongAnswers":[],
+              "regle":"",
+              "lienQ":""
+            },
+            {
+              "idq":23,
+              "enonce":{"debut":"","fin":""},
+              "answers":[],
+              "correctAnswer":[],
+              "wrongAnswers":[],
+              "regle":"",
+              "lienQ":""
+            },
+            {
+              "idq":24,
+              "enonce":{"debut":"","fin":""},
+              "answers":[],
+              "correctAnswer":[],
+              "wrongAnswers":[],
+              "regle":"",
+              "lienQ":""
+            },
+            {
+              "idq":25,
               "enonce":{"debut":"","fin":""},
               "answers":[],
               "correctAnswer":[],
@@ -199,7 +307,43 @@
           "lenExo":"",
           "questions":[
             {
-              "idq":,
+              "idq":26,
+              "enonce":{"debut":"","fin":""},
+              "answers":[],
+              "correctAnswer":[],
+              "wrongAnswers":[],
+              "regle":"",
+              "lienQ":""
+            },
+            {
+              "idq":27,
+              "enonce":{"debut":"","fin":""},
+              "answers":[],
+              "correctAnswer":[],
+              "wrongAnswers":[],
+              "regle":"",
+              "lienQ":""
+            },
+            {
+              "idq":28,
+              "enonce":{"debut":"","fin":""},
+              "answers":[],
+              "correctAnswer":[],
+              "wrongAnswers":[],
+              "regle":"",
+              "lienQ":""
+            },
+            {
+              "idq":29,
+              "enonce":{"debut":"","fin":""},
+              "answers":[],
+              "correctAnswer":[],
+              "wrongAnswers":[],
+              "regle":"",
+              "lienQ":""
+            },
+            {
+              "idq":30,
               "enonce":{"debut":"","fin":""},
               "answers":[],
               "correctAnswer":[],
@@ -220,7 +364,43 @@
           "lenExo":"",
           "questions":[
             {
-              "idq":,
+              "idq":31,
+              "enonce":{"debut":"","fin":""},
+              "answers":[],
+              "correctAnswer":[],
+              "wrongAnswers":[],
+              "regle":"",
+              "lienQ":""
+            },
+            {
+              "idq":32,
+              "enonce":{"debut":"","fin":""},
+              "answers":[],
+              "correctAnswer":[],
+              "wrongAnswers":[],
+              "regle":"",
+              "lienQ":""
+            },
+            {
+              "idq":33,
+              "enonce":{"debut":"","fin":""},
+              "answers":[],
+              "correctAnswer":[],
+              "wrongAnswers":[],
+              "regle":"",
+              "lienQ":""
+            },
+            {
+              "idq":34,
+              "enonce":{"debut":"","fin":""},
+              "answers":[],
+              "correctAnswer":[],
+              "wrongAnswers":[],
+              "regle":"",
+              "lienQ":""
+            },
+            {
+              "idq":35,
               "enonce":{"debut":"","fin":""},
               "answers":[],
               "correctAnswer":[],
@@ -241,7 +421,43 @@
           "lenExo":"",
           "questions":[
             {
-              "idq":,
+              "idq":36,
+              "enonce":{"debut":"","fin":""},
+              "answers":[],
+              "correctAnswer":[],
+              "wrongAnswers":[],
+              "regle":"",
+              "lienQ":""
+            },
+            {
+              "idq":37,
+              "enonce":{"debut":"","fin":""},
+              "answers":[],
+              "correctAnswer":[],
+              "wrongAnswers":[],
+              "regle":"",
+              "lienQ":""
+            },
+            {
+              "idq":38,
+              "enonce":{"debut":"","fin":""},
+              "answers":[],
+              "correctAnswer":[],
+              "wrongAnswers":[],
+              "regle":"",
+              "lienQ":""
+            },
+            {
+              "idq":39,
+              "enonce":{"debut":"","fin":""},
+              "answers":[],
+              "correctAnswer":[],
+              "wrongAnswers":[],
+              "regle":"",
+              "lienQ":""
+            },
+            {
+              "idq":40,
               "enonce":{"debut":"","fin":""},
               "answers":[],
               "correctAnswer":[],
@@ -262,7 +478,43 @@
           "lenExo":"",
           "questions":[
             {
-              "idq":,
+              "idq":41,
+              "enonce":{"debut":"","fin":""},
+              "answers":[],
+              "correctAnswer":[],
+              "wrongAnswers":[],
+              "regle":"",
+              "lienQ":""
+            },
+            {
+              "idq":42,
+              "enonce":{"debut":"","fin":""},
+              "answers":[],
+              "correctAnswer":[],
+              "wrongAnswers":[],
+              "regle":"",
+              "lienQ":""
+            },
+            {
+              "idq":43,
+              "enonce":{"debut":"","fin":""},
+              "answers":[],
+              "correctAnswer":[],
+              "wrongAnswers":[],
+              "regle":"",
+              "lienQ":""
+            },
+            {
+              "idq":44,
+              "enonce":{"debut":"","fin":""},
+              "answers":[],
+              "correctAnswer":[],
+              "wrongAnswers":[],
+              "regle":"",
+              "lienQ":""
+            },
+            {
+              "idq":45,
               "enonce":{"debut":"","fin":""},
               "answers":[],
               "correctAnswer":[],
