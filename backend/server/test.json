@@ -74,7 +74,7 @@
           "subtheme": "Les adjectifs de couleur",
           "level": 1,
           "type": "Texte a trou",
-          "consigne": "",
+          "consigne": "Complétez la seconde phrase sur le modèle de la première, en accordant l’adjectif de couleur comme il convient.",
           "explication": "<p>Les adjectifs simples de couleur s&rsquo;accordent en genre et en nombre : <em>des costumes noirs, des cheveux blonds, des lacs verd&acirc;tres.&nbsp;</em>Toutefois, les noms communs employ&eacute;s comme adjectifs de couleur sont invariables : <em>des chaussures marron, des robes pivoine.</em> On peut en effet consid&eacute;rer ces formes comme des ellipses : <em>des chaussures (de la couleur du) marron, des robes (de la couleur de la) pivoine.&nbsp;</em>On recense traditionnellement quatre<strong> exceptions</strong> &agrave; cette r&egrave;gle : <strong><em>rose, mauve, pourpre et &eacute;carlate</em></strong>, qui sont variables. <strong><em>Fauve</em></strong> et <strong><em>incarnat</em></strong>, &eacute;tant d&rsquo;abord des adjectifs, sont naturellement variables.</p>",
           "lienExo": "https://www.academie-francaise.fr/questions-de-langue#64_strong-em-participe-pass-accord-em-strong",
           "questions": [
@@ -142,82 +142,322 @@
         },
         {
           "ide": 3,
-          "theme": "",
-          "subtheme": "",
-          "level": "",
-          "type": "",
-          "consigne": "",
+          "theme": "Lexique",
+          "subtheme": "Anglicismes",
+          "level": "1",
+          "type": "Énoncé fautif",
+          "consigne": "Parmi les propositions données pour remplacer l’anglicisme placé entre parenthèses, repérez si l’une d’entre elles n’est pas adéquate.",
           "explication": "",
-          "lenExo": "",
+          "lienExo": "",
           "questions": [
             {
               "idq": 11,
-              "enonce": { "debut": "", "fin": "" },
-              "answers": [],
+              "enonce": {
+                "debut": "<p>Le d&eacute;veloppement des r&eacute;seaux sociaux accro&icirc;t la diffusion des (<em>fake news</em>).",
+                "fin": ""
+              },
+              "answers": [
+                "des fausses informations",
+                "des informations mensong&egrave;res",
+                "des rumeurs infond&eacute;es"
+              ],
               "correctAnswer": [],
               "wrongAnswers": [],
-              "regle": "",
-              "lienQ": ""
+              "regle": "<p><em>Pas de faute.</em></p><p><em>&nbsp;</em></p><p>(Depuis plusieurs mois l&rsquo;expression <em>fake news</em> s&rsquo;est largement r&eacute;pandue en France. Pourtant, plusieurs termes fran&ccedil;ais peuvent &ecirc;tre employ&eacute;es, tels que <em>bobard, boniments, contre-v&eacute;rit&eacute;, mensonge, ragot, tromperie, trucage</em>, <em>information fallacieuse,</em> voire <em>infox.</em>)</p>",
+              "lienQ": "https://www.academie-francaise.fr/fake-news"
+            },
+            {
+              "idq": 12,
+              "enonce": {
+                "debut": "<p>Cette d&eacute;coration est tr&egrave;s r&eacute;ussie car les diff&eacute;rentes couleurs (<em>matchent</em>) bien ensemble.</p>",
+                "fin": ""
+              },
+              "answers": ["se marient", "s'accordent", "s'arrangent"],
+              "correctAnswer": [2],
+              "wrongAnswers": [],
+              "regle": "<p>(Le substantif anglais <em>match </em>et le verbe correspondant <em>to match </em>peuvent traduire une id&eacute;e d&rsquo;affront, de rivalit&eacute;, de comp&eacute;tition (c&rsquo;est en ce sens que le substantif est entr&eacute; dans la langue fran&ccedil;aise), mais ils peuvent aussi &eacute;voquer une id&eacute;e d&rsquo;harmonie. Ainsi <em>to be a good match </em>signifie &laquo;&nbsp;aller bien ensemble&nbsp;&raquo;, et <em>to match well, </em>&laquo;&nbsp;&ecirc;tre bien assortis, faire la paire&nbsp;&raquo;. Comme on le voit, le fran&ccedil;ais dispose de nombreux mots et expressions pour rendre compte de cette id&eacute;e.)</p>",
+              "lienQ": "https://www.academie-francaise.fr/matcher"
+            },
+            {
+              "idq": 13,
+              "enonce": {
+                "debut": "<p>La journaliste a publi&eacute; des propos (<em>off record</em>) alors qu&rsquo;elle n&rsquo;en avait pas le droit.</p>",
+                "fin": ""
+              },
+              "answers": ["mensongers", "confidentiels", "tenus hors micro"],
+              "correctAnswer": [2],
+              "wrongAnswers": [],
+              "regle": "<p>(Le substantif anglais <em>match </em>et le verbe correspondant <em>to match </em>peuvent traduire une id&eacute;e d&rsquo;affront, de rivalit&eacute;, de comp&eacute;tition (c&rsquo;est en ce sens que le substantif est entr&eacute; dans la langue fran&ccedil;aise), mais ils peuvent aussi &eacute;voquer une id&eacute;e d&rsquo;harmonie. Ainsi <em>to be a good match </em>signifie &laquo;&nbsp;aller bien ensemble&nbsp;&raquo;, et <em>to match well, </em>&laquo;&nbsp;&ecirc;tre bien assortis, faire la paire&nbsp;&raquo;. Comme on le voit, le fran&ccedil;ais dispose de nombreux mots et expressions pour rendre compte de cette id&eacute;e.)</p>",
+              "lienQ": "https://www.academie-francaise.fr/record-0"
+            },
+            {
+              "idq": 14,
+              "enonce": {
+                "debut": "<p>Je ne peux pas d&eacute;jeuner avec vous j&rsquo;ai (<em>un</em> <em>conf call) </em>&agrave; 11h45 avec mes associ&eacute;s britanniques.</p>",
+                "fin": ""
+              },
+              "answers": [
+                "un appel numérique",
+                "une réunion téléphonique",
+                "une conférence téléphonique"
+              ],
+              "correctAnswer": [2],
+              "wrongAnswers": [],
+              "regle": "<p>(La locution anglaise <em>conf call</em>, abr&eacute;viation de <em>conference call, </em>tend &agrave; se r&eacute;pandre. Elle d&eacute;signe une communication t&eacute;l&eacute;phonique organis&eacute;e &agrave; l&rsquo;avance entre plus de deux correspondants, et non, comme on le croit parfois, un expos&eacute; retransmis par t&eacute;l&eacute;phone. Cet anglicisme peut facilement &ecirc;tre remplac&eacute; par la forme <em>conf&eacute;rence t&eacute;l&eacute;phonique.</em>)</p>",
+              "lienQ": "https://www.academie-francaise.fr/conf"
+            },
+            {
+              "idq": 15,
+              "enonce": {
+                "debut": "<p>Elle aimerait (<em>relooker</em>) son appartement en adoptant un style plus &eacute;pur&eacute;.</p>",
+                "fin": ""
+              },
+              "answers": ["redécorer", "rajeunir", "refaire"],
+              "correctAnswer": [2],
+              "wrongAnswers": [],
+              "regle": "<p>(Le verbe <em>relooker</em>, qui d&eacute;rive du nom <em>look</em>, se compose d&rsquo;un verbe anglais et du pr&eacute;fixe it&eacute;ratif fran&ccedil;ais<em> re-</em>. Le fran&ccedil;ais dispose de verbes et d&rsquo;expressions comme <em>modifier, refaire, donner une apparence nouvelle, </em>etc., qui nous permettent de nous passer ais&eacute;ment de cet anglicisme.)</p>",
+              "lienQ": "https://www.academie-francaise.fr/relooker"
             }
           ]
         },
         {
           "ide": 4,
-          "theme": "",
-          "subtheme": "",
-          "level": "",
-          "type": "",
-          "consigne": "",
-          "explication": "",
-          "lenExo": "",
+          "theme": "Morphologie",
+          "subtheme": "Finales des participes passés",
+          "level": "2",
+          "type": "Enoncé fautif",
+          "consigne": "Dans les énoncés ci-après, cliquez sur les participes passés qui contiennent une faute.",
+          "explication": "<p><strong>Finales du participe pass&eacute;&nbsp;:&nbsp; </strong></p><p>Pour les verbes du 1<sup>er</sup> groupe&nbsp;: <em>-&eacute;</em></p><p>Pour les verbes du 2<sup>e</sup> groupe&nbsp;: <em>-i</em></p><p>Pour les verbes du 3<sup>e</sup> groupe&nbsp;: <em>- i, - u&nbsp;</em>ou <em>-s, -t </em></p><p>&nbsp;</p><p>&egrave; Pour les verbes du 3<sup>e</sup> groupe, mettre le participe pass&eacute; au f&eacute;minin pour savoir s&rsquo;il contient, au masculin, une consonne finale muette.</p><p>&egrave; Le participe pass&eacute; d&rsquo;<em>avoir</em> est &laquo;&nbsp;eu(e)(s)&nbsp;&raquo;</p><p>&egrave; Le participe pass&eacute; d&rsquo;<em>&ecirc;tre</em> est &laquo;&nbsp;&eacute;t&eacute;&nbsp;&raquo;. </p>",
+          "lienExo": "",
           "questions": [
             {
-              "idq": 12,
-              "enonce": { "debut": "", "fin": "" },
-              "answers": [],
-              "correctAnswer": [],
+              "idq": 16,
+              "enonce": {
+                "debut": "Marie et Baptiste ont dormis toute la journée. ",
+                "fin": ""
+              },
+              "answers": [
+                "Marie",
+                "et",
+                "Baptiste",
+                "ont",
+                "dormi",
+                "toute",
+                "la",
+                "journée."
+              ],
+              "correctAnswer": [4],
               "wrongAnswers": [],
               "regle": "",
+              "lienQ": ""
+            },
+            {
+              "idq": 17,
+              "enonce": {
+                "debut": "Il a dis de ne pas toucher aux livres de sa bibliothèque. ",
+                "fin": ""
+              },
+              "answers": [
+                "Il",
+                "a",
+                "dit",
+                "de",
+                "ne",
+                "pas",
+                "toucher",
+                "aux",
+                "livres",
+                "de",
+                "sa",
+                "bibliothèque."
+              ],
+              "correctAnswer": [2],
+              "wrongAnswers": [],
+              "regle": "",
+              "lienQ": ""
+            },
+            {
+              "idq": 18,
+              "enonce": {
+                "debut": "Nous avons atteins le refuge avant le soir.",
+                "fin": ""
+              },
+              "answers": [
+                "Nous",
+                "avons",
+                "atteins",
+                "le",
+                "refuge",
+                "avant",
+                "le",
+                "soir."
+              ],
+              "correctAnswer": [2],
+              "wrongAnswers": [],
+              "regle": "",
+              "lienQ": ""
+            },
+            {
+              "idq": 19,
+              "enonce": {
+                "debut": "Tony, n'oublie pas ce que je t'ai dit !",
+                "fin": ""
+              },
+              "answers": [
+                "Tony",
+                "n'oublie",
+                "pas",
+                "ce",
+                "que",
+                "je",
+                "t'ai",
+                "dit."
+              ],
+              "correctAnswer": [],
+              "wrongAnswers": [],
+              "regle": "<p><em>Pas de faute.</em></p>",
+              "lienQ": ""
+            },
+            {
+              "idq": 20,
+              "enonce": {
+                "debut": "Le luxe a corrompu cette nation.",
+                "fin": ""
+              },
+              "answers": ["Le", "luxe", "a", "corrompu", "cette", "nation."],
+              "correctAnswer": [],
+              "wrongAnswers": [],
+              "regle": "<p><em>Pas de faute.</em></p>",
               "lienQ": ""
             }
           ]
         },
         {
           "ide": 5,
-          "theme": "",
-          "subtheme": "",
-          "level": "",
-          "type": "",
-          "consigne": "",
+          "theme": "Lexique",
+          "subtheme": "Anglicismes",
+          "level": "2",
+          "type": "Substitution",
+          "consigne": "Donnez l’équivalent français de l’anglicisme placé entre parenthèses.",
           "explication": "",
-          "lenExo": "",
+          "lienExo": "",
           "questions": [
             {
-              "idq": 13,
-              "enonce": { "debut": "", "fin": "" },
+              "idq": 21,
+              "enonce": {
+                "debut": "<p>Le (<em>process)</em>",
+                "fin": " &hellip;&hellip;&hellip;... de fabrication de ce produit est tenu secret.</p>"
+              },
               "answers": [],
-              "correctAnswer": [],
+              "correctAnswer": ["procédé"],
               "wrongAnswers": [],
-              "regle": "",
-              "lienQ": ""
+              "regle": "<p>(L&rsquo;anglais <em>process </em>a &eacute;t&eacute; emprunt&eacute; du fran&ccedil;ais <em>processus </em>aux environs de l&rsquo;an 1300. Lui-m&ecirc;me vient du nom latin de m&ecirc;me forme <em>processus. </em>Ce dernier est d&eacute;riv&eacute; de <em>procedere, </em>qui a donn&eacute; le verbe <em>proc&eacute;der </em>et le nom <em>proc&eacute;d&eacute;. Proc&eacute;d&eacute; </em>et <em>processus </em>ont des sens voisins et couvrent &agrave; eux deux ceux de l&rsquo;anglais <em>process. </em>Choisissons donc d&rsquo;employer, en fonction du contexte, l&rsquo;un ou l&rsquo;autre et soyons convaincus que la suppression du digramme final -<em>us </em>n&rsquo;est pas un gage de modernit&eacute;.)</p>",
+              "lienQ": "https://www.academie-francaise.fr/process"
+            },
+            {
+              "idq": 22,
+              "enonce": {
+                "debut": "<p>As-tu (<em>book&eacute;</em>)",
+                "fin": " &hellip;&hellip;&hellip;... l&rsquo;h&ocirc;tel &agrave; Madrid&nbsp;?</p>"
+              },
+              "answers": [],
+              "correctAnswer": ["réservé"],
+              "wrongAnswers": [],
+              "regle": "<p>(L&rsquo;anglais <em>book, </em>&laquo;&nbsp;livre&nbsp;&raquo;, a donn&eacute;, par m&eacute;tonymie, le verbe <em>to book, </em>&laquo;&nbsp;noter, enregistrer&nbsp;&raquo;, puis &laquo;&nbsp;r&eacute;server&nbsp;&raquo;. Ce verbe s&rsquo;est d&rsquo;abord appliqu&eacute; &agrave; des lieux, th&eacute;&acirc;tres, restaurants, etc.)</p>",
+              "lienQ": "https://www.academie-francaise.fr/booke-overbooke-surbooke"
+            },
+            {
+              "idq": 23,
+              "enonce": {
+                "debut": "<p>Je ne retrouve pas mon dossier&nbsp;: peux-tu (<em>checker</em>)",
+                "fin": "&hellip;&hellip;&hellip;... si je ne l&rsquo;ai pas oubli&eacute; sur ton bureau&nbsp;?</p>"
+              },
+              "answers": [],
+              "correctAnswer": ["vérifier"],
+              "wrongAnswers": [],
+              "regle": "<p>(<em>Check-list </em>signifie &laquo;&nbsp;liste des v&eacute;rifications &agrave; effectuer&nbsp;&raquo;. Ce mot anglais a longtemps &eacute;t&eacute; cantonn&eacute; au vocabulaire de l&rsquo;aviation, mais il s&rsquo;est depuis peu r&eacute;pandu dans tous les domaines de la vie courante. On a ensuite cr&eacute;&eacute; le verbe <em>Checker, </em>qui s&rsquo;est substitu&eacute; abusivement &agrave; &laquo;&nbsp;contr&ocirc;ler&nbsp;&raquo; ou &laquo;&nbsp;v&eacute;rifier&nbsp;&raquo;.)</p>",
+              "lienQ": "https://www.academie-francaise.fr/checker-check-list-do-list"
+            },
+            {
+              "idq": 24,
+              "enonce": {
+                "debut": "<p>Elle aime beaucoup (<em>customiser</em>)",
+                "fin": "&hellip;&hellip;&hellip;... ses paires de chaussures.&nbsp;</p>"
+              },
+              "answers": [],
+              "correctAnswer": ["personnaliser"],
+              "wrongAnswers": [],
+              "regle": "<p>(Le monde de l&rsquo;automobile nous a donn&eacute; cet anglicisme, que l&rsquo;on peut remplacer par des formes fran&ccedil;aises de bonne langue.</p><p>L&rsquo;anglais <em>to customize, </em>&laquo;&nbsp;faire sur commande, personnaliser&nbsp;&raquo;, est d&eacute;riv&eacute; de <em>custom, </em>&laquo;&nbsp;coutume, habitude&nbsp;&raquo;, puis &laquo;&nbsp;client&egrave;le&nbsp;&raquo;, lui-m&ecirc;me d&eacute;riv&eacute; de l&rsquo;ancien fran&ccedil;ais <em>custume</em>. On peut et on doit &eacute;viter l&rsquo;anglicisme <em>Customiser, </em>car il existe des formes de m&ecirc;me sens en fran&ccedil;ais, comme &laquo;&nbsp;personnaliser&nbsp;&raquo; ou &laquo;&nbsp;adapter &agrave; ses go&ucirc;ts&nbsp;&raquo;.)</p>",
+              "lienQ": "https://www.academie-francaise.fr/customiser-tuning"
+            },
+            {
+              "idq": 25,
+              "enonce": {
+                "debut": "<p>Ce soir, il y a un match qui oppose la France (<em>versus</em>)",
+                "fin": "&hellip;&hellip;&hellip;... l&rsquo;Italie.</p>"
+              },
+              "answers": [],
+              "correctAnswer": ["à"],
+              "wrongAnswers": [],
+              "regle": "<p>(Le participe pass&eacute; <em>versus,</em> du verbe latin <em>vertere, </em>&laquo;&nbsp;tourner&nbsp;&raquo;, &eacute;tait employ&eacute; en latin classique comme adverbe pour compl&eacute;ter les pr&eacute;positions <em>in </em>et <em>ad</em>&nbsp;: <em>in forum versus, </em>&laquo;&nbsp;dans la direction du forum&nbsp;&raquo;, <em>ad Oceanum versus,</em> &laquo;&nbsp;du c&ocirc;t&eacute; de l&rsquo;Oc&eacute;an&nbsp;&raquo;. Par la suite, en latin m&eacute;di&eacute;val, ce mot devint une pr&eacute;position signifiant &laquo;&nbsp;contre&nbsp;&raquo;, aussi bien au sens locatif qu&rsquo;au sens adversatif, pr&eacute;position que l&rsquo;on retrouve en anglais &agrave; partir du xv<sup>e </sup>si&egrave;cle. Il existe en fran&ccedil;ais depuis le milieu des ann&eacute;es 1960, mais c&rsquo;est surtout depuis les ann&eacute;es 1980 qu&rsquo;il est devenu d&rsquo;usage courant. C&rsquo;est le sport, et en particulier la boxe, qui a assur&eacute; sa popularit&eacute; en y recourant pour pr&eacute;senter les deux adversaires d&rsquo;un combat. On pouvait ainsi lire sur les affiches&nbsp;: <em>Ali versus Frazier, Hagler versus Leonard. </em>Par la suite <em>versus </em>s&rsquo;est r&eacute;pandu dans tous les domaines o&ugrave; l&rsquo;on voulait &eacute;voquer une opposition, un antagonisme ou une comparaison. On rappellera que les pr&eacute;positions ou locutions pr&eacute;positives fran&ccedil;aises <em>contre, ou, face &agrave;, en face de, par opposition &agrave; </em>peuvent exprimer cette id&eacute;e et qu&rsquo;il est donc inutile de les remplacer par cet anglicisme ou par sa forme abr&eacute;g&eacute;e <em>vs.)</em></p>",
+              "lienQ": "https://www.academie-francaise.fr/versus"
             }
           ]
         },
         {
           "ide": 6,
-          "theme": "",
-          "subtheme": "",
-          "level": "",
-          "type": "",
-          "consigne": "",
-          "explication": "",
-          "lenExo": "",
+          "theme": "Lexique",
+          "subtheme": "Les homonymes",
+          "level": "2",
+          "type": "QCM",
+          "consigne": "Dans les phrases suivantes, sélectionnez le terme adéquat.",
+          "explication": "<p><em>Ainsi font, font, font les petites marionnettes,</em> nous apprend la comptine. Mais &agrave; c&ocirc;t&eacute; de ces trois <strong><em>font</em></strong><em>,</em> reprise du verbe <em>faire</em> &agrave; la troisi&egrave;me personne du pluriel, il existe une autre triplette d&rsquo;homonymes de ces formes : <em>fond</em>, <em>fonds</em> et <em>fonts</em>.</p><p>Le premier (<strong><em>fond</em></strong>), issu du latin <em>fundus</em>, cousin de l&rsquo;anglais <em>bottom</em> et de l&rsquo;allemand <em>Boden</em>, a de nombreux sens : il d&eacute;signe ce qui constitue la limite inf&eacute;rieure (<em>le fond d&rsquo;une malle</em>), ce qui est situ&eacute; &agrave; la plus grande profondeur (<em>le fond d&rsquo;un puits</em>), mais aussi ce qui est le plus &eacute;loign&eacute; de l&rsquo;ouverture, de l&rsquo;entr&eacute;e (<em>le fond de la salle</em>) ; ce nom d&eacute;signe enfin les qualit&eacute;s essentielles et permanentes d&rsquo;un &ecirc;tre (<em>il a bon fond</em>).</p><p><em>Fond</em> est aussi la 3<sup>e</sup> personne du pr&eacute;sent de l&rsquo;indicatif du verbe <em>fondre.</em></p><p>&nbsp;</p><p>La forme <strong><em>fonds</em></strong> peut &ecirc;tre le pluriel de <em>fond</em> mais c&rsquo;est aussi un nom autonome, qui d&eacute;signe un bien ou un ensemble de biens de nature &agrave; permettre l&rsquo;exercice d&rsquo;une activit&eacute;, d&rsquo;une profession (<em>un fonds de commerce</em>) ; c&rsquo;est aussi un capital, immobilier ou non, que l&rsquo;on fait valoir (<em>le fonds et le revenu</em>) et c&rsquo;est enfin un ensemble de ressources susceptibles d&rsquo;&ecirc;tre exploit&eacute;es (<em>le fonds d&rsquo;une biblioth&egrave;que</em>).</p><p>&nbsp;</p><p>La troisi&egrave;me forme, <strong><em>fonts</em></strong>, ne s&rsquo;emploie qu&rsquo;au pluriel ; elle appartient &agrave; la m&ecirc;me famille que fontaine et ne se rencontre gu&egrave;re que dans la locution <em>fonts baptismaux</em>, qui d&eacute;signe la vasque o&ugrave; l&rsquo;on conserve l&rsquo;eau b&eacute;nite dont on se sert pour les bapt&ecirc;mes. </p>",
+          "lienExo": "",
           "questions": [
             {
-              "idq": 14,
-              "enonce": { "debut": "", "fin": "" },
-              "answers": [],
-              "correctAnswer": [],
+              "idq": 26,
+              "enonce": { "debut": "Une malle à double.", "fin": "" },
+              "answers": ["fond", "fonds", "font"],
+              "correctAnswer": [0],
+              "wrongAnswers": [],
+              "regle": "",
+              "lienQ": ""
+            },
+            {
+              "idq": 27,
+              "enonce": {
+                "debut": "Ce musée a été construit avec des",
+                "fin": "publics."
+              },
+              "answers": ["fonts", "fond", "fonds"],
+              "correctAnswer": [2],
+              "wrongAnswers": [],
+              "regle": "",
+              "lienQ": ""
+            },
+            {
+              "idq": 28,
+              "enonce": { "debut": "La glace", "fin": "" },
+              "answers": ["fond", "fonds", "font"],
+              "correctAnswer": [0],
+              "wrongAnswers": [],
+              "regle": "",
+              "lienQ": ""
+            },
+            {
+              "idq": 29,
+              "enonce": { "debut": "Ils", "fin": "encore des bêtises." },
+              "answers": ["font", "fonds", "fonds"],
+              "correctAnswer": [0],
+              "wrongAnswers": [],
+              "regle": "",
+              "lienQ": ""
+            },
+            {
+              "idq": 30,
+              "enonce": { "debut": "Le", "fin": "ancien d'une bibliothèque" },
+              "answers": ["fond", "fonds", "font"],
+              "correctAnswer": [1],
               "wrongAnswers": [],
               "regle": "",
               "lienQ": ""
@@ -228,14 +468,50 @@
           "ide": 7,
           "theme": "",
           "subtheme": "",
-          "level": "",
+          "level": "3",
           "type": "",
           "consigne": "",
           "explication": "",
-          "lenExo": "",
+          "lienExo": "",
           "questions": [
             {
-              "idq": 15,
+              "idq": 31,
+              "enonce": { "debut": "", "fin": "" },
+              "answers": [],
+              "correctAnswer": [],
+              "wrongAnswers": [],
+              "regle": "",
+              "lienQ": ""
+            },
+            {
+              "idq": 32,
+              "enonce": { "debut": "", "fin": "" },
+              "answers": [],
+              "correctAnswer": [],
+              "wrongAnswers": [],
+              "regle": "",
+              "lienQ": ""
+            },
+            {
+              "idq": 33,
+              "enonce": { "debut": "", "fin": "" },
+              "answers": [],
+              "correctAnswer": [],
+              "wrongAnswers": [],
+              "regle": "",
+              "lienQ": ""
+            },
+            {
+              "idq": 34,
+              "enonce": { "debut": "", "fin": "" },
+              "answers": [],
+              "correctAnswer": [],
+              "wrongAnswers": [],
+              "regle": "",
+              "lienQ": ""
+            },
+            {
+              "idq": 35,
               "enonce": { "debut": "", "fin": "" },
               "answers": [],
               "correctAnswer": [],
@@ -249,14 +525,50 @@
           "ide": 8,
           "theme": "",
           "subtheme": "",
-          "level": "",
+          "level": "3",
           "type": "",
           "consigne": "",
           "explication": "",
-          "lenExo": "",
+          "lienExo": "",
           "questions": [
             {
-              "idq": 16,
+              "idq": 36,
+              "enonce": { "debut": "", "fin": "" },
+              "answers": [],
+              "correctAnswer": [],
+              "wrongAnswers": [],
+              "regle": "",
+              "lienQ": ""
+            },
+            {
+              "idq": 37,
+              "enonce": { "debut": "", "fin": "" },
+              "answers": [],
+              "correctAnswer": [],
+              "wrongAnswers": [],
+              "regle": "",
+              "lienQ": ""
+            },
+            {
+              "idq": 38,
+              "enonce": { "debut": "", "fin": "" },
+              "answers": [],
+              "correctAnswer": [],
+              "wrongAnswers": [],
+              "regle": "",
+              "lienQ": ""
+            },
+            {
+              "idq": 39,
+              "enonce": { "debut": "", "fin": "" },
+              "answers": [],
+              "correctAnswer": [],
+              "wrongAnswers": [],
+              "regle": "",
+              "lienQ": ""
+            },
+            {
+              "idq": 40,
               "enonce": { "debut": "", "fin": "" },
               "answers": [],
               "correctAnswer": [],
@@ -270,14 +582,50 @@
           "ide": 9,
           "theme": "",
           "subtheme": "",
-          "level": "",
+          "level": "3",
           "type": "",
           "consigne": "",
           "explication": "",
-          "lenExo": "",
+          "lienExo": "",
           "questions": [
             {
-              "idq": 17,
+              "idq": 41,
+              "enonce": { "debut": "", "fin": "" },
+              "answers": [],
+              "correctAnswer": [],
+              "wrongAnswers": [],
+              "regle": "",
+              "lienQ": ""
+            },
+            {
+              "idq": 42,
+              "enonce": { "debut": "", "fin": "" },
+              "answers": [],
+              "correctAnswer": [],
+              "wrongAnswers": [],
+              "regle": "",
+              "lienQ": ""
+            },
+            {
+              "idq": 43,
+              "enonce": { "debut": "", "fin": "" },
+              "answers": [],
+              "correctAnswer": [],
+              "wrongAnswers": [],
+              "regle": "",
+              "lienQ": ""
+            },
+            {
+              "idq": 44,
+              "enonce": { "debut": "", "fin": "" },
+              "answers": [],
+              "correctAnswer": [],
+              "wrongAnswers": [],
+              "regle": "",
+              "lienQ": ""
+            },
+            {
+              "idq": 45,
               "enonce": { "debut": "", "fin": "" },
               "answers": [],
               "correctAnswer": [],
