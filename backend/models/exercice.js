@@ -1,16 +1,63 @@
 const mongoose = require("mongoose");
 
-const newExo = mongoose.Schema({
+const ExoSchema = mongoose.Schema({
   ide: Number,
+  theme: String,
   subtheme: String,
   level: Number,
   type: String,
-  Consigne: String,
-  Explication: String,
+  consigne: String,
+  explication: String,
   lienExo: String,
-  questions: [Object],
+  questions: [
+    {
+      idq: Number,
+      enonce: { debut: String, fin: String },
+      answers: [String],
+      correctAnswer: [Number],
+      wrongAnswers: [Number],
+      regle: String,
+      lienQ: String,
+    },
+    {
+      idq: Number,
+      enonce: { debut: String, fin: String },
+      answers: [String, String],
+      correctAnswer: [Number],
+      wrongAnswers: [Number],
+      regle: String,
+      lienQ: String,
+    },
+    {
+      idq: Number,
+      enonce: { debut: String, fin: String },
+      answers: [String, String],
+      correctAnswer: [Number],
+      wrongAnswers: [Number],
+      regle: String,
+      lienQ: String,
+    },
+    {
+      idq: Number,
+      enonce: { debut: String, fin: String },
+      answers: [String, String],
+      correctAnswer: [Number],
+      wrongAnswers: [Number],
+      regle: String,
+      lienQ: String,
+    },
+    {
+      idq: Number,
+      enonce: { debut: String, fin: String },
+      answers: [String, String],
+      correctAnswer: [Number],
+      wrongAnswers: [Number],
+      regle: String,
+      lienQ: String,
+    },
+  ],
 });
 
-const exercice = mongoose.model("exercice", newExo);
+const ExoModel = mongoose.model("exercice", ExoSchema);
 
-exports.exercice = exercice;
+module.exports = ExoModel;

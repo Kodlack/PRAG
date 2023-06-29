@@ -1,15 +1,15 @@
 const mongoose = require("mongoose");
 
-const newQuestion = mongoose.Schema({
+const questionSchema = mongoose.Schema({
   idq: Number,
-  enonce: { Debut: String, Fin: String },
-  Answers: [String, String],
+  enonce: { debut: String, fin: String },
+  answers: [String],
   correctAnswer: [Number],
   wrongAnswers: [Number],
   regle: String,
   lienQ: String,
 });
 
-const question = mongoose.model("question", newQuestion);
+const questionModel = mongoose.model("question", questionSchema);
 
-exports.question = question;
+module.exports = questionModel;

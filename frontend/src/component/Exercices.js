@@ -34,7 +34,7 @@ function Exercice() {
           <h3>
             {i.type} n°{inex + 1}
           </h3>
-          <p>{i.Consigne}</p>
+          <p>{i.consigne}</p>
           {i.questions.map((j, nb) => {
             {
               j.Answers.map((k, nb) => {
