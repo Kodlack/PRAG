@@ -67,6 +67,210 @@
               "lienQ": ""
             }
           ]
+        },
+        {
+          "ide": 2,
+          "theme": "Syntaxe",
+          "subtheme": "Les adjectifs de couleur",
+          "level": 1,
+          "type": "Texte a trou",
+          "consigne": "",
+          "explication": "<p>Les adjectifs simples de couleur s&rsquo;accordent en genre et en nombre : <em>des costumes noirs, des cheveux blonds, des lacs verd&acirc;tres.&nbsp;</em>Toutefois, les noms communs employ&eacute;s comme adjectifs de couleur sont invariables : <em>des chaussures marron, des robes pivoine.</em> On peut en effet consid&eacute;rer ces formes comme des ellipses : <em>des chaussures (de la couleur du) marron, des robes (de la couleur de la) pivoine.&nbsp;</em>On recense traditionnellement quatre<strong> exceptions</strong> &agrave; cette r&egrave;gle : <strong><em>rose, mauve, pourpre et &eacute;carlate</em></strong>, qui sont variables. <strong><em>Fauve</em></strong> et <strong><em>incarnat</em></strong>, &eacute;tant d&rsquo;abord des adjectifs, sont naturellement variables.</p>",
+          "lienExo": "https://www.academie-francaise.fr/questions-de-langue#64_strong-em-participe-pass-accord-em-strong",
+          "questions": [
+            {
+              "idq": 6,
+              "enonce": { "debut": "<p>Un chapeau noir.</p><p>Une casquette &hellip;&hellip;.</p>", "fin":""},
+              "answers": ["Une","casquette","noire."],
+              "correctAnswer": [2],
+              "wrongAnswers": [],
+              "regle": "",
+              "lienQ": ""
+            },
+            {
+              "idq": 7,
+              "enonce": { "debut": "<p>Un chien marron.</p><p>Une chienne &hellip;&hellip;</p>", "fin":""},
+              "answers": ["Une","chienne","marron."],
+              "correctAnswer": [2],
+              "wrongAnswers": [],
+              "regle": "",
+              "lienQ": ""
+            },
+            {
+              "idq": 8,
+              "enonce": { "debut": "<p>Un gilet bleu.</p><p>Une veste &hellip;&hellip;</p>", "fin":""},
+              "answers": ["Une","veste","bleue."],
+              "correctAnswer": [2],
+              "wrongAnswers": [],
+              "regle": "",
+              "lienQ": ""
+            },
+            {
+              "idq": 9,
+              "enonce": { "debut": "<p>Un portail vert.</p><p>Des portes &hellip;&hellip;</p>", "fin":""},
+              "answers": ["Des","portes","vertes."],
+              "correctAnswer": [2],
+              "wrongAnswers": [],
+              "regle": "",
+              "lienQ": ""
+            },
+            {
+              "idq": 10,
+              "enonce": { "debut": "<p>Un mur topaze.</p><p>Des fa&ccedil;ades &hellip;&hellip;</p>", "fin":""},
+              "answers": ["Des","façades","topaze."],
+              "correctAnswer": [2],
+              "wrongAnswers": [],
+              "regle": "",
+              "lienQ": ""
+            }
+          ]
+        },
+        {
+          "ide":3,
+          "theme":"",
+          "subtheme":"",
+          "level":"",
+          "type":"",
+          "consigne":"",
+          "explication":"",
+          "lenExo":"",
+          "questions":[
+            {
+              "idq":,
+              "enonce":{"debut":"","fin":""},
+              "answers":[],
+              "correctAnswer":[],
+              "wrongAnswers":[],
+              "regle":"",
+              "lienQ":""
+            }
+          ]
+        },
+        {
+          "ide":4,
+          "theme":"",
+          "subtheme":"",
+          "level":"",
+          "type":"",
+          "consigne":"",
+          "explication":"",
+          "lenExo":"",
+          "questions":[
+            {
+              "idq":,
+              "enonce":{"debut":"","fin":""},
+              "answers":[],
+              "correctAnswer":[],
+              "wrongAnswers":[],
+              "regle":"",
+              "lienQ":""
+            }
+          ]
+        },
+        {
+          "ide":5,
+          "theme":"",
+          "subtheme":"",
+          "level":"",
+          "type":"",
+          "consigne":"",
+          "explication":"",
+          "lenExo":"",
+          "questions":[
+            {
+              "idq":,
+              "enonce":{"debut":"","fin":""},
+              "answers":[],
+              "correctAnswer":[],
+              "wrongAnswers":[],
+              "regle":"",
+              "lienQ":""
+            }
+          ]
+        },
+        {
+          "ide":6,
+          "theme":"",
+          "subtheme":"",
+          "level":"",
+          "type":"",
+          "consigne":"",
+          "explication":"",
+          "lenExo":"",
+          "questions":[
+            {
+              "idq":,
+              "enonce":{"debut":"","fin":""},
+              "answers":[],
+              "correctAnswer":[],
+              "wrongAnswers":[],
+              "regle":"",
+              "lienQ":""
+            }
+          ]
+        },
+        {
+          "ide":7,
+          "theme":"",
+          "subtheme":"",
+          "level":"",
+          "type":"",
+          "consigne":"",
+          "explication":"",
+          "lenExo":"",
+          "questions":[
+            {
+              "idq":,
+              "enonce":{"debut":"","fin":""},
+              "answers":[],
+              "correctAnswer":[],
+              "wrongAnswers":[],
+              "regle":"",
+              "lienQ":""
+            }
+          ]
+        },
+        {
+          "ide":8,
+          "theme":"",
+          "subtheme":"",
+          "level":"",
+          "type":"",
+          "consigne":"",
+          "explication":"",
+          "lenExo":"",
+          "questions":[
+            {
+              "idq":,
+              "enonce":{"debut":"","fin":""},
+              "answers":[],
+              "correctAnswer":[],
+              "wrongAnswers":[],
+              "regle":"",
+              "lienQ":""
+            }
+          ]
+        },
+        {
+          "ide":9,
+          "theme":"",
+          "subtheme":"",
+          "level":"",
+          "type":"",
+          "consigne":"",
+          "explication":"",
+          "lenExo":"",
+          "questions":[
+            {
+              "idq":,
+              "enonce":{"debut":"","fin":""},
+              "answers":[],
+              "correctAnswer":[],
+              "wrongAnswers":[],
+              "regle":"",
+              "lienQ":""
+            }
+          ]
         }
       ]
     }
