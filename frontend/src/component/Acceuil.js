@@ -3,10 +3,12 @@ import "../css/background.css";
 import "../css/accueil.css";
 import BasPage from "./BasPage";
 import { Box } from "@mui/system";
+import Carrousel from "../component/Carrousel";
 
 function Accueil() {
   return (
     <div id="background">
+      <Carrousel />
       <Box sx={{ textAlign: "center" }}>
         <h1 id="titreAccueil">Titre Accueil</h1>
         <p id="texteTitreAccueil"> blablabla</p>
