@@ -8,35 +8,23 @@ import { Container } from "@mui/system";
 function Navigation() {
   return (
     <div>
-      <div id="liensAcadem">
-        <a href="https://www.academie-francaise.fr/" target="_blank">
-          <AccountBalanceIcon id="lf" />
-          <span id="logoAcadem1">Langue française</span>
-        </a>
-        <a
-          id="logoAcadem1"
-          href="https://www.dictionnaire-academie.fr/"
-          target="_blank"
-        >
-          <MenuBookIcon for="dic" />
-          <span id="logoAcadem1">Dictionnaire</span>
-        </a>
-      </div>
-      <img id="logoAcFr" src={logo} alt="logo de l'academie"></img>
-      <p id="titreSite">LE PETIT ACADÉMICIEN SANS FAUTE</p>
-      <nav id="pages">
-        <Link id="lien" href="/">
-          Accueil
-        </Link>
-        <Link id="lien" href="/interrogation">
-          Mode interrogatoire
-        </Link>
-        <Link id="lien" href="/entrainement">
-          Mode entrainement
-        </Link>
-        <Link id="lien" href="/exercice/:ide">
-          Tous les exercices
-        </Link>
+      <nav className="navigation-bar">
+
+        <ul className="nav-links-left">
+            <li className="left-link"><a href="/">Accueil</a></li>
+            <li className="left-link"><a href="/academie-francaise">Académie Française</a></li>
+        </ul>
+
+        <div className="logo">
+            <img src={logo} alt="Logo" />
+            <h1>LE PETIT ACADÉMICIEN SANS FAUTE</h1>
+        </div>
+
+        <ul className="nav-links-right">
+            <li className="right-link"><a href="/decouvrir" className="right-link">Découvrir</a></li>
+            <li className="right-link"><a href="/toutes-les-notions" className="right-link">Toutes les notions</a></li>
+        </ul>
+
       </nav>
     </div>
   );
