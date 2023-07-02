@@ -3,6 +3,7 @@ var express = require("express");
 var app = express();
 const router = express.Router();
 
+//créer dans la base de données des exercices côté admin
 router.post("/exercice", async (req, res) => {
   const {
     ide,
@@ -49,6 +50,7 @@ app.use("/exercice", (req, res, next) => {
     .catch((error) => res.status(400).json({ error }));
 });
 
+//récupérer des exercices
 router.post("/exercice/:ide", (req, res) => {
   ExoModel.find({ ide: req.body.ide })
     .then((exercice) => {
