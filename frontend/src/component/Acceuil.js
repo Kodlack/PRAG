@@ -9,11 +9,6 @@ function Accueil() {
   return (
     <div id="background">
       <Carrousel />
-      <Box sx={{ textAlign: "center" }}>
-        <h1 id="titreAccueil">Titre Accueil</h1>
-        <p id="texteTitreAccueil"> blablabla</p>
-        <h3 id="sousTitre">Modes</h3>
-      </Box>
       <Box
         sx={{
           textAlign: "center",

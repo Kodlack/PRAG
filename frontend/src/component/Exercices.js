@@ -4,10 +4,12 @@ import "../css/exercices.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import BasPage from "./BasPage";
+import Infobulle from "./Infobulle";
 
 function Exercice() {
   const [exos, setExos] = useState([]);
   const [questions, setQuestions] = useState([]);
+  const [reponses, setReponses] = useState([]);
 
   function toHtml(texte, id) {
     var x = document.getElementById(id);
@@ -15,32 +17,38 @@ function Exercice() {
     return x.innerHTML;
   }
 
-  // const envoieData = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     const res = await axios
-  //       .post("http://localhost:3000/formulaire", {
-  //         tab1,
-  //         dateChoisie,
-  //         activite,
-  //       })
-  //       .then((response) => {
-  //       });
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // };
+  function verifReponse(reponseDonnee, i) {
+    console.log(questions[i].correctAnswer);
+    console.log(reponseDonnee);
+    if (questions[i].correctAnswer == reponseDonnee) {
+      document.getElementById("ques").style.color = "#35a329";
+    }
+  }
 
-  const param = { ide: 1 };
+  const param = { ide: 9 };
+
+  function getExo(ideExo) {
+    axios
+      .post("http://localhost:3000/exercice/:ide", ideExo)
+      .then((res) => {
+        setExos(res.data);
+        console.log(exos);
+        setQuestions(res.data[0].questions);
+        console.log(questions);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 
   useEffect(() => {
     axios
       .post("http://localhost:3000/exercice/:ide", param)
       .then((res) => {
         setExos(res.data);
+        console.log(exos);
         setQuestions(res.data[0].questions);
         console.log(questions);
-        console.log(exos);
       })
       .catch((err) => {
         console.log(err);
@@ -49,23 +57,26 @@ function Exercice() {
 
   return (
     <div id="background">
-      <h1>Titre </h1>
-      <p>blablabla</p>
       {exos.map((i, inex) => (
         <div key={inex}>
           <h3>
             {i.type} n°{inex + 1}
           </h3>
-          <p>{i.consigne}</p>
+          <Infobulle value={i.explication}></Infobulle>
         </div>
       ))}
       {questions.map((j, inex) => (
         <div key={inex}>
           <p>{j.enonce.debut}</p>
-          {j.answers.map((k) => (
+          {j.answers.map((k, index) => (
             <div>
-              <label>
-                <input name="question" type="radio" />
+              <label key={index} id="ques">
+                <input
+                  name="question"
+                  type="radio"
+                  value={index}
+                  onClick={(e) => setReponses(e.target.value)}
+                />
                 {k}
               </label>
               <br />
@@ -73,40 +84,19 @@ function Exercice() {
           ))}
         </div>
       ))}
-      <div id="explication"></div>
+      <div id="regle"></div>
       <Button
         variant="contained"
         type="submit"
         sx={{ margin: "7px 0px 0px 10px", background: "#376f98" }}
         onClick={() => {
-          toHtml(exos[0].questions[0].regle, "explication");
+          toHtml(exos[0].questions[0].regle, "regle");
+          verifReponse(reponses[0], 0);
+          getExo({ ide: 3 });
         }}
       >
         Valider
       </Button>
-      <h3>Texte à trous</h3>
-      Je mange des chocolats.
-      <br /> Je mange un <input type="text"></input>.
-      <br />
-      <Button
-        variant="contained"
-        sx={{ margin: "7px 0px 0px 10px", background: "#376f98" }}
-      >
-        Valider
-      </Button>
-      <h3>Enoncé fautif</h3>
-      <button id="eltenonceFatif">Je </button>
-      <button id="eltenonceFatif">suis </button>
-      <button id="eltenonceFatif">un </button>
-      <button
-        id="eltenonceFatif"
-        onClick={() => {
-          console.log("faute trouvé !!");
-        }}
-      >
-        canart.
-      </button>
-      <br />
       <BasPage />
     </div>
   );
