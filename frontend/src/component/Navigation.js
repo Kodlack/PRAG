@@ -30,7 +30,7 @@ function Navigation() {
             </a>
           </li>
           <li className="right-link">
-            <a href="/toutes-les-notions" className="right-link">
+            <a href="/notions" className="right-link">
               Toutes les notions
             </a>
           </li>

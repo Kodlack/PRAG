@@ -1,7 +1,7 @@
 import { Button } from "@mui/material";
-import "../css/background.css";
-import "../css/Themes.css";
-import "../css/exercices.css";
+import "../../css/background.css";
+import "../../css/Themes.css";
+import "../../css/exercices.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Infobulle from "./Infobulle";

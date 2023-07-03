@@ -15,7 +15,9 @@ const AccueilContent = () => {
           typesetting industry. Lorem Ipsum has been the industry's standard
           dummy text ever since the 1500s.
         </p>
-        <button className="round-button">Je veux me faire accompagner</button>
+        <a href="/decouverte">
+          <button className="round-button">Je veux me faire accompagner</button>
+        </a>
       </div>
       <hr className="solid"></hr>
       <div className="content-choisir">
@@ -27,9 +29,11 @@ const AccueilContent = () => {
           typesetting industry. Lorem Ipsum has been the industry's standard
           dummy text ever since the 1500s.
         </p>
-        <button className="round-button">
-          Choisir les notions que je souhaites étudier
-        </button>
+        <a href="/notions">
+          <button className="round-button">
+            Choisir les notions que je souhaites étudier
+          </button>
+        </a>
       </div>
     </div>
   );

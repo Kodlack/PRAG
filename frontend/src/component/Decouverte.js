@@ -4,10 +4,10 @@ import "../css/Themes.css";
 import "../css/exercices.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Infobulle from "./Infobulle";
-import TexteTrous from "./TexteTrous";
-import EnonceFautif from "./EnonceFautif";
-import QCM from "./QCM";
+import Infobulle from "./exercices/Infobulle";
+import TexteTrous from "./exercices/TexteTrous";
+import EnonceFautif from "./exercices/EnonceFautif";
+import QCM from "./exercices/QCM";
 
 export default function Decouverte() {
   const [exos, setExos] = useState([]);

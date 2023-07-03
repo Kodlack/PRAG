@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Exercice from "./component/Exercices";
+import Exercice from "./component/exercices/Exercices";
 import Navigation from "./component/Navigation";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
@@ -11,6 +11,7 @@ import Themes from "./component/Themes";
 import BasPage from "./component/BasPage";
 import "./css/main.css";
 import Decouverte from "./component/Decouverte";
+import Modes from "./component/Modes";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
   {
     path: "/categorie",
     element: <Themes />,
+  },
+  {
+    path: "/notions",
+    element: <Modes />,
   },
 ]);
 

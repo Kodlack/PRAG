@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Modal } from "@mui/material";
+import { Modal } from "@mui/material";
 import { Container } from "@mui/system";
 
 export default function Infobulle(props) {

@@ -1,11 +1,11 @@
 import { Button } from "@mui/material";
-import "../css/Etiq.css";
 import { useEffect, useState } from "react";
 
-export default function QCM(props) {
+export default function EnonceFautif(props) {
   const [reponses, setReponses] = useState([null, null, null, null, null]);
   const [bonneReponses, setBonneReponses] = useState(0);
   const [buttonValider, setButtonValider] = useState(false);
+  const [enonce, setEnonce] = useState([]);
 
   useEffect(() => {
     setButtonValider(false);
@@ -31,11 +31,11 @@ export default function QCM(props) {
       for (let j = 0; j < props.value[i].answers.length; j++) {
         if (listeQuestionRep[i][j] == props.value[i].correctAnswer[0]) {
           document.querySelectorAll("button#questions")[compteur].style.color =
-            "#35a329";
+            "red";
           compteur++;
         } else {
           document.querySelectorAll("button#questions")[compteur].style.color =
-            "red";
+            "#35a329";
           compteur++;
         }
       }
@@ -44,7 +44,6 @@ export default function QCM(props) {
     for (let i = 0; i < 5; i++) {
       if (props.value[i].correctAnswer == reponses[i]) {
         bonneReponse++;
-        document.querySelectorAll(".titre")[i].style.color = "#35a329";
       }
     }
     setBonneReponses(bonneReponses + bonneReponse);
@@ -52,20 +51,15 @@ export default function QCM(props) {
 
   return (
     <div>
-      <div class="qcm-container">
+      <div>
         {props.value.map((j, inex) => (
-          <div key={inex} class="themequestion">
-            <p class="titre">
-              {j.enonce.debut} ... {j.enonce.fin}
-            </p>
-            <p class="contenu">Sélèctionnez la bonne réponse :</p>
-            {j.answers.map((k, indexk) => (
+          <div key={inex}>
+            {j.enonce.debut.split(" ").map((k, indexk) => (
               <button
                 id="questions"
                 name={j.idq}
                 type="radio"
                 value={indexk}
-                class="square-button"
                 onClick={(e) => {
                   reponses[inex] = parseInt(e.target.value);
                 }}
@@ -73,7 +67,19 @@ export default function QCM(props) {
                 {k}
               </button>
             ))}
-
+            {j.answers.map((k, indexk) => (
+              <p
+                id="questions"
+                name={j.idq}
+                type="radio"
+                value={indexk}
+                onClick={(e) => {
+                  reponses[inex] = parseInt(e.target.value);
+                }}
+              >
+                {k}
+              </p>
+            ))}
             {buttonValider ? (
               <p dangerouslySetInnerHTML={{ __html: j.regle }} />
             ) : (
