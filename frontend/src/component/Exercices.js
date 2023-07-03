@@ -78,21 +78,24 @@ export default function Exercice() {
   }
 
   useEffect(() => {
-    axios
-      .post("http://localhost:3000/exercice/:ide", param[0])
-      .then((res) => {
-        setExos(res.data);
-        console.log(res.data);
-        setQuestions(res.data[0].questions);
-        console.log(questions);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    const fetchData = async () => {
+      const date = await axios
+        .post("http://localhost:3000/exercice/:ide", param[0])
+        .then((res) => {
+          setExos(res.data);
+          console.log(res.data);
+          setQuestions(res.data[0].questions);
+          console.log(questions);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+    fetchData().catch(console.error);
   }, []);
 
   return (
-    <div id="background">
+    <div>
       {exos.map((i, inex) => (
         <div key={inex}>
           <div class="bga">

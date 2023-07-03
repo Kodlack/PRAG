@@ -1,16 +1,13 @@
 import { Button } from "@mui/material";
+import "../css/Etiq.css";
 import { useEffect, useState } from "react";
 
 export default function QCM(props) {
-  const [questions, setQuestions] = useState([]);
   const [reponses, setReponses] = useState([null, null, null, null, null]);
   const [bonneReponses, setBonneReponses] = useState(0);
   const [buttonValider, setButtonValider] = useState(false);
 
-  console.log(props.value);
-
   useEffect(() => {
-    setQuestions(props.value);
     setButtonValider(false);
     setReponses([null, null, null, null, null]);
   }, []);
@@ -23,7 +20,7 @@ export default function QCM(props) {
     let listerep = [];
 
     for (let i = 0; i < 5; i++) {
-      for (let j = 0; j < questions[i].answers.length; j++) {
+      for (let j = 0; j < props.value[i].answers.length; j++) {
         listerep.push(j);
         listeQuestionRep.push(listerep);
       }
@@ -31,19 +28,20 @@ export default function QCM(props) {
     }
 
     for (let i = 0; i < 5; i++) {
-      for (let j = 0; j < questions[i].answers.length; j++) {
-        if (listeQuestionRep[i][j] == questions[i].correctAnswer[0]) {
-          document.querySelectorAll("label")[compteur].style.color = "#35a329";
+      for (let j = 0; j < props.value[i].answers.length; j++) {
+        if (listeQuestionRep[i][j] == props.value[i].correctAnswer[0]) {
+          document.querySelectorAll("#questions")[compteur].style.color =
+            "#35a329";
           compteur++;
         } else {
-          document.querySelectorAll("label")[compteur].style.color = "red";
+          document.querySelectorAll("#questions")[compteur].style.color = "red";
           compteur++;
         }
       }
     }
 
     for (let i = 0; i < 5; i++) {
-      if (questions[i].correctAnswer == reponses[i]) {
+      if (props.value[i].correctAnswer == reponses[i]) {
         bonneReponse++;
       }
     }
@@ -51,28 +49,28 @@ export default function QCM(props) {
   }
 
   return (
-    <div>
+    <div class="qcm-container">
       {props.value.map((j, inex) => (
-        <div key={inex}>
-          <p>{j.enonce.debut}</p>
+        <div key={inex} class="themequestion">
+          <p class="titre">
+            {j.enonce.debut} ... {j.enonce.fin}
+          </p>
+          <p class="contenu">Sélèctionnez la bonne réponse :</p>
           {j.answers.map((k, indexk) => (
-            <div>
-              <label key={indexk} id="nomquestions">
-                <input
-                  id="questions"
-                  name={j.idq}
-                  type="radio"
-                  value={indexk}
-                  onClick={(e) => {
-                    reponses[inex] = parseInt(e.target.value);
-                  }}
-                />
-                {k}
-              </label>
-              <br />
-            </div>
+            <button
+              id="questions"
+              name={j.idq}
+              type="radio"
+              value={indexk}
+              class="round-button"
+              onClick={(e) => {
+                reponses[inex] = parseInt(e.target.value);
+              }}
+            >
+              {k}
+            </button>
           ))}
-          <p id="enonceFin">{j.enonce.fin}</p>
+
           {buttonValider ? (
             <p dangerouslySetInnerHTML={{ __html: j.regle }} />
           ) : (
