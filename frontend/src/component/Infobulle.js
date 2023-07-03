@@ -13,9 +13,13 @@ export default function Infobulle(props) {
 
   return (
     <div>
-      <Button variant="contained" color="primary" onClick={handleOpen}>
+      <button
+        class="button2"
+        style={{ backgroundColor: "#FBE62F" }}
+        onClick={handleOpen}
+      >
         Me rappeler la règle
-      </Button>
+      </button>
       <Modal
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"

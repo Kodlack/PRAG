@@ -111,7 +111,10 @@ export default function Exercice() {
               </div>
             </div>
           </div>
-          <Infobulle value={i.explication}></Infobulle>
+          <div class="upright">
+            <div class="button2">Exercice 5/15</div>
+            <Infobulle value={i.explication}></Infobulle>
+          </div>
           {/* {i.type == "QCM" ? (
             i.questions.map((j, inex) => (
               <div key={inex}>
