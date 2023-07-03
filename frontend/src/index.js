@@ -8,6 +8,9 @@ import reportWebVitals from "./reportWebVitals";
 import Accueil from "./component/Acceuil";
 import AdminLog from "./component/AdminLog";
 import EspaceAdmin from "./component/EspaceAdmin";
+import Etiq from "./component/Etiq";
+import Exoqcm from "./component/Exoqcm";
+import Themes from "./component/Themes";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +28,18 @@ const router = createBrowserRouter([
   {
     path: "/admin",
     element: <EspaceAdmin />,
+  },
+  {
+    path: "/themes",
+    element: <Themes />,
+  },
+  {
+    path: "/exoqcm",
+    element: <Exoqcm />,
+  },
+  {
+    path: "/etiq",
+    element: <Etiq />,
   },
 ]);
 
