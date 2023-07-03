@@ -1,7 +1,6 @@
-import React from 'react';
-import '../css/Themes.css';
-import Navigation from './Navigation';
-import Question from './Question';
+import React from "react";
+import "../css/Themes.css";
+import Question from "./Question";
 
 const Exoqcm = () => {
   return (
@@ -28,10 +27,10 @@ const Exoqcm = () => {
       </div>
       
       <div class="qcm-container">
-      <Question></Question>
-      <Question></Question>
-      </div>  
+        <Question></Question>
+        <Question></Question>
       </div>
+    </div>
   );
 };
 

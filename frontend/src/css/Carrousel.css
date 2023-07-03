@@ -5,7 +5,7 @@
     background-image: url("../photo/carrousel-background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 600px;
+    height: 500px;
     width: 100%;
 
 	display: flex;
@@ -13,7 +13,7 @@
 
 .slider {
     width: 100%;
-    max-width: 600px;
+    max-width: 500px;
     height: 100%;
     margin: 0;
     position: relative;
@@ -40,20 +40,20 @@
     transform: scale(1);
     scroll-snap-align: center;
 
-	padding: 16% 8% 8% 8%;
+	padding: 20% 16% 8% 8%;
 	color: #6A6A6A;
 
     .round-button{
         color: #FFFFFF;
         background-color: #376F98;
         font-family: 'Cormorant Garamond', serif;
-        font-size: 20px;
+        font-size: 90%;
         border-radius: 25px;
-        height: 40px;
+        height: 30px;
         width: 200px;
         border: none;
         float: right;
-        margin: 5% 2% 0 0;
+        margin: 12% 2% 0 0;
     }
 }
 
@@ -63,7 +63,6 @@
 }
 
 .slide p{
-	font-size: 150%;
     margin: 0;
 }
 

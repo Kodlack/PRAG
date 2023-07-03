@@ -1,9 +1,5 @@
 import logo from "../photo/logo.png";
 import "../css/navigation.css";
-import { Link } from "@mui/material";
-import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
-import MenuBookIcon from "@mui/icons-material/MenuBook";
-import { Container } from "@mui/system";
 
 function Navigation() {
   return (

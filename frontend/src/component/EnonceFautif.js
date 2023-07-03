@@ -1,4 +1,3 @@
-import { Button } from "@mui/material";
 import { useState } from "react";
 
 export default function EnonceFautif(props) {
@@ -11,7 +10,7 @@ export default function EnonceFautif(props) {
     let bonneReponse = 0;
 
     for (let i = 0; i < 5; i++) {
-      if (questions[i].correctAnswer == reponseDonnee[i]) {
+      if (questions[i].correctAnswer === reponseDonnee[i]) {
         document.querySelectorAll("label")[i].style.color = "#35a329";
         console.log(questions[i].correctAnswer);
         console.log(reponseDonnee);
@@ -22,11 +21,6 @@ export default function EnonceFautif(props) {
     setBonneReponses(bonneReponses + bonneReponse);
   }
 
-  function toHtml(texte, id) {
-    var x = document.getElementById(id);
-    x.innerHTML = texte;
-    return x.innerHTML;
-  }
   return (
     <div>
       {props.value.map((j, inex) => (
@@ -44,7 +38,11 @@ export default function EnonceFautif(props) {
           ))}
           <br />
           <p id="enonceFin">{j.enonce.fin}</p>
-          {props.buttonValider ? <p>{toHtml(j.regle, "regle")}</p> : <p></p>}
+          {props.buttonValider ? (
+            <p dangerouslySetInnerHTML={{ __html: j.regle }} />
+          ) : (
+            <p></p>
+          )}
         </div>
       ))}
     </div>
