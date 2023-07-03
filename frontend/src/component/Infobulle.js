@@ -11,12 +11,6 @@ export default function Infobulle(props) {
     setOpen(false);
   };
 
-  async function toHtml(id) {
-    var x = await document.getElementById(id);
-    x.innerHTML = props.value;
-    return x.innerHTML;
-  }
-
   return (
     <div>
       <Button variant="contained" color="primary" onClick={handleOpen}>
@@ -32,8 +26,7 @@ export default function Infobulle(props) {
           sx={{ background: "#FFF6C5", margin: "50px", borderRadius: "6px" }}
         >
           <h3>Explication de la régle</h3>
-          <p>{props.value}</p>
-          <p id="explication"></p>
+          <p dangerouslySetInnerHTML={{ __html: props.value }}></p>
         </Container>
       </Modal>
     </div>

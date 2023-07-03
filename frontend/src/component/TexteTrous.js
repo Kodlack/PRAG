@@ -1,19 +1,14 @@
 export default function TexteTrous(props) {
   console.log(props.value);
 
-  function toHtml(texte, id) {
-    var x = document.getElementById(id);
-    x.innerHTML = texte;
-    return x.innerHTML;
-  }
   return (
     <div>
       {props.value.map((j, inex) => (
         <div key={inex}>
-          <p>{j.enonce.debut}</p>
+          <p dangerouslySetInnerHTML={{ __html: j.enonce.debut }} />
           {j.answers.map((k, indexk) => (
             <div>
-              {indexk != j.correctAnswer ? (
+              {indexk !== j.correctAnswer[0] ? (
                 <label key={indexk} id="nomquestions">
                   {k}
                 </label>
@@ -28,9 +23,12 @@ export default function TexteTrous(props) {
               )}
             </div>
           ))}
-          <br />
-          <p id="enonceFin">{j.enonce.fin}</p>
-          {props.buttonValider ? <p>{toHtml(j.regle, "regle")}</p> : <p></p>}
+          <p dangerouslySetInnerHTML={{ __html: j.enonce.fin }} />
+          {props.buttonValider ? (
+            <p dangerouslySetInnerHTML={{ __html: j.regle }} />
+          ) : (
+            <p></p>
+          )}
         </div>
       ))}
     </div>

@@ -8,11 +8,13 @@ export default function QCM(props) {
   const [buttonValider, setButtonValider] = useState(false);
 
   console.log(props.value);
+
   useEffect(() => {
     setButtonValider(false);
     setReponses([null, null, null, null, null]);
     setQuestions(props.value);
   }, []);
+
   function verifReponse(reponseDonnee) {
     let bonneReponse = 0;
 
@@ -28,11 +30,6 @@ export default function QCM(props) {
     setBonneReponses(bonneReponses + bonneReponse);
   }
 
-  function toHtml(texte, id) {
-    var x = document.getElementById(id);
-    x.innerHTML = texte;
-    return x.innerHTML;
-  }
   return (
     <div>
       {props.value.map((j, inex) => (
@@ -56,7 +53,11 @@ export default function QCM(props) {
             </div>
           ))}
           <p id="enonceFin">{j.enonce.fin}</p>
-          {buttonValider ? <p>{toHtml(j.regle, "regle")}</p> : <p></p>}
+          {buttonValider ? (
+            <p dangerouslySetInnerHTML={{ __html: j.regle }} />
+          ) : (
+            <p></p>
+          )}
         </div>
       ))}
       <Button
