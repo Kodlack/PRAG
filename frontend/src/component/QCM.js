@@ -10,22 +10,42 @@ export default function QCM(props) {
   console.log(props.value);
 
   useEffect(() => {
+    setQuestions(props.value);
     setButtonValider(false);
     setReponses([null, null, null, null, null]);
-    setQuestions(props.value);
   }, []);
 
-  function verifReponse(reponseDonnee) {
+  function verifReponse() {
+    let listeQuestionRep = [];
+    let compteur = 0;
     let bonneReponse = 0;
 
+    let listerep = [];
+
     for (let i = 0; i < 5; i++) {
-      if (questions[i].correctAnswer == reponseDonnee[i]) {
-        document.querySelectorAll("label")[i].style.color = "#35a329";
-        console.log(questions[i].correctAnswer);
-        console.log(reponseDonnee);
-        console.log("nombre bonne réponse : " + bonneReponses);
+      for (let j = 0; j < questions[i].answers.length; j++) {
+        listerep.push(j);
+        listeQuestionRep.push(listerep);
+      }
+      listerep = [];
+    }
+
+    for (let i = 0; i < 5; i++) {
+      for (let j = 0; j < questions[i].answers.length; j++) {
+        if (listeQuestionRep[i][j] == questions[i].correctAnswer[0]) {
+          document.querySelectorAll("label")[compteur].style.color = "#35a329";
+          compteur++;
+        } else {
+          document.querySelectorAll("label")[compteur].style.color = "red";
+          compteur++;
+        }
+      }
+    }
+
+    for (let i = 0; i < 5; i++) {
+      if (questions[i].correctAnswer == reponses[i]) {
         bonneReponse++;
-      } else document.getElementById("nomquestions").style.color = "#f80404";
+      }
     }
     setBonneReponses(bonneReponses + bonneReponse);
   }
@@ -65,7 +85,7 @@ export default function QCM(props) {
         type="submit"
         sx={{ margin: "7px 0px 0px 10px", background: "#376f98" }}
         onClick={() => {
-          verifReponse(reponses);
+          verifReponse();
           setButtonValider(true);
         }}
       >

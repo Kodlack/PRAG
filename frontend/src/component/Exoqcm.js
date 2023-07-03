@@ -1,6 +1,5 @@
 import React from "react";
 import "../css/Themes.css";
-import Navigation from "./Navigation";
 import Question from "./Question";
 
 const Exoqcm = () => {

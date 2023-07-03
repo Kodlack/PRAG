@@ -1,5 +1,6 @@
 import { Button } from "@mui/material";
 import "../css/background.css";
+import "../css/Themes.css";
 import "../css/exercices.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -7,11 +8,11 @@ import BasPage from "./BasPage";
 import Infobulle from "./Infobulle";
 import TexteTrous from "./TexteTrous";
 import EnonceFautif from "./EnonceFautif";
+import QCM from "./QCM";
 
 export default function Exercice() {
   const [exos, setExos] = useState([]);
   const [questions, setQuestions] = useState([]);
-  // const [reponses, setReponses] = useState([]);
   const [reponses, setReponses] = useState([null, null, null, null, null]);
   const [bonneReponses, setBonneReponses] = useState(0);
   const [buttonValider, setButtonValider] = useState(false);
@@ -94,14 +95,18 @@ export default function Exercice() {
     <div id="background">
       {exos.map((i, inex) => (
         <div key={inex}>
-          <h3>
-            {i.theme} / {i.subtheme} ------- Niveau {i.level} / {i.type}{" "}
-            Exercice n°
-            {indexExo}
-          </h3>
-          <h4>Consigne : {i.consigne}</h4>
+          <div class="bga">
+            <div class="qcmtheme">
+              <h1 class="htext">
+                {i.theme} / {i.subtheme} <br /> Niveau {i.level} / {i.type}{" "}
+                Exercice n°
+                {indexExo}
+              </h1>
+              <p class="stext">Consigne : {i.consigne}</p>
+            </div>
+          </div>
           <Infobulle value={i.explication}></Infobulle>
-          {i.type == "QCM" ? (
+          {/* {i.type == "QCM" ? (
             i.questions.map((j, inex) => (
               <div key={inex}>
                 <p>{j.enonce.debut}</p>
@@ -134,6 +139,11 @@ export default function Exercice() {
             ))
           ) : (
             <p></p>
+          )} */}
+          {i.type == "QCM" ? (
+            <QCM value={questions} buttonValider={buttonValider} />
+          ) : (
+            <p></p>
           )}
           {i.type == "Texte a trou" ? (
             <TexteTrous value={questions} buttonValider={buttonValider} />
@@ -155,7 +165,7 @@ export default function Exercice() {
           )}
         </div>
       ))}
-      <Button
+      {/* <Button
         variant="contained"
         type="submit"
         sx={{ margin: "7px 0px 0px 10px", background: "#376f98" }}
@@ -165,7 +175,7 @@ export default function Exercice() {
         }}
       >
         Valider
-      </Button>
+      </Button> */}
       <Button
         variant="contained"
         type="reset"
