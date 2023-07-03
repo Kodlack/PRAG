@@ -24,6 +24,48 @@
 .qcmtheme {
     text-align: center;
     padding: 15px;
+    width: 80%;
+}
+
+.chrono {
+    margin-left: 100px;
+    margin-top: 40px;
+    text-align: right;
+    padding-right: 10px;
+    width:100px;
+    height:45px;
+    border-radius: 30px;
+    background-color:#f0f0f0;
+    color:#6A6A6A;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: bold;
+    font-size:30px;
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-image: url("../img/chrono.png");
+    background-repeat: no-repeat;
+    background-position:10%;
+    float: right;
+}
+
+.upright{
+    margin-top: 20px;
+    display:grid;
+}
+
+.button2{
+    width:150px;
+    height:40px;
+    border-radius: 10px;
+    border-color: #D9D9D9;
+    background-color: #ffffff;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: bold;
+    color:#6A6A6A;
+}
+
+.bandeau {
+    display: flex;
 }
 
 .bga{
