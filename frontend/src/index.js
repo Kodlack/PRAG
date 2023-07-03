@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./css/index.css";
 import Exercice from "./component/Exercices";
 import Navigation from "./component/Navigation";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
@@ -8,9 +7,10 @@ import reportWebVitals from "./reportWebVitals";
 import Accueil from "./component/Acceuil";
 import AdminLog from "./component/AdminLog";
 import EspaceAdmin from "./component/EspaceAdmin";
-import Etiq from "./component/Etiq";
 import Exoqcm from "./component/Exoqcm";
 import Themes from "./component/Themes";
+import BasPage from "./component/BasPage";
+import "./css/main.css";
 
 const router = createBrowserRouter([
   {
@@ -37,16 +37,13 @@ const router = createBrowserRouter([
     path: "/exoqcm",
     element: <Exoqcm />,
   },
-  {
-    path: "/etiq",
-    element: <Etiq />,
-  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Navigation />
     <RouterProvider router={router} />
+    <BasPage />
   </React.StrictMode>
 );
 

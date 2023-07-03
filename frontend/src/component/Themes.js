@@ -12,7 +12,6 @@ const Themes = () => {
   return (
     <div style={{textAlign:'center'}}>
     <div class="bga">
-      <Navigation></Navigation>
       <div class="htheme">
       <h1 class="htext">Choisissez les notions que vous souhaitez exercer</h1>
       <p class="stext">Lorem Ipsum is simply dummy text of the printing and typesetting printing and typesetting printing and typesettingy's standard dummy text ever since the 1500s.</p>

@@ -62,7 +62,7 @@ export default function QCM(props) {
               name={j.idq}
               type="radio"
               value={indexk}
-              class="round-button"
+              class="square-button"
               onClick={(e) => {
                 reponses[inex] = parseInt(e.target.value);
               }}

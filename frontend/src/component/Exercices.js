@@ -99,13 +99,16 @@ export default function Exercice() {
       {exos.map((i, inex) => (
         <div key={inex}>
           <div class="bga">
-            <div class="qcmtheme">
-              <h1 class="htext">
-                {i.theme} / {i.subtheme} <br /> Niveau {i.level} / {i.type}{" "}
-                Exercice n°
-                {indexExo}
-              </h1>
-              <p class="stext">Consigne : {i.consigne}</p>
+            <div class="bandeau">
+              <div class="chrono">10:00</div>
+              <div class="qcmtheme">
+                <h1 class="htext">
+                  {i.theme} / {i.subtheme} <br /> Niveau {i.level} / {i.type}{" "}
+                  Exercice n°
+                  {indexExo}
+                </h1>
+                <p class="stext">Consigne : {i.consigne}</p>
+              </div>
             </div>
           </div>
           <Infobulle value={i.explication}></Infobulle>
@@ -192,7 +195,6 @@ export default function Exercice() {
       >
         Exercice suivant
       </Button>
-      <BasPage />
     </div>
   );
 }
