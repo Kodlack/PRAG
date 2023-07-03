@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap');
+
+.content-accueil{
+    font-family: 'Cormorant Garamond', serif;
+    text-align: center;
+    color: #6A6A6A;
+    background-color: #F8F5F2;
+
+    position: relative;
+    overflow: hidden;
+}
+
+hr{
+    width: 70%;
+}
+
+.round-button{
+    color: #FFFFFF;
+    background-color: #376F98;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    border-radius: 25px;
+    height: 30px;
+    width: 400px;
+    border: none;
+}
+
+.content-decouvrir h1,
+.content-decouvrir p,
+.content-choisir h1,
+.content-choisir p,
+.round-button {
+    position: relative;
+    z-index: 1;
+}
+
+.content-decouvrir{
+    padding: 15% 10% 5% 35%;
+}
+
+.content-decouvrir h1{
+    font-size: 2.5em;
+    margin-bottom: 2%;
+}
+
+.content-decouvrir p{
+    margin-top: 0;
+    margin-bottom: 3%;
+}
+
+.content-decouvrir img{
+    position: absolute;
+    z-index: 0;
+    transform: rotate(105deg);
+    width: 60%;
+    top: -30%; 
+    left : 2%;
+
+    filter: opacity(15%) brightness(1);
+}
+
+
+.content-choisir{
+    padding: 5% 35% 15% 10%;
+
+    .round-button{
+        background-color: #DB7B44;
+    }
+}
+
+.content-choisir h1{
+    font-size: 2.5em;
+    margin-bottom: 2%;
+    margin-top: 0;
+}
+
+.content-choisir p{
+    margin-top: 0;
+    margin-bottom: 3%;
+}
+
+.content-choisir img{
+    position: absolute;
+    z-index: 0;
+    width: 105%;
+    top: 45%; 
+    left: 50%;
+
+    filter: opacity(15%) brightness(1);
+}
