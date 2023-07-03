@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap");
 
 .theme {
-  height: 250px;
+  height: 300px;
   width: 350px;
   box-shadow: 3px 3px 5px rgb(218, 223, 224);
   background-color: rgb(248, 245, 242);
@@ -22,7 +22,7 @@
 .titre {
   color: #6a6a6a;
   font-family: "Cormorant Garamond", serif;
-  font-size: 28px;
+  font-size: 25px;
   font-weight: bolder;
 }
 

@@ -9,48 +9,13 @@ import TexteTrous from "./TexteTrous";
 import EnonceFautif from "./EnonceFautif";
 import QCM from "./QCM";
 
-export default function Exercice() {
+export default function Decouverte() {
   const [exos, setExos] = useState([]);
   const [questions, setQuestions] = useState([]);
   const [reponses, setReponses] = useState([null, null, null, null, null]);
   const [bonneReponses, setBonneReponses] = useState(0);
   const [buttonValider, setButtonValider] = useState(false);
   const [indexExo, setIndexExo] = useState(1);
-
-  function verifReponse() {
-    let listeQuestionRep = [];
-    let compteur = 0;
-    let bonneReponse = 0;
-
-    let listerep = [];
-
-    for (let i = 0; i < 5; i++) {
-      for (let j = 0; j < questions[i].answers.length; j++) {
-        listerep.push(j);
-        listeQuestionRep.push(listerep);
-      }
-      listerep = [];
-    }
-
-    for (let i = 0; i < 5; i++) {
-      for (let j = 0; j < questions[i].answers.length; j++) {
-        if (listeQuestionRep[i][j] == questions[i].correctAnswer[0]) {
-          document.querySelectorAll("label")[compteur].style.color = "#35a329";
-          compteur++;
-        } else {
-          document.querySelectorAll("label")[compteur].style.color = "red";
-          compteur++;
-        }
-      }
-    }
-
-    for (let i = 0; i < 5; i++) {
-      if (questions[i].correctAnswer == reponses[i]) {
-        bonneReponse++;
-      }
-    }
-    setBonneReponses(bonneReponses + bonneReponse);
-  }
 
   function uncheck(taille) {
     for (let i = 0; i < taille; i++) {
@@ -59,7 +24,7 @@ export default function Exercice() {
     }
   }
 
-  var param = [{ ide: 1 }, { ide: 9 }, { ide: 2 }, { ide: 4 }];
+  var param = [{ ide: 1 }, { ide: 9 }];
 
   function getExo(ideExo) {
     axios
@@ -98,7 +63,6 @@ export default function Exercice() {
         <div key={inex}>
           <div class="bga">
             <div class="bandeau">
-              <div class="chrono">10:00</div>
               <div class="qcmtheme">
                 <h1 class="htext">
                   {i.theme} / {i.subtheme} <br /> Niveau {i.level} / {i.type}{" "}
@@ -110,43 +74,8 @@ export default function Exercice() {
             </div>
           </div>
           <div class="upright">
-            <div class="button2">Exercice {indexExo}/15</div>
             <Infobulle value={i.explication}></Infobulle>
           </div>
-          {/* {i.type == "QCM" ? (
-            i.questions.map((j, inex) => (
-              <div key={inex}>
-                <p>{j.enonce.debut}</p>
-                {j.answers.map((k, indexk) => (
-                  <div>
-                    <label key={indexk} id="nomquestions">
-                      <input
-                        id="questions"
-                        name={j.idq}
-                        type="radio"
-                        value={indexk}
-                        onClick={(e) => {
-                          reponses[inex] = parseInt(e.target.value);
-                          // reponses.push(e.target.value);
-                        }}
-                        onLoad={(e) => {}}
-                      />
-                      {k}
-                    </label>
-                    <br />
-                  </div>
-                ))}
-                <p id="enonceFin">{j.enonce.fin}</p>
-                {buttonValider ? (
-                  <p dangerouslySetInnerHTML={{ __html: j.regle }} />
-                ) : (
-                  <p></p>
-                )}
-              </div>
-            ))
-          ) : (
-            <p></p>
-          )} */}
           {i.type == "QCM" ? (
             <QCM value={questions} buttonValider={buttonValider} />
           ) : (
@@ -162,34 +91,12 @@ export default function Exercice() {
           ) : (
             <p></p>
           )}
-          {indexExo == 2 && buttonValider ? (
-            <p>
-              Vous avez {(bonneReponses * 100) / 10}% de bonnes réponses sur
-              cette série d'exercice.
-            </p>
-          ) : (
-            <p></p>
-          )}
         </div>
       ))}
-      {/* <Button
-        variant="contained"
-        type="submit"
-        sx={{ margin: "7px 0px 0px 10px", background: "#376f98" }}
-        onClick={() => {
-          verifReponse();
-          setButtonValider(true);
-        }}
-      >
-        Valider
-      </Button> */}
       <Button
         variant="contained"
         type="reset"
-        sx={{
-          margin: "7px 0px 15px 10px",
-          background: "#376f98",
-        }}
+        sx={{ margin: "7px 0px 15px 10px", background: "#376f98" }}
         onClick={() => {
           setButtonValider(false);
           getExo(param[indexExo]);

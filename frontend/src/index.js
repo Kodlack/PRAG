@@ -5,12 +5,12 @@ import Navigation from "./component/Navigation";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import Accueil from "./component/Acceuil";
-import AdminLog from "./component/AdminLog";
-import EspaceAdmin from "./component/EspaceAdmin";
-import Exoqcm from "./component/Exoqcm";
+import AdminLog from "./component/AdminComponent/AdminLog";
+import EspaceAdmin from "./component/AdminComponent/EspaceAdmin";
 import Themes from "./component/Themes";
 import BasPage from "./component/BasPage";
 import "./css/main.css";
+import Decouverte from "./component/Decouverte";
 
 const router = createBrowserRouter([
   {
@@ -30,12 +30,12 @@ const router = createBrowserRouter([
     element: <EspaceAdmin />,
   },
   {
-    path: "/themes",
-    element: <Themes />,
+    path: "/decouverte",
+    element: <Decouverte />,
   },
   {
-    path: "/exoqcm",
-    element: <Exoqcm />,
+    path: "/categorie",
+    element: <Themes />,
   },
 ]);
 

@@ -25,7 +25,7 @@ function Navigation() {
 
         <ul className="nav-links-right">
           <li className="right-link">
-            <a href="/decouvrir" className="right-link">
+            <a href="/decouverte" className="right-link">
               Découvrir
             </a>
           </li>

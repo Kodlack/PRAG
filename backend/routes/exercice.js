@@ -4,7 +4,7 @@ var app = express();
 const router = express.Router();
 
 //créer dans la base de données des exercices côté admin
-router.post("/exercice", async (req, res) => {
+router.post("/admin/exo", async (req, res) => {
   const {
     ide,
     theme,
@@ -60,14 +60,14 @@ router.post("/exercice/:ide", (req, res) => {
 });
 
 router.delete("/exercice", (req, res) => {
-  ExoModel.deleteOne({ ide: 1 })
-    .then(() => res.status(200).json({ message: "Objet supprimé !" }))
+  ExoModel.deleteOne({ ide: req.body.ide })
+    .then(() => res.status(200).json({ message: "Exercice supprimé !" }))
     .catch((error) => res.status(400).json({ error }));
 });
 
 router.put("/exercices", (req, res) => {
   ExoModel.updateOne({ ide: 1 }, { ...req.body, ide: 2 })
-    .then(() => res.status(200).json({ message: "Objet modifié !" }))
+    .then(() => res.status(200).json({ message: "Exercice modifié !" }))
     .catch((error) => res.status(400).json({ error }));
 });
 

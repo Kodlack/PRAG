@@ -30,11 +30,12 @@ export default function QCM(props) {
     for (let i = 0; i < 5; i++) {
       for (let j = 0; j < props.value[i].answers.length; j++) {
         if (listeQuestionRep[i][j] == props.value[i].correctAnswer[0]) {
-          document.querySelectorAll("#questions")[compteur].style.color =
+          document.querySelectorAll("button#questions")[compteur].style.color =
             "#35a329";
           compteur++;
         } else {
-          document.querySelectorAll("#questions")[compteur].style.color = "red";
+          document.querySelectorAll("button#questions")[compteur].style.color =
+            "red";
           compteur++;
         }
       }
@@ -43,41 +44,44 @@ export default function QCM(props) {
     for (let i = 0; i < 5; i++) {
       if (props.value[i].correctAnswer == reponses[i]) {
         bonneReponse++;
+        document.querySelectorAll(".titre")[i].style.color = "#35a329";
       }
     }
     setBonneReponses(bonneReponses + bonneReponse);
   }
 
   return (
-    <div class="qcm-container">
-      {props.value.map((j, inex) => (
-        <div key={inex} class="themequestion">
-          <p class="titre">
-            {j.enonce.debut} ... {j.enonce.fin}
-          </p>
-          <p class="contenu">Sélèctionnez la bonne réponse :</p>
-          {j.answers.map((k, indexk) => (
-            <button
-              id="questions"
-              name={j.idq}
-              type="radio"
-              value={indexk}
-              class="square-button"
-              onClick={(e) => {
-                reponses[inex] = parseInt(e.target.value);
-              }}
-            >
-              {k}
-            </button>
-          ))}
+    <div>
+      <div class="qcm-container">
+        {props.value.map((j, inex) => (
+          <div key={inex} class="themequestion">
+            <p class="titre">
+              {j.enonce.debut} ... {j.enonce.fin}
+            </p>
+            <p class="contenu">Sélèctionnez la bonne réponse :</p>
+            {j.answers.map((k, indexk) => (
+              <button
+                id="questions"
+                name={j.idq}
+                type="radio"
+                value={indexk}
+                class="square-button"
+                onClick={(e) => {
+                  reponses[inex] = parseInt(e.target.value);
+                }}
+              >
+                {k}
+              </button>
+            ))}
 
-          {buttonValider ? (
-            <p dangerouslySetInnerHTML={{ __html: j.regle }} />
-          ) : (
-            <p></p>
-          )}
-        </div>
-      ))}
+            {buttonValider ? (
+              <p dangerouslySetInnerHTML={{ __html: j.regle }} />
+            ) : (
+              <p></p>
+            )}
+          </div>
+        ))}
+      </div>
       <Button
         variant="contained"
         type="submit"
