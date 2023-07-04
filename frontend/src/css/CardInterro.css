@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap');
+
+.card-interro{
+    font-family: 'Cormorant Garamond', serif;
+    background-color: #F8F5F2;
+    width: 30%;
+    padding: 1%;
+    text-align: center;
+    color: #6A6A6A;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(83, 83, 83, 0.572);
+}
+
+.card-interro h2{
+    font-size: 2em;
+    margin-top: 0;
+}
+
+.card-interro p{
+    margin-top: 0;
+}
+
+.card-interro h3{
+    margin-top: 0;
+}
+
+.buttons-mode{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10% 0 10%;
+}
+
+.buttons-mode button{
+    color: #6A6A6A;
+    background-color: #D9D9D9;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    border-radius: 8px;
+    height: 40px;
+    width: 100%;
+    border: none;
+    margin: 0 3% 3% 3%;
+}
+
+.buttons-mode button:hover{
+    color: #FFFFFF;
+    background-color: #B7207A;
+
+}
+
+.buttons-mode .active{
+    color: #FFFFFF;
+    background-color: #B7207A;
+
+}
+
+.mode-content p{
+    display: none;
+}
+
+.mode-content .active-content{
+    display: block;
+}
