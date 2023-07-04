@@ -13,6 +13,7 @@ import "./css/main.css";
 import Decouverte from "./component/exercices/Decouverte";
 import Modes from "./component/Modes";
 import ChoixMode from "./component/ChoixMode";
+import Etiq from "./component/Etiq";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
   {
     path: "/choix-modes",
     element: <ChoixMode />,
+  },
+  {
+    path: "/etiq",
+    element: <Etiq />,
   },
 ]);
 
