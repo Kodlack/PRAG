@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import "../css/CardInterro.css";
 
-const CardInterro = (props) => {
-  const [activeButton, setActiveButton] = useState("");
-
+const CardInterro = ({ activeButton, setActiveButton }) => {
   const handleClick = (contentId) => {
     setActiveButton(contentId);
   };

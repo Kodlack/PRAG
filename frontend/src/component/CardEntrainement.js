@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import "../css/CardEntrainement.css";
 
-const CardEntrainement = () => {
-  const [activeButton, setActiveButton] = useState("");
-
+const CardEntrainement = ({ activeButton, setActiveButton }) => {
   const handleClick = (contentId) => {
     setActiveButton(contentId);
   };

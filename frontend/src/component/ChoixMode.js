@@ -5,9 +5,6 @@ import CardEntrainement from "../component/CardEntrainement";
 import CardInterro from "../component/CardInterro";
 
 const ChoixMode = () => {
-  const [mode, setMode] = useState("");
-  const [niveau, setNiveau] = useState(0);
-  const [bool, setBool] = useState(false);
   const [activeButton, setActiveButton] = useState("");
 
   return (
@@ -15,11 +12,18 @@ const ChoixMode = () => {
       <HeaderMode />
       <div className="content-choix-mode">
         <div className="choix-carte">
-          <CardEntrainement />
-          <CardInterro />
+          <CardEntrainement
+            activeButton={activeButton}
+            setActiveButton={setActiveButton}
+          />
+          <CardInterro
+            activeButton={activeButton}
+            setActiveButton={setActiveButton}
+          />
         </div>
         <button class="round-button-choix-mode">Étape suivante</button>
       </div>
+      <button class="round-button-choix-mode">Étape suivante</button>
     </div>
   );
 };
