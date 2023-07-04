@@ -15,7 +15,7 @@ export default function Infobulle(props) {
     <div>
       <button
         class="button2"
-        style={{ backgroundColor: "#FBE62F" }}
+        style={{ backgroundColor: "#FBE62F"}}
         onClick={handleOpen}
       >
         Me rappeler la règle
