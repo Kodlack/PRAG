@@ -1,5 +1,6 @@
 import { Button } from "@mui/material";
 import "../../css/Etiq.css";
+import "../../css/qcm.css";
 import { useEffect, useState } from "react";
 
 export default function QCM(props) {
@@ -47,6 +48,7 @@ export default function QCM(props) {
       }
     }
 
+    //change les couleurs des réponses
     for (let i = 0; i < 5; i++) {
       if (props.value[i].correctAnswer == reponses[i]) {
         bonneReponse++;
@@ -57,6 +59,13 @@ export default function QCM(props) {
       }
     }
     setBonneReponses(bonneReponses + bonneReponse);
+  }
+
+  function buttonOnclick() {
+    for (let i = 0; i < 5; i++) {
+      if (props.value[i].correctAnswer == reponses[i]) {
+      }
+    }
   }
 
   return (
@@ -77,16 +86,19 @@ export default function QCM(props) {
                 class="square-button"
                 onClick={(e) => {
                   reponses[inex] = parseInt(e.target.value);
+                  document.querySelector(".square-button").style.background =
+                    "#376f98";
+                  console.log(document.querySelector("button[name]"));
+                  console.log();
                 }}
               >
                 {k}
               </button>
             ))}
-
             {buttonValider ? (
               <p dangerouslySetInnerHTML={{ __html: j.regle }} />
             ) : (
-              <p></p>
+              ""
             )}
           </div>
         ))}

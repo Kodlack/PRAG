@@ -2,6 +2,7 @@ const ExoModel = require("../models/exercice");
 var express = require("express");
 var app = express();
 const router = express.Router();
+const db = require("../server/db");
 
 //créer dans la base de données des exercices côté admin
 router.post("/admin/exo", async (req, res) => {
