@@ -42,10 +42,6 @@ const router = createBrowserRouter([
   },
   {
     path: "/notions",
-    element: <Modes />,
-  },
-  {
-    path: "/choix-modes",
     element: <ChoixMode />,
   },
   {

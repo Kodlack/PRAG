@@ -5,16 +5,27 @@ import { useEffect, useState } from "react";
 export default function QCM(props) {
   const [reponses, setReponses] = useState([null, null, null, null, null]);
   const [bonneReponses, setBonneReponses] = useState(0);
-  const [buttonValider, setButtonValider] = useState(false);
+  const [buttonValider, setButtonValider] = useState("");
+  const [activeButtonQuestion, setActiveButtonQuestion] = useState("");
 
-  // useEffect(() => {
-  //   const test = async () => {
-  //     const date = await setButtonValider(false);
-  //   };
-  //   test();
+  const handleClick = (content) => {
+    setActiveButtonQuestion(content);
+  };
 
-  //   // setReponses([null, null, null, null, null]);
-  // }, []);
+  const handleButtonValider = (content) => {
+    setButtonValider("oui");
+  };
+
+  function resetState() {
+    setReponses([null, null, null, null, null]);
+    setBonneReponses(0);
+    setButtonValider("");
+    setActiveButtonQuestion("");
+  }
+
+  useEffect(() => {
+    resetState();
+  }, [props.suivant]);
 
   function verifReponse() {
     let listeQuestionRep = [];
@@ -46,7 +57,9 @@ export default function QCM(props) {
         }
       }
     }
+    setButtonValider(true);
 
+    //change les couleurs des réponses
     for (let i = 0; i < 5; i++) {
       if (props.value[i].correctAnswer == reponses[i]) {
         bonneReponse++;
@@ -59,8 +72,15 @@ export default function QCM(props) {
     setBonneReponses(bonneReponses + bonneReponse);
   }
 
+  function buttonOnclick() {
+    for (let i = 0; i < 5; i++) {
+      if (props.value[i].correctAnswer == reponses[i]) {
+      }
+    }
+  }
+
   return (
-    <div style={{textAlign:'center'}}>
+    <div style={{ textAlign: "center" }}>
       <div class="qcm-container">
         {props.value.map((j, inex) => (
           <div key={inex} class="themequestion">
@@ -71,22 +91,26 @@ export default function QCM(props) {
             {j.answers.map((k, indexk) => (
               <button
                 id="questions"
-                name={j.idq}
+                name={j.answers[indexk]}
                 type="radio"
                 value={indexk}
-                class="square-button"
+                // class="square-button"
                 onClick={(e) => {
                   reponses[inex] = parseInt(e.target.value);
+                  handleClick(indexk);
+                  console.log(activeButtonQuestion);
                 }}
+                className={
+                  activeButtonQuestion == indexk ? "active" : "square-button"
+                }
               >
                 {k}
               </button>
             ))}
-
-            {buttonValider ? (
-              <p dangerouslySetInnerHTML={{ __html: j.regle }} />
+            {buttonValider == "oui" ? (
+              <p id="regle" dangerouslySetInnerHTML={{ __html: j.regle }} />
             ) : (
-              <p></p>
+              ""
             )}
           </div>
         ))}
@@ -95,10 +119,10 @@ export default function QCM(props) {
         variant="contained"
         type="submit"
         color="success"
-        sx={{ margin: "7px 0px 0px 10px"}}
+        sx={{ margin: "7px 0px 0px 10px" }}
         onClick={() => {
           verifReponse();
-          setButtonValider(true);
+          handleButtonValider();
         }}
       >
         Valider
