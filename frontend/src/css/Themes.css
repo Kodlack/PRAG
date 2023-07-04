@@ -61,10 +61,10 @@
   text-align: center;
   box-shadow: 0 6px 6px rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
   font-family: "Cormorant Garamond", serif;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: bold;
   color: #6a6a6a;
-  margin: 5px;
+  margin:5px;
 }
 
 .rectangle2 {
@@ -75,9 +75,10 @@
   box-shadow: 3px 3px rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
   font-family: "Cormorant Garamond", serif;
   font-size: 16px;
-  font-weight: bold;
   color: #6a6a6a;
-  margin: 5px;
+  margin:5px;
+  font-size: 26px;
+  font-weight: bold;
 }
 
 .button2:hover{

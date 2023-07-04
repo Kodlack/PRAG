@@ -105,7 +105,7 @@ export default function Exercice() {
           <div>
             <div class="bandeau">
             <div class="upright">
-            <div class="rectangle2">Exercice {indexExo}/15</div>
+            <p class="rectangle2">Exercice {indexExo}/15</p>
             <Infobulle value={i.explication}></Infobulle>
           </div>
       
