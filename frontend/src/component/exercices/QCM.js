@@ -60,7 +60,7 @@ export default function QCM(props) {
   }
 
   return (
-    <div>
+    <div style={{textAlign:'center'}}>
       <div class="qcm-container">
         {props.value.map((j, inex) => (
           <div key={inex} class="themequestion">
@@ -94,7 +94,8 @@ export default function QCM(props) {
       <Button
         variant="contained"
         type="submit"
-        sx={{ margin: "7px 0px 0px 10px", background: "#376f98" }}
+        color="success"
+        sx={{ margin: "7px 0px 0px 10px"}}
         onClick={() => {
           verifReponse();
           setButtonValider(true);
