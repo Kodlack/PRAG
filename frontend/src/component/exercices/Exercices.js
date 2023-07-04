@@ -103,19 +103,11 @@ export default function Exercice() {
         <div key={inex}>
           <div>
             <div class="bandeau">
-<<<<<<< HEAD
-            <div class="upright">
-            <p class="rectangle2">Exercice {indexExo}/15</p>
-            <Infobulle value={i.explication}></Infobulle>
-          </div>
-      
-=======
               <div class="upright">
                 <div class="rectangle2">Exercice {indexExo}/15</div>
                 <Infobulle value={i.explication}></Infobulle>
               </div>
 
->>>>>>> 80eba99ab07dfa57df21edcbecc43eb5380d3acb
               <div class="qcmtheme">
                 <h1 class="htext">
                   {i.theme} / {i.subtheme} <br /> Niveau {i.level} / {i.type}{" "}
