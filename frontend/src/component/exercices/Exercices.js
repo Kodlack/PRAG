@@ -105,7 +105,7 @@ export default function Exercice() {
           <div>
             <div class="bandeau">
             <div class="upright">
-            <div class="button2">Exercice {indexExo}/15</div>
+            <div class="rectangle2">Exercice {indexExo}/15</div>
             <Infobulle value={i.explication}></Infobulle>
           </div>
       
@@ -185,6 +185,7 @@ export default function Exercice() {
         sx={{
           margin: "7px 0px 15px 10px",
           background: "#376f98",
+          left: "80%",
         }}
         onClick={() => {
           // setButtonValider(false);

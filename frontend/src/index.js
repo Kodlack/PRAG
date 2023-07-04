@@ -12,6 +12,7 @@ import BasPage from "./component/BasPage";
 import "./css/main.css";
 import Decouverte from "./component/exercices/Decouverte";
 import Modes from "./component/Modes";
+import ChoixMode from "./component/ChoixMode";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
   {
     path: "/notions",
     element: <Modes />,
+  },
+  {
+    path: "/choix-modes",
+    element: <ChoixMode />,
   },
 ]);
 
