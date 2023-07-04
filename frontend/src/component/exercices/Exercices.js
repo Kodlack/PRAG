@@ -16,6 +16,7 @@ export default function Exercice() {
   // const [bonneReponses, setBonneReponses] = useState(0);
   // const [buttonValider, setButtonValider] = useState(false);
   const [indexExo, setIndexExo] = useState(1);
+  const [suivant, setSuivant] = useState(false);
 
   function verifReponse() {
     let listeQuestionRep = [];
@@ -56,9 +57,7 @@ export default function Exercice() {
 
   function uncheck(taille) {
     for (let i = 0; i < taille; i++) {
-      document.querySelectorAll("button#questions.square-button")[
-        i
-      ].style.color = "black";
+      document.querySelectorAll("button#questions")[i].style.color = "black";
     }
     for (let i = 0; i < 5; i++) {
       document.querySelectorAll(".titre")[i].style.color = "#6a6a6a";
@@ -104,11 +103,11 @@ export default function Exercice() {
         <div key={inex}>
           <div>
             <div class="bandeau">
-            <div class="upright">
-            <div class="rectangle2">Exercice {indexExo}/15</div>
-            <Infobulle value={i.explication}></Infobulle>
-          </div>
-      
+              <div class="upright">
+                <div class="rectangle2">Exercice {indexExo}/15</div>
+                <Infobulle value={i.explication}></Infobulle>
+              </div>
+
               <div class="qcmtheme">
                 <h1 class="htext">
                   {i.theme} / {i.subtheme} <br /> Niveau {i.level} / {i.type}{" "}
@@ -120,7 +119,7 @@ export default function Exercice() {
               <div class="chrono">23:59</div>
             </div>
           </div>
-          
+
           {/* {i.type == "QCM" ? (
             i.questions.map((j, inex) => (
               <div key={inex}>
@@ -155,7 +154,7 @@ export default function Exercice() {
           ) : (
             <p></p>
           )} */}
-          {i.type == "QCM" ? <QCM value={questions} /> : ""}
+          {i.type == "QCM" ? <QCM value={questions} suivant={suivant} /> : ""}
           {i.type == "Texte a trou" ? <TexteTrous value={questions} /> : ""}
           {i.type == "Enoncé fautif" ? <EnonceFautif value={questions} /> : ""}
           {indexExo == 2 ? (
@@ -191,9 +190,8 @@ export default function Exercice() {
           // setButtonValider(false);
           getExo(param[indexExo]);
           setIndexExo(indexExo + 1);
-          uncheck(
-            document.querySelectorAll("button#questions.square-button").length
-          );
+          uncheck(document.querySelectorAll("button#questions").length);
+          setSuivant(true);
         }}
       >
         Exercice suivant

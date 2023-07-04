@@ -54,3 +54,21 @@
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
+
+.active {
+  color: #6a6a6a;
+  background-color: rgba(55, 112, 152, 0.8);
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-size: 20px;
+  border-radius: 10px;
+  height: 40px;
+  width: 30%;
+  border: none;
+  margin: 5% 2% 0 0;
+  transition-duration: 0.4s;
+}
+
+#regle {
+  color: green;
+}
