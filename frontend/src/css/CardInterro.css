@@ -46,7 +46,8 @@
 .buttons-mode button:hover{
     color: #FFFFFF;
     background-color: #B7207A;
-
+    transition: background-color 400ms ease-in-out;
+    transition: color 200ms ease-in-out;
 }
 
 .buttons-mode .active{
