@@ -99,12 +99,16 @@ export default function Exercice() {
   }, []);
 
   return (
-    <div>
+    <div class="bga">
       {exos.map((i, inex) => (
         <div key={inex}>
-          <div class="bga">
+          <div>
             <div class="bandeau">
-              <div class="chrono">10:00</div>
+            <div class="upright">
+            <div class="button2">Exercice {indexExo}/15</div>
+            <Infobulle value={i.explication}></Infobulle>
+          </div>
+      
               <div class="qcmtheme">
                 <h1 class="htext">
                   {i.theme} / {i.subtheme} <br /> Niveau {i.level} / {i.type}{" "}
@@ -113,12 +117,10 @@ export default function Exercice() {
                 </h1>
                 <p class="stext">Consigne : {i.consigne}</p>
               </div>
+              <div class="chrono">23:59</div>
             </div>
           </div>
-          <div class="upright">
-            <div class="button2">Exercice {indexExo}/15</div>
-            <Infobulle value={i.explication}></Infobulle>
-          </div>
+          
           {/* {i.type == "QCM" ? (
             i.questions.map((j, inex) => (
               <div key={inex}>

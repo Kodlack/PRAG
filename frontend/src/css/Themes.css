@@ -23,34 +23,35 @@
 
 .qcmtheme {
   text-align: center;
-  padding: 15px;
-  width: 80%;
+  position: absolute;
+  left: 30%;
 }
 
 .chrono {
-  margin-left: 100px;
-  margin-top: 40px;
   text-align: right;
   padding-right: 10px;
   width: 100px;
   height: 45px;
   border-radius: 30px;
-  background-color: #f0f0f0;
-  color: #6a6a6a;
+  background-color: #F8F5F2;
+  color: #6A6A6A;
   font-family: "Cormorant Garamond", serif;
   font-weight: bold;
   font-size: 30px;
-  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 3px 6px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
   background-image: url("../img/chrono.png");
   background-repeat: no-repeat;
   background-position: 10%;
-  float: right;
+  position: relative;
+  left: 70%;
+  top: 50px;
 }
 
 .upright {
-  margin: 10px;
   display: grid;
-  float: right;
+  position: relative;
+  top:50px;
+  left: 10%;
 }
 
 .button2 {
@@ -58,31 +59,34 @@
   height: 40px;
   border-radius: 10px;
   border-color: #0c0c0c;
+  text-align: center;
+  box-shadow: 3px 6px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
   background-color: #ffffff;
   font-family: "Cormorant Garamond", serif;
   font-size: 16px;
   font-weight: bold;
   color: #6a6a6a;
+  margin: 5px;
 }
 
 .bandeau {
-  display: flex;
+  display:flex;
+  margin-bottom: 100px;
 }
 
 .bga {
-  background-image: url("../img/motif_academie.png");
+  background-image: url("../img/motif_academieee.png");
   background-repeat: no-repeat;
   background-color: rgba(248, 245, 242, 0.9);
-  background-size: 800px, 200px;
+  background-size: auto;
   background-blend-mode: lighten;
+  background-position:100% 0%;
 }
 
 .htext {
   color: #6a6a6a;
   font-family: "Cormorant Garamond", serif;
   font-size: 35px;
-  width: 50%;
-  padding-left: 15%;
   font-weight: light;
   text-align: center;
 }
@@ -91,7 +95,6 @@
   color: #6a6a6a;
   font-family: "Cormorant Garamond", serif;
   font-size: 24px;
-  width: 50%;
-  padding-left: 15%;
   font-weight: lighter;
+  text-align: center;
 }
