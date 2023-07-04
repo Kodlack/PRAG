@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import "../css/CardEntrainement.css";
 
 const CardEntrainement = ({ activeButton, setActiveButton }) => {

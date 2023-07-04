@@ -12,16 +12,12 @@ import QCM from "./QCM";
 export default function Decouverte() {
   const [exos, setExos] = useState([]);
   const [questions, setQuestions] = useState([]);
-  const [reponses, setReponses] = useState([null, null, null, null, null]);
-  const [bonneReponses, setBonneReponses] = useState(0);
-  const [buttonValider, setButtonValider] = useState(false);
   const [indexExo, setIndexExo] = useState(1);
+  const [suivant, setSuivant] = useState(false);
 
   function uncheck(taille) {
     for (let i = 0; i < taille; i++) {
-      document.querySelectorAll("button#questions.square-button")[
-        i
-      ].style.color = "black";
+      document.querySelectorAll("button#questions")[i].style.color = "black";
     }
     for (let i = 0; i < 5; i++) {
       document.querySelectorAll(".titre")[i].style.color = "#6a6a6a";
@@ -62,11 +58,15 @@ export default function Decouverte() {
   }, []);
 
   return (
-    <div>
+    <div class="bga">
       {exos.map((i, inex) => (
         <div key={inex}>
-          <div class="bga">
+          <div>
             <div class="bandeau">
+              <div class="upright">
+                <Infobulle value={i.explication}></Infobulle>
+              </div>
+
               <div class="qcmtheme">
                 <h1 class="htext">
                   {i.theme} / {i.subtheme} <br /> Niveau {i.level} / {i.type}{" "}
@@ -77,37 +77,59 @@ export default function Decouverte() {
               </div>
             </div>
           </div>
-          <div class="upright">
-            <Infobulle value={i.explication}></Infobulle>
-          </div>
-          {i.type == "QCM" ? (
-            <QCM value={questions} buttonValider={buttonValider} />
+
+          {/* {i.type == "QCM" ? (
+            i.questions.map((j, inex) => (
+              <div key={inex}>
+                <p>{j.enonce.debut}</p>
+                {j.answers.map((k, indexk) => (
+                  <div>
+                    <label key={indexk} id="nomquestions">
+                      <input
+                        id="questions"
+                        name={j.idq}
+                        type="radio"
+                        value={indexk}
+                        onClick={(e) => {
+                          reponses[inex] = parseInt(e.target.value);
+                          // reponses.push(e.target.value);
+                        }}
+                        onLoad={(e) => {}}
+                      />
+                      {k}
+                    </label>
+                    <br />
+                  </div>
+                ))}
+                <p id="enonceFin">{j.enonce.fin}</p>
+                {buttonValider ? (
+                  <p dangerouslySetInnerHTML={{ __html: j.regle }} />
+                ) : (
+                  <p></p>
+                )}
+              </div>
+            ))
           ) : (
             <p></p>
-          )}
-          {i.type == "Texte a trou" ? (
-            <TexteTrous value={questions} buttonValider={buttonValider} />
-          ) : (
-            <p></p>
-          )}
-          {i.type == "Enoncé fautif" ? (
-            <EnonceFautif value={questions} buttonValider={buttonValider} />
-          ) : (
-            <p></p>
-          )}
+          )} */}
+          {i.type == "QCM" ? <QCM value={questions} suivant={suivant} /> : ""}
+          {i.type == "Texte a trou" ? <TexteTrous value={questions} /> : ""}
+          {i.type == "Enoncé fautif" ? <EnonceFautif value={questions} /> : ""}
         </div>
       ))}
       <Button
         variant="contained"
         type="reset"
-        sx={{ margin: "7px 0px 15px 10px", background: "#376f98" }}
+        sx={{
+          margin: "7px 0px 15px 10px",
+          background: "#376f98",
+          left: "80%",
+        }}
         onClick={() => {
-          setButtonValider(false);
           getExo(param[indexExo]);
           setIndexExo(indexExo + 1);
-          uncheck(
-            document.querySelectorAll("button#questions.square-button").length
-          );
+          uncheck(document.querySelectorAll("button#questions").length);
+          setSuivant(true);
         }}
       >
         Exercice suivant

@@ -3,14 +3,18 @@ import { useEffect, useState } from "react";
 
 export default function EnonceFautif(props) {
   const [reponses, setReponses] = useState([null, null, null, null, null]);
-  const [bonneReponses, setBonneReponses] = useState(0);
   const [buttonValider, setButtonValider] = useState(false);
   const [enonce, setEnonce] = useState([]);
 
-  useEffect(() => {
-    setButtonValider(false);
+  const resetState = () => {
     setReponses([null, null, null, null, null]);
-  }, []);
+    setButtonValider(false);
+    // setActiveButtonQuestion("");
+  };
+
+  useEffect(() => {
+    resetState();
+  }, [props.suivant]);
 
   function verifReponse() {
     let listeQuestionRep = [];
@@ -19,6 +23,7 @@ export default function EnonceFautif(props) {
 
     let listerep = [];
 
+    //création d'une indexation pour pouvoir comparer les index des questions
     for (let i = 0; i < 5; i++) {
       for (let j = 0; j < props.value[i].answers.length; j++) {
         listerep.push(j);
@@ -27,26 +32,28 @@ export default function EnonceFautif(props) {
       listerep = [];
     }
 
+    //comparer questions afficher avec ceux de la base de données pour afficher les bonnes et mauvaises réponse
     for (let i = 0; i < 5; i++) {
       for (let j = 0; j < props.value[i].answers.length; j++) {
         if (listeQuestionRep[i][j] == props.value[i].correctAnswer[0]) {
-          document.querySelectorAll("button#questions")[compteur].style.color =
-            "red";
+          document.querySelectorAll("#questions")[compteur].style.color = "red";
           compteur++;
         } else {
-          document.querySelectorAll("button#questions")[compteur].style.color =
+          document.querySelectorAll("#questions")[compteur].style.color =
             "#35a329";
           compteur++;
         }
       }
     }
 
+    //change les couleurs des bonnes réponses trouvées
     for (let i = 0; i < 5; i++) {
       if (props.value[i].correctAnswer == reponses[i]) {
         bonneReponse++;
+        // document.querySelectorAll("#questions")[i].style.color = "#35a329";
       }
     }
-    setBonneReponses(bonneReponses + bonneReponse);
+    props.setBonneReponses(props.bonneReponses + bonneReponse);
   }
 
   return (
@@ -54,6 +61,7 @@ export default function EnonceFautif(props) {
       <div>
         {props.value.map((j, inex) => (
           <div key={inex}>
+            <p className="titre">ok</p>
             {j.enonce.debut.split(" ").map((k, indexk) => (
               <button
                 id="questions"
@@ -69,9 +77,7 @@ export default function EnonceFautif(props) {
             ))}
             {j.answers.map((k, indexk) => (
               <p
-                id="questions"
                 name={j.idq}
-                type="radio"
                 value={indexk}
                 onClick={(e) => {
                   reponses[inex] = parseInt(e.target.value);
@@ -81,7 +87,10 @@ export default function EnonceFautif(props) {
               </p>
             ))}
             {buttonValider ? (
-              <p dangerouslySetInnerHTML={{ __html: j.regle }} />
+              <p
+                id="regle"
+                dangerouslySetInnerHTML={{ __html: j.regle + j.lienQ }}
+              />
             ) : (
               <p></p>
             )}

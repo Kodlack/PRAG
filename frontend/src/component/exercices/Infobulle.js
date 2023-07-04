@@ -15,7 +15,7 @@ export default function Infobulle(props) {
     <div>
       <button
         class="button2"
-        style={{ backgroundColor: "#FBE62F"}}
+        style={{ backgroundColor: "#FBE62F" }}
         onClick={handleOpen}
       >
         Me rappeler la règle
@@ -30,7 +30,9 @@ export default function Infobulle(props) {
           sx={{ background: "#FFF6C5", margin: "50px", borderRadius: "6px" }}
         >
           <h3>Explication de la régle</h3>
-          <p dangerouslySetInnerHTML={{ __html: props.value }}></p>
+          <p
+            dangerouslySetInnerHTML={{ __html: props.value + props.lienExo }}
+          ></p>
         </Container>
       </Modal>
     </div>

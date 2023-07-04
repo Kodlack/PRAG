@@ -1,11 +1,9 @@
 import { Button } from "@mui/material";
-import "../../css/Etiq.css";
 import { useEffect, useState } from "react";
 
 export default function QCM(props) {
   const [reponses, setReponses] = useState([null, null, null, null, null]);
-  const [bonneReponses, setBonneReponses] = useState(0);
-  const [buttonValider, setButtonValider] = useState("");
+  const [buttonValider, setButtonValider] = useState(false);
   const [activeButtonQuestion, setActiveButtonQuestion] = useState("");
 
   const handleClick = (content) => {
@@ -13,15 +11,14 @@ export default function QCM(props) {
   };
 
   const handleButtonValider = (content) => {
-    setButtonValider("oui");
+    setButtonValider(true);
   };
 
-  function resetState() {
+  const resetState = () => {
     setReponses([null, null, null, null, null]);
-    setBonneReponses(0);
-    setButtonValider("");
+    setButtonValider(false);
     setActiveButtonQuestion("");
-  }
+  };
 
   useEffect(() => {
     resetState();
@@ -47,36 +44,27 @@ export default function QCM(props) {
     for (let i = 0; i < 5; i++) {
       for (let j = 0; j < props.value[i].answers.length; j++) {
         if (listeQuestionRep[i][j] == props.value[i].correctAnswer[0]) {
-          document.querySelectorAll("button#questions")[compteur].style.color =
+          document.querySelectorAll("#questions")[compteur].style.color =
             "#35a329";
           compteur++;
         } else {
-          document.querySelectorAll("button#questions")[compteur].style.color =
-            "red";
+          document.querySelectorAll("#questions")[compteur].style.color = "red";
           compteur++;
         }
       }
     }
-    setButtonValider(true);
 
-    //change les couleurs des réponses
+    //change les couleurs des bonnes réponses trouvées
     for (let i = 0; i < 5; i++) {
       if (props.value[i].correctAnswer == reponses[i]) {
         bonneReponse++;
         document.querySelectorAll(".titre")[i].style.color = "#35a329";
         console.log(reponses);
-        console.log(bonneReponses);
         console.log(buttonValider);
       }
     }
-    setBonneReponses(bonneReponses + bonneReponse);
-  }
-
-  function buttonOnclick() {
-    for (let i = 0; i < 5; i++) {
-      if (props.value[i].correctAnswer == reponses[i]) {
-      }
-    }
+    props.setBonneReponses(props.bonneReponses + bonneReponse);
+    console.log(props.bonneReponses);
   }
 
   return (
@@ -107,8 +95,11 @@ export default function QCM(props) {
                 {k}
               </button>
             ))}
-            {buttonValider == "oui" ? (
-              <p id="regle" dangerouslySetInnerHTML={{ __html: j.regle }} />
+            {buttonValider ? (
+              <p
+                id="regle"
+                dangerouslySetInnerHTML={{ __html: j.regle + j.lienQ }}
+              />
             ) : (
               ""
             )}

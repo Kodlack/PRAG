@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../css/Themes.css";
 import axios from "axios";
+import Etiq from "./Etiq";
 
 export default function Themes(props) {
   const [categorie, setCategorie] = useState([]);
@@ -40,6 +41,7 @@ export default function Themes(props) {
           </p>
         </div>
       </div>
+      <Etiq />
       <div class="grid-container">
         {categorie.map((i, index) => (
           <div class="theme">

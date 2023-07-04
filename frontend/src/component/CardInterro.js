@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import "../css/CardInterro.css";
 
 const CardInterro = ({ activeButton, setActiveButton }) => {
@@ -18,7 +17,9 @@ const CardInterro = ({ activeButton, setActiveButton }) => {
       <div className="buttons-mode">
         <button
           id="fiButton"
-          onClick={() => handleClick("fiContent")}
+          onClick={() => {
+            handleClick("fiContent");
+          }}
           className={activeButton === "fiContent" ? "active" : ""}
         >
           Facile

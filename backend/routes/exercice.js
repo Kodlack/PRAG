@@ -60,6 +60,14 @@ router.post("/exercice/:ide", (req, res) => {
     .catch((error) => res.status(404).json({ error }));
 });
 
+router.post("/exos", (req, res) => {
+  ExoModel.find(req.body)
+    .then((exercice) => {
+      res.send(exercice);
+    })
+    .catch((error) => res.status(404).json({ error }));
+});
+
 router.delete("/exercice", (req, res) => {
   ExoModel.deleteOne({ ide: req.body.ide })
     .then(() => res.status(200).json({ message: "Exercice supprimé !" }))

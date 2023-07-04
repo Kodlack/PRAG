@@ -25,7 +25,7 @@ export default function TexteTrous(props) {
           ))}
           <p dangerouslySetInnerHTML={{ __html: j.enonce.fin }} />
           {props.buttonValider ? (
-            <p dangerouslySetInnerHTML={{ __html: j.regle }} />
+            <p dangerouslySetInnerHTML={{ __html: j.regle + j.lienQ }} />
           ) : (
             <p></p>
           )}

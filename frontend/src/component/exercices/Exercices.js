@@ -1,6 +1,7 @@
 import { Button } from "@mui/material";
 import "../../css/background.css";
 import "../../css/Themes.css";
+import "../../css/Etiq.css";
 import "../../css/exercices.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -8,63 +9,26 @@ import Infobulle from "./Infobulle";
 import TexteTrous from "./TexteTrous";
 import EnonceFautif from "./EnonceFautif";
 import QCM from "./QCM";
+import Substitution from "./Substitution";
 
 export default function Exercice() {
   const [exos, setExos] = useState([]);
   const [questions, setQuestions] = useState([]);
   // const [reponses, setReponses] = useState([null, null, null, null, null]);
-  // const [bonneReponses, setBonneReponses] = useState(0);
-  // const [buttonValider, setButtonValider] = useState(false);
+  const [bonneReponses, setBonneReponses] = useState(0);
   const [indexExo, setIndexExo] = useState(1);
   const [suivant, setSuivant] = useState(false);
 
-  function verifReponse() {
-    let listeQuestionRep = [];
-    let compteur = 0;
-    let bonneReponse = 0;
-
-    let listerep = [];
-
-    for (let i = 0; i < 5; i++) {
-      for (let j = 0; j < questions[i].answers.length; j++) {
-        listerep.push(j);
-        listeQuestionRep.push(listerep);
-      }
-      listerep = [];
-    }
-
-    for (let i = 0; i < 5; i++) {
-      for (let j = 0; j < questions[i].answers.length; j++) {
-        if (listeQuestionRep[i][j] == questions[i].correctAnswer[0]) {
-          document.querySelectorAll("button#questions")[compteur].style.color =
-            "#35a329";
-          compteur++;
-        } else {
-          document.querySelectorAll("button#questions")[compteur].style.color =
-            "red";
-          compteur++;
-        }
-      }
-    }
-
-    // for (let i = 0; i < 5; i++) {
-    //   if (questions[i].correctAnswer == reponses[i]) {
-    //     bonneReponse++;
-    //   }
-    // }
-    // setBonneReponses(bonneReponses + bonneReponse);
-  }
-
   function uncheck(taille) {
     for (let i = 0; i < taille; i++) {
-      document.querySelectorAll("button#questions")[i].style.color = "black";
+      document.querySelectorAll("#questions")[i].style.color = "black";
     }
     for (let i = 0; i < 5; i++) {
       document.querySelectorAll(".titre")[i].style.color = "#6a6a6a";
     }
   }
 
-  var param = [{ ide: 1 }, { ide: 9 }, { ide: 2 }, { ide: 4 }];
+  var param = [{ ide: 1 }, { ide: 9 }, { ide: 2 }, { ide: 4 }, { ide: 8 }];
 
   function getExo(ideExo) {
     axios
@@ -86,9 +50,7 @@ export default function Exercice() {
         .post("http://localhost:3000/exercice/:ide", param[0])
         .then((res) => {
           setExos(res.data);
-          console.log(res.data);
           setQuestions(res.data[0].questions);
-          console.log(questions);
         })
         .catch((err) => {
           console.log(err);
@@ -105,7 +67,10 @@ export default function Exercice() {
             <div class="bandeau">
               <div class="upright">
                 <div class="rectangle2">Exercice {indexExo}/15</div>
-                <Infobulle value={i.explication}></Infobulle>
+                <Infobulle
+                  value={i.explication}
+                  lienExo={i.lienExo}
+                ></Infobulle>
               </div>
 
               <div class="qcmtheme">
@@ -119,65 +84,56 @@ export default function Exercice() {
               <div class="chrono">23:59</div>
             </div>
           </div>
-
-          {/* {i.type == "QCM" ? (
-            i.questions.map((j, inex) => (
-              <div key={inex}>
-                <p>{j.enonce.debut}</p>
-                {j.answers.map((k, indexk) => (
-                  <div>
-                    <label key={indexk} id="nomquestions">
-                      <input
-                        id="questions"
-                        name={j.idq}
-                        type="radio"
-                        value={indexk}
-                        onClick={(e) => {
-                          reponses[inex] = parseInt(e.target.value);
-                          // reponses.push(e.target.value);
-                        }}
-                        onLoad={(e) => {}}
-                      />
-                      {k}
-                    </label>
-                    <br />
-                  </div>
-                ))}
-                <p id="enonceFin">{j.enonce.fin}</p>
-                {buttonValider ? (
-                  <p dangerouslySetInnerHTML={{ __html: j.regle }} />
-                ) : (
-                  <p></p>
-                )}
-              </div>
-            ))
+          {i.type == "QCM" ? (
+            <QCM
+              value={questions}
+              suivant={suivant}
+              bonneReponses={bonneReponses}
+              setBonneReponses={setBonneReponses}
+            />
           ) : (
-            <p></p>
-          )} */}
-          {i.type == "QCM" ? <QCM value={questions} suivant={suivant} /> : ""}
-          {i.type == "Texte a trou" ? <TexteTrous value={questions} /> : ""}
-          {i.type == "Enoncé fautif" ? <EnonceFautif value={questions} /> : ""}
-          {indexExo == 2 ? (
+            ""
+          )}
+          {i.type == "Texte a trou" ? (
+            <TexteTrous
+              value={questions}
+              suivant={suivant}
+              bonneReponses={bonneReponses}
+              setBonneReponses={setBonneReponses}
+            />
+          ) : (
+            ""
+          )}
+          {i.type == "Enoncé fautif" ? (
+            <EnonceFautif
+              value={questions}
+              suivant={suivant}
+              bonneReponses={bonneReponses}
+              setBonneReponses={setBonneReponses}
+            />
+          ) : (
+            ""
+          )}
+          {i.type == "Substitution" ? (
+            <Substitution
+              value={questions}
+              suivant={suivant}
+              bonneReponses={bonneReponses}
+              setBonneReponses={setBonneReponses}
+            />
+          ) : (
+            ""
+          )}
+          {indexExo == 3 ? (
             <p>
-              Vous avez {(2 * 100) / 10}% de bonnes réponses sur cette série
-              d'exercice.
+              Vous avez {(bonneReponses * 100) / 10}% de bonnes réponses sur
+              cette série d'exercice.
             </p>
           ) : (
             <p></p>
           )}
         </div>
       ))}
-      {/* <Button
-        variant="contained"
-        type="submit"
-        sx={{ margin: "7px 0px 0px 10px", background: "#376f98" }}
-        onClick={() => {
-          verifReponse();
-          setButtonValider(true);
-        }}
-      >
-        Valider
-      </Button> */}
       <Button
         variant="contained"
         type="reset"
@@ -187,10 +143,9 @@ export default function Exercice() {
           left: "80%",
         }}
         onClick={() => {
-          // setButtonValider(false);
           getExo(param[indexExo]);
           setIndexExo(indexExo + 1);
-          uncheck(document.querySelectorAll("button#questions").length);
+          uncheck(document.querySelectorAll("questions").length);
           setSuivant(true);
         }}
       >
