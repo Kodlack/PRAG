@@ -3,8 +3,8 @@
 .theme {
   height: 300px;
   width: 350px;
-  box-shadow: 3px 3px 5px rgb(218, 223, 224);
-  background-color: rgb(248, 245, 242);
+  box-shadow: 0 20px 20px rgb(218, 223, 224);
+  background-color: rgb(255, 255, 255);
   text-align: center;
   padding: 2px;
   padding-bottom: 10px;
@@ -38,7 +38,6 @@
   color: #6A6A6A;
   background-color: #D9D9D9;
   font-family: "Cormorant Garamond", serif;
-  font-weight:600;
   font-size: 20px;
   border-radius: 10px;
   height: 40px;

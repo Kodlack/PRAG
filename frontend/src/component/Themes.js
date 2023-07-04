@@ -27,8 +27,8 @@ export default function Themes(props) {
   }, []);
 
   return (
-    <div style={{ textAlign: "center" }}>
-      <div class="bga">
+    <div class="bga" style={{ textAlign: "center" }}>
+      <div>
         <div class="htheme">
           <h1 class="htext">
             Choisissez les notions que vous souhaitez exercer
