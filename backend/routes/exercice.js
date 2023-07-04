@@ -39,7 +39,7 @@ router.post("/admin/exo", async (req, res) => {
 });
 
 router.get("/exercice", (req, res, next) => {
-  ExoModel.findOne({ ide: req.params.id })
+  ExoModel.find(req.body)
     .then((thing) => res.status(200).json(thing))
     .catch((error) => res.status(404).json({ error }));
 });

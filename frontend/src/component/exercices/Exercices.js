@@ -12,9 +12,9 @@ import QCM from "./QCM";
 export default function Exercice() {
   const [exos, setExos] = useState([]);
   const [questions, setQuestions] = useState([]);
-  const [reponses, setReponses] = useState([null, null, null, null, null]);
-  const [bonneReponses, setBonneReponses] = useState(0);
-  const [buttonValider, setButtonValider] = useState(false);
+  // const [reponses, setReponses] = useState([null, null, null, null, null]);
+  // const [bonneReponses, setBonneReponses] = useState(0);
+  // const [buttonValider, setButtonValider] = useState(false);
   const [indexExo, setIndexExo] = useState(1);
 
   function verifReponse() {
@@ -35,27 +35,33 @@ export default function Exercice() {
     for (let i = 0; i < 5; i++) {
       for (let j = 0; j < questions[i].answers.length; j++) {
         if (listeQuestionRep[i][j] == questions[i].correctAnswer[0]) {
-          document.querySelectorAll("label")[compteur].style.color = "#35a329";
+          document.querySelectorAll("button#questions")[compteur].style.color =
+            "#35a329";
           compteur++;
         } else {
-          document.querySelectorAll("label")[compteur].style.color = "red";
+          document.querySelectorAll("button#questions")[compteur].style.color =
+            "red";
           compteur++;
         }
       }
     }
 
-    for (let i = 0; i < 5; i++) {
-      if (questions[i].correctAnswer == reponses[i]) {
-        bonneReponse++;
-      }
-    }
-    setBonneReponses(bonneReponses + bonneReponse);
+    // for (let i = 0; i < 5; i++) {
+    //   if (questions[i].correctAnswer == reponses[i]) {
+    //     bonneReponse++;
+    //   }
+    // }
+    // setBonneReponses(bonneReponses + bonneReponse);
   }
 
   function uncheck(taille) {
     for (let i = 0; i < taille; i++) {
-      document.querySelectorAll("input")[i].checked = false;
-      document.querySelectorAll("label")[i].style.color = "black";
+      document.querySelectorAll("button#questions.square-button")[
+        i
+      ].style.color = "black";
+    }
+    for (let i = 0; i < 5; i++) {
+      document.querySelectorAll(".titre")[i].style.color = "#6a6a6a";
     }
   }
 
@@ -147,25 +153,13 @@ export default function Exercice() {
           ) : (
             <p></p>
           )} */}
-          {i.type == "QCM" ? (
-            <QCM value={questions} buttonValider={buttonValider} />
-          ) : (
-            <p></p>
-          )}
-          {i.type == "Texte a trou" ? (
-            <TexteTrous value={questions} buttonValider={buttonValider} />
-          ) : (
-            <p></p>
-          )}
-          {i.type == "Enoncé fautif" ? (
-            <EnonceFautif value={questions} buttonValider={buttonValider} />
-          ) : (
-            <p></p>
-          )}
-          {indexExo == 2 && buttonValider ? (
+          {i.type == "QCM" ? <QCM value={questions} /> : ""}
+          {i.type == "Texte a trou" ? <TexteTrous value={questions} /> : ""}
+          {i.type == "Enoncé fautif" ? <EnonceFautif value={questions} /> : ""}
+          {indexExo == 2 ? (
             <p>
-              Vous avez {(bonneReponses * 100) / 10}% de bonnes réponses sur
-              cette série d'exercice.
+              Vous avez {(2 * 100) / 10}% de bonnes réponses sur cette série
+              d'exercice.
             </p>
           ) : (
             <p></p>
@@ -191,10 +185,12 @@ export default function Exercice() {
           background: "#376f98",
         }}
         onClick={() => {
-          setButtonValider(false);
+          // setButtonValider(false);
           getExo(param[indexExo]);
           setIndexExo(indexExo + 1);
-          uncheck(document.querySelectorAll("input").length);
+          uncheck(
+            document.querySelectorAll("button#questions.square-button").length
+          );
         }}
       >
         Exercice suivant

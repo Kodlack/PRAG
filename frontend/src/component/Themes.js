@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../css/Themes.css";
 import axios from "axios";
 
-const Themes = () => {
+export default function Themes(props) {
   const [categorie, setCategorie] = useState([]);
 
   const myStyle = {
@@ -60,6 +60,4 @@ const Themes = () => {
       </a>
     </div>
   );
-};
-
-export default Themes;
+}

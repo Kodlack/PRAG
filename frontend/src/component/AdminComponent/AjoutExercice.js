@@ -84,7 +84,6 @@ export default function AjoutExercice(props) {
         </FormControl>
         <br />
         <br />
-
         <FormControl
           sx={{ backgroundColor: "white", width: "200px", margin: "0px 50px" }}
         >
@@ -138,6 +137,9 @@ export default function AjoutExercice(props) {
         >
           Valider
         </Button>
+        <br />
+        <br />
+        <Button variant="contained">Ajouter une question</Button> A développer
       </Box>
     </div>
   );

@@ -3,6 +3,7 @@ var express = require("express");
 const router = express.Router();
 
 router.post("/admin/cate", async (req, res) => {
+  delete req.body._id;
   const { subtheme } = req.body;
 
   var categorie = new categorieModel({
@@ -27,7 +28,7 @@ router.get("/categorie", (req, res) => {
 
 router.delete("/categorie", (req, res) => {
   categorieModel
-    .delete({ subtheme: req.body.subtheme })
+    .deleteOne({ subtheme: req.body.subtheme })
     .then(() => res.status(200).json({ message: "Catégorie supprimé !" }))
     .catch((error) => res.status(400).json({ error }));
 });

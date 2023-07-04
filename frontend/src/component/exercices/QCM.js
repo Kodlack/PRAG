@@ -7,10 +7,14 @@ export default function QCM(props) {
   const [bonneReponses, setBonneReponses] = useState(0);
   const [buttonValider, setButtonValider] = useState(false);
 
-  useEffect(() => {
-    setButtonValider(false);
-    setReponses([null, null, null, null, null]);
-  }, []);
+  // useEffect(() => {
+  //   const test = async () => {
+  //     const date = await setButtonValider(false);
+  //   };
+  //   test();
+
+  //   // setReponses([null, null, null, null, null]);
+  // }, []);
 
   function verifReponse() {
     let listeQuestionRep = [];
@@ -19,6 +23,7 @@ export default function QCM(props) {
 
     let listerep = [];
 
+    //création d'une indexation pour pouvoir comparer les index des questions
     for (let i = 0; i < 5; i++) {
       for (let j = 0; j < props.value[i].answers.length; j++) {
         listerep.push(j);
@@ -27,6 +32,7 @@ export default function QCM(props) {
       listerep = [];
     }
 
+    //comparer questions afficher avec ceux de la base de données pour afficher les bonnes et mauvaises réponse
     for (let i = 0; i < 5; i++) {
       for (let j = 0; j < props.value[i].answers.length; j++) {
         if (listeQuestionRep[i][j] == props.value[i].correctAnswer[0]) {
@@ -45,6 +51,9 @@ export default function QCM(props) {
       if (props.value[i].correctAnswer == reponses[i]) {
         bonneReponse++;
         document.querySelectorAll(".titre")[i].style.color = "#35a329";
+        console.log(reponses);
+        console.log(bonneReponses);
+        console.log(buttonValider);
       }
     }
     setBonneReponses(bonneReponses + bonneReponse);
