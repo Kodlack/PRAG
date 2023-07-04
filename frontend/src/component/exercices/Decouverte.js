@@ -1,13 +1,13 @@
 import { Button } from "@mui/material";
-import "../css/background.css";
-import "../css/Themes.css";
-import "../css/exercices.css";
+import "../../css/background.css";
+import "../../css/Themes.css";
+import "../../css/exercices.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Infobulle from "./exercices/Infobulle";
-import TexteTrous from "./exercices/TexteTrous";
-import EnonceFautif from "./exercices/EnonceFautif";
-import QCM from "./exercices/QCM";
+import Infobulle from "./Infobulle";
+import TexteTrous from "./TexteTrous";
+import EnonceFautif from "./EnonceFautif";
+import QCM from "./QCM";
 
 export default function Decouverte() {
   const [exos, setExos] = useState([]);
@@ -19,8 +19,12 @@ export default function Decouverte() {
 
   function uncheck(taille) {
     for (let i = 0; i < taille; i++) {
-      document.querySelectorAll("input")[i].checked = false;
-      document.querySelectorAll("label")[i].style.color = "black";
+      document.querySelectorAll("button#questions.square-button")[
+        i
+      ].style.color = "black";
+    }
+    for (let i = 0; i < 5; i++) {
+      document.querySelectorAll(".titre")[i].style.color = "#6a6a6a";
     }
   }
 
@@ -101,7 +105,9 @@ export default function Decouverte() {
           setButtonValider(false);
           getExo(param[indexExo]);
           setIndexExo(indexExo + 1);
-          uncheck(document.querySelectorAll("input").length);
+          uncheck(
+            document.querySelectorAll("button#questions.square-button").length
+          );
         }}
       >
         Exercice suivant

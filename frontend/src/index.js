@@ -10,7 +10,7 @@ import EspaceAdmin from "./component/AdminComponent/EspaceAdmin";
 import Themes from "./component/Themes";
 import BasPage from "./component/BasPage";
 import "./css/main.css";
-import Decouverte from "./component/Decouverte";
+import Decouverte from "./component/exercices/Decouverte";
 import Modes from "./component/Modes";
 
 const router = createBrowserRouter([
