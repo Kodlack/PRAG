@@ -64,10 +64,10 @@ export default function TexteTrous(props) {
                     {k}{" "}
                   </label>
                 ) : (
-                  <input
-                    class="input"
+                  <input class="input"
                     id="questions"
                     type="text"
+                    placeholder=". . . . . . . . ."
                     onChange={(e) => {
                       reponses[inex] = e.target.value;
                     }}

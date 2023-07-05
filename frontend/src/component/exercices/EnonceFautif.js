@@ -57,11 +57,11 @@ export default function EnonceFautif(props) {
   }
 
   return (
-    <div>
-      <div>
+    <div style={{ textAlign: "center" }}>
+    <div class="qcm-container">
         {props.value.map((j, inex) => (
-          <div key={inex}>
-            <p className="titre">ok</p>
+          <div key={inex} class="themequestion">
+            <p className="titre">Sélectionnez la bonne réponse :</p>
             {j.enonce.debut.split(" ").map((k, indexk) => (
               <button
                 id="questions"
@@ -72,10 +72,11 @@ export default function EnonceFautif(props) {
                   reponses[inex] = parseInt(e.target.value);
                 }}
               >
-                {k}
+                <p className="contenu">{k}</p>
               </button>
             ))}
-            {j.answers.map((k, indexk) => (
+          {/*
+          {j.answers.map((k, indexk) => (
               <p
                 name={j.idq}
                 value={indexk}
@@ -86,6 +87,7 @@ export default function EnonceFautif(props) {
                 {k}
               </p>
             ))}
+          */}
             {buttonValider ? (
               <p
                 id="regle"
@@ -94,6 +96,11 @@ export default function EnonceFautif(props) {
             ) : (
               <p></p>
             )}
+            <button
+              id="pasdefaute"
+              className="square-button">
+                Pas de faute
+              </button>
           </div>
         ))}
       </div>

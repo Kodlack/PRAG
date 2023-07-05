@@ -1,4 +1,5 @@
-import { Button } from "@mui/material";
+import { Button, TextField, Typography } from "@mui/material";
+import { fontFamily, fontSize } from "@mui/system";
 import { useEffect, useState } from "react";
 
 export default function Substitution(props) {
@@ -35,19 +36,35 @@ export default function Substitution(props) {
   }
 
   return (
-    <div>
-      <div>
+      <div style={{ textAlign: "center" }}>
+      <div class="qcm-container">
         {props.value.map((j, inex) => (
-          <div key={inex}>
+          <div key={inex} class="themequestion">
             <p className="titre">{j.enonce.debut}</p>
-            <input
+            {/* <input className="input"
               id="questions"
               type="text"
               onChange={(e) => {
                 reponses[inex] = e.target.value;
                 console.log(reponses[inex]);
               }}
-            ></input>
+            ></input> */}
+            <Typography fontSize={"24px"}>
+            <TextField 
+            multiline
+            maxRows={2}
+            variant="filled"
+            sx={{
+              width:"80%",
+            }}
+            inputProps={{ style: { fontSize : "24px", fontFamily : "Cormorant Garamond", fontWeight : "bold" } }}
+            onChange={(e) => {
+                reponses[inex] = e.target.value;
+                console.log(reponses[inex]);
+              }}>
+            </TextField>
+            </Typography>
+            
             {buttonValider ? (
               <p
                 id="regle"
