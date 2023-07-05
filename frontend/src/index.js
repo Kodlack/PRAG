@@ -1,18 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Exercice from "./component/exercices/Exercices";
-import Navigation from "./component/Navigation";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
+import "./css/main.css";
+import Navigation from "./component/Navigation";
 import Accueil from "./component/Acceuil";
+import BasPage from "./component/BasPage";
 import AdminLog from "./component/AdminComponent/AdminLog";
 import EspaceAdmin from "./component/AdminComponent/EspaceAdmin";
 import Themes from "./component/Themes";
-import BasPage from "./component/BasPage";
-import "./css/main.css";
+import Etiq from "./component/Etiq";
 import Decouverte from "./component/exercices/Decouverte";
 import ChoixMode from "./component/ChoixMode";
-import Etiq from "./component/Etiq";
+import ModeEntrainement from "./component/exercices/ModeEntrainement";
+import ModeInterrogation from "./component/exercices/ModeInterrogation";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/exercice/:ide",
-    element: <Exercice />,
+    element: <ModeInterrogation />,
+  },
+  {
+    path: "/entrainement/exercice/:ide",
+    element: <ModeEntrainement />,
   },
   {
     path: "/adminlog",

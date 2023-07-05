@@ -9,6 +9,12 @@ const Etiq = (props) => {
   const [checked, setChecked] = useState([]);
   const [categorie, setCategorie] = useState([]);
 
+  const myStyle = {
+    marginBottom: "40px",
+    width: "20%",
+    backgroundColor: "#376F98",
+  };
+
   useEffect(() => {
     console.log("props.exos");
     console.log(props.exos);
@@ -113,6 +119,19 @@ const Etiq = (props) => {
           <br />
         </div>
       ))}
+      {props.mode == "entrainement" ? (
+        <a href="/entrainement/exercice/1">
+          <button class="round-button" style={myStyle}>
+            Démarrer
+          </button>
+        </a>
+      ) : (
+        <a href="/exercice/1">
+          <button class="round-button" style={myStyle}>
+            Démarrer
+          </button>
+        </a>
+      )}
     </div>
   );
 };

@@ -11,14 +11,13 @@ import EnonceFautif from "./EnonceFautif";
 import QCM from "./QCM";
 import Substitution from "./Substitution";
 
-export default function Exercice(props) {
+export default function ModeInterrogation(props) {
   const [exos, setExos] = useState([]);
   const [questions, setQuestions] = useState([]);
   // const [reponses, setReponses] = useState([null, null, null, null, null]);
   const [bonneReponses, setBonneReponses] = useState(0);
   const [indexExo, setIndexExo] = useState(1);
   const [suivant, setSuivant] = useState(false);
-  const [mode, setmode] = useState("interrogation");
 
   function uncheck(taille) {
     for (let i = 0; i < taille; i++) {
@@ -67,11 +66,7 @@ export default function Exercice(props) {
           <div>
             <div class="bandeau">
               <div class="upright">
-                {mode == "interrogation" ? (
-                  <div class="rectangle2">Exercice {indexExo}/15</div>
-                ) : (
-                  ""
-                )}
+                <div class="rectangle2">Exercice {indexExo}/15</div>
                 <Infobulle
                   value={i.explication}
                   lienExo={i.lienExo}
@@ -86,10 +81,10 @@ export default function Exercice(props) {
                 </h1>
                 <p class="stext">Consigne : {i.consigne}</p>
               </div>
-              {mode == "interrogation" ? <div class="chrono">23:59</div> : ""}
+              <div class="chrono">23:59</div>
             </div>
           </div>
-          {i.type == "QCM" ? (
+          {i.type === "QCM" ? (
             <QCM
               value={questions}
               suivant={suivant}
@@ -99,7 +94,7 @@ export default function Exercice(props) {
           ) : (
             ""
           )}
-          {i.type == "Texte a trou" ? (
+          {i.type === "Texte a trou" ? (
             <TexteTrous
               value={questions}
               suivant={suivant}
@@ -109,7 +104,7 @@ export default function Exercice(props) {
           ) : (
             ""
           )}
-          {i.type == "Enoncé fautif" ? (
+          {i.type === "Enoncé fautif" ? (
             <EnonceFautif
               value={questions}
               suivant={suivant}
@@ -119,7 +114,7 @@ export default function Exercice(props) {
           ) : (
             ""
           )}
-          {i.type == "Substitution" ? (
+          {i.type === "Substitution" ? (
             <Substitution
               value={questions}
               suivant={suivant}
@@ -129,7 +124,7 @@ export default function Exercice(props) {
           ) : (
             ""
           )}
-          {indexExo == 3 && mode == "interrogation" ? (
+          {indexExo == 3 ? (
             <p>
               Vous avez {(bonneReponses * 100) / 10}% de bonnes réponses sur
               cette série d'exercice.

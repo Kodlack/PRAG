@@ -70,6 +70,7 @@ const ChoixMode = () => {
               class="round-button-choix-mode"
               onClick={() => {
                 getExo();
+                getMode();
                 setBool(true);
               }}
             >
