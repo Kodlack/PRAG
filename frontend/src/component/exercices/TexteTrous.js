@@ -1,23 +1,14 @@
-import { Button, TextField } from "@mui/material";
+import { Button } from "@mui/material";
 import { useEffect, useState } from "react";
 
 export default function TexteTrous(props) {
-  const [reponses, setReponses] = useState([null, null, null, null, null]);
+  const [reponses, setReponses] = useState(["", "", "", "", ""]);
   const [buttonValider, setButtonValider] = useState(false);
-  const [activeButtonQuestion, setActiveButtonQuestion] = useState("");
-
-  const handleClick = (content) => {
-    setActiveButtonQuestion(content);
-  };
-
-  const handleButtonValider = () => {
-    setButtonValider(true);
-  };
+  const [activeButtonValider, setActiveButtonQuestion] = useState(false);
 
   const resetState = () => {
-    setReponses([null, null, null, null, null]);
+    setReponses(["", "", "", "", ""]);
     setButtonValider(false);
-    setActiveButtonQuestion("");
   };
 
   useEffect(() => {
@@ -25,32 +16,22 @@ export default function TexteTrous(props) {
   }, [props.suivant]);
 
   function verifReponse() {
-    let listeQuestionRep = [];
     let compteur = 0;
     let bonneReponse = 0;
 
-    let listerep = [];
-
-    //création d'une indexation pour pouvoir comparer les index des questions
-    for (let i = 0; i < 5; i++) {
-      for (let j = 0; j < props.value[i].answers.length; j++) {
-        listerep.push(j);
-        listeQuestionRep.push(listerep);
-      }
-      listerep = [];
-    }
-
     //comparer questions afficher avec ceux de la base de données pour afficher les bonnes et mauvaises réponse
     for (let i = 0; i < 5; i++) {
-      for (let j = 0; j < props.value[i].answers.length; j++) {
-        if (listeQuestionRep[i][j] == props.value[i].correctAnswer[0]) {
-          document.querySelectorAll("#questions")[compteur].style.color =
-            "#35a329";
-          compteur++;
-        } else {
-          document.querySelectorAll("#questions")[compteur].style.color = "red";
-          compteur++;
-        }
+      if (
+        reponses[i] == props.value[i].answers[props.value[i].correctAnswer[0]]
+      ) {
+        document.querySelectorAll("#questions")[compteur].style.color =
+          "#35a329";
+        compteur++;
+        console.log(reponses);
+        console.log(props.value[i].correctAnswer[0]);
+      } else {
+        document.querySelectorAll("#questions")[compteur].style.color = "red";
+        compteur++;
       }
     }
 
@@ -58,11 +39,10 @@ export default function TexteTrous(props) {
     for (let i = 0; i < 5; i++) {
       if (props.value[i].correctAnswer == reponses[i]) {
         bonneReponse++;
-        document.querySelectorAll(".titre")[i].style.color = "#35a329";
-        console.log(reponses);
-        console.log(buttonValider);
+        // document.querySelectorAll("#questions")[i].style.color = "#35a329";
       }
     }
+    console.log(props.bonneReponses);
     props.setBonneReponses(props.bonneReponses + bonneReponse);
     console.log(props.bonneReponses);
   }
@@ -96,8 +76,8 @@ export default function TexteTrous(props) {
                     class="input"
                     id="questions"
                     type="text"
-                    onClick={(e) => {
-                      reponses[inex] = parseInt(e.target.value);
+                    onChange={(e) => {
+                      reponses[inex] = e.target.value;
                     }}
                   />
                 )}
@@ -118,7 +98,7 @@ export default function TexteTrous(props) {
         sx={{ margin: "7px 0px 0px 10px" }}
         onClick={() => {
           verifReponse();
-          handleButtonValider();
+          setButtonValider(true);
         }}
       >
         Valider

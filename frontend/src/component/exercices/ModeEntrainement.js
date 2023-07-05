@@ -65,22 +65,22 @@ export default function ModeEntrainement(props) {
     <div class="bga">
       {exos.map((i, inex) => (
         <div key={inex}>
-          <div>
-            <div class="bandeau">
+          <div class="row">
+            <div class="column left">
               <div class="upright">
                 <Infobulle
                   value={i.explication}
                   lienExo={i.lienExo}
                 ></Infobulle>
               </div>
-              <div class="qcmtheme">
-                <h1 class="htext">
-                  {i.theme} / {i.subtheme} <br /> Niveau {i.level} / {i.type}{" "}
-                  Exercice n°
-                  {indexExo}
-                </h1>
-                <p class="stext">Consigne : {i.consigne}</p>
-              </div>
+            </div>
+            <div class="column middle">
+              <h1 class="htext">
+                {i.theme} / {i.subtheme} <br /> Niveau {i.level} / {i.type}{" "}
+                Exercice n°
+                {indexExo}
+              </h1>
+              <p class="stext">Consigne : {i.consigne}</p>
             </div>
           </div>
           {i.type === "QCM" ? (
@@ -142,21 +142,6 @@ export default function ModeEntrainement(props) {
       >
         Exercice suivant
       </Button>
-      <br />
-      <a href="/notions">
-        <Button
-          variant="contained"
-          type="reset"
-          sx={{
-            margin: "7px 0px 15px 10px",
-            background: "#376f98",
-            left: "80%",
-          }}
-          onClick={() => {}}
-        >
-          Terminer
-        </Button>
-      </a>
     </div>
   );
 }

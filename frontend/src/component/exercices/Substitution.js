@@ -8,7 +8,6 @@ export default function Substitution(props) {
   const resetState = () => {
     setReponses([null, null, null, null, null]);
     setButtonValider(false);
-    // setActiveButtonQuestion("");
   };
 
   useEffect(() => {

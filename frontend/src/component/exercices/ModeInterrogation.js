@@ -65,8 +65,8 @@ export default function ModeInterrogation(props) {
     <div class="bga">
       {exos.map((i, inex) => (
         <div key={inex}>
-          <div>
-            <div class="bandeau">
+          <div class="row">
+            <div class="column left">
               <div class="upright">
                 <div class="rectangle2">Exercice {indexExo}/15</div>
                 <Infobulle
@@ -74,15 +74,16 @@ export default function ModeInterrogation(props) {
                   lienExo={i.lienExo}
                 ></Infobulle>
               </div>
-
-              <div class="qcmtheme">
-                <h1 class="htext">
-                  {i.theme} / {i.subtheme} <br /> Niveau {i.level} / {i.type}{" "}
-                  Exercice n°
-                  {indexExo}
-                </h1>
-                <p class="stext">Consigne : {i.consigne}</p>
-              </div>
+            </div>
+            <div class="column middle">
+              <h1 class="htext">
+                {i.theme} / {i.subtheme} <br /> Niveau {i.level} / {i.type}{" "}
+                Exercice n°
+                {indexExo}
+              </h1>
+              <p class="stext">Consigne : {i.consigne}</p>
+            </div>
+            <div class="column right">
               <div class="chrono">23:59</div>
             </div>
           </div>
@@ -126,55 +127,34 @@ export default function ModeInterrogation(props) {
           ) : (
             ""
           )}
-          {indexExo == 3 ? (
+          {indexExo == param.length ? (
             <p>
-              Vous avez {(bonneReponses * 100) / 10}% de bonnes réponses sur
-              cette série d'exercice.
+              Vous avez {(bonneReponses * 100) / (5 * param.length)}% de bonnes
+              réponses sur cette série d'exercice.
             </p>
           ) : (
             <p></p>
           )}
         </div>
       ))}
-      {indexExo !== param.length ? (
-        <Button
-          variant="contained"
-          type="reset"
-          sx={{
-            margin: "7px 0px 15px 10px",
-            background: "#376f98",
-            left: "80%",
-          }}
-          onClick={() => {
-            getExo(param[indexExo]);
-            setIndexExo(indexExo + 1);
-            uncheck(document.querySelectorAll("#questions").length);
-            setSuivant(true);
-          }}
-        >
-          Exercice suivant
-        </Button>
-      ) : (
-        <Button
-          variant="contained"
-          type="reset"
-          sx={{
-            margin: "7px 0px 15px 10px",
-            background: "#376f98",
-            left: "80%",
-          }}
-          onClick={() => {
-            return (
-              <p>
-                Vous avez {(bonneReponses * 100) / 10}% de bonnes réponses sur
-                cette série d'exercice.
-              </p>
-            );
-          }}
-        >
-          Terminer
-        </Button>
-      )}
+      <Button
+        variant="contained"
+        type="reset"
+        sx={{
+          margin: "7px 0px 15px 10px",
+          background: "#376f98",
+          left: "80%",
+        }}
+        onClick={() => {
+          getExo(param[indexExo]);
+          setIndexExo(indexExo + 1);
+          uncheck(document.querySelectorAll("#questions").length);
+          setSuivant(true);
+          console.log(bonneReponses);
+        }}
+      >
+        Exercice suivant
+      </Button>
     </div>
   );
 }
