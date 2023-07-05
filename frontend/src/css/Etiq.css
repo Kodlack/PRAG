@@ -24,6 +24,14 @@
   font-weight: bolder;
 }
 
+.titreTexteTrou {
+  color: #6a6a6a;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 25px;
+  font-weight: bolder;
+  display: inline;
+}
+
 .contenu {
   width: 70%;
   padding-left: 15%;
