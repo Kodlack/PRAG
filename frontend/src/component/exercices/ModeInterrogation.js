@@ -28,7 +28,7 @@ export default function ModeInterrogation(props) {
     }
   }
 
-  var param = [{ ide: 1 }, { ide: 9 }, { ide: 4 }, { ide: 8 }, { ide: 2 }];
+  var param = [{ ide: 1 }, { ide: 9 }, { ide: 2 }, { ide: 4 }, { ide: 8 }];
 
   function getExo(ideExo) {
     axios

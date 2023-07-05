@@ -8,6 +8,7 @@ import axios from "axios";
 const ChoixTheme = (props) => {
   const [checked, setChecked] = useState([]);
   const [categorie, setCategorie] = useState([]);
+  const [choixNotions, setChoixNotions] = useState([]);
 
   const myStyle = {
     marginBottom: "40px",
@@ -61,9 +62,10 @@ const ChoixTheme = (props) => {
             text ever since the 1500s.
           </p>
         </div>
-        <p>Niveau choisi : {props.niveau}</p>
+        <p class="stext">Niveau choisi : {props.niveau}</p>
+        <p class="stext">Mode choisi : {props.mode}</p>
       </div>
-        <div class="grid-container">
+      <div class="grid-container">
         {["Syntaxe", "Lexique", "Morphologie"].map((j, jdex) => (
           <div class="theme">
             <h1 class="titre">
@@ -84,22 +86,19 @@ const ChoixTheme = (props) => {
             </h1>
             {categorie.map((i, index) => (
               <p class="contenu">
-                <FormControlLabel
-                  control={
-                    i.theme == j ? (
-                      <Checkbox
-                        name={i.subtheme}
-                        // checked={checked[index]}
-                        onChange={(e) => {
-                          // handleChange2();
-                          console.log(e.target.name);
-                        }}
-                      />
-                    ) : (
-                      <p id="delete" />
-                    )
-                  }
-                />
+                {i.theme == j ? (
+                  <Checkbox
+                    name={i.subtheme}
+                    // checked={checked[index]}
+                    onChange={(e) => {
+                      // handleChange2();
+                      choixNotions.push(e.target.name);
+                      console.log(choixNotions);
+                    }}
+                  />
+                ) : (
+                  <></>
+                )}
                 {i.theme == j ? i.subtheme : ""}
               </p>
             ))}
@@ -120,8 +119,8 @@ const ChoixTheme = (props) => {
             Lorem Ipsum is simply dummy Lorem Ipsum is simply dummy
           </p> */}
           </div>
-          ))}
-        </div>
+        ))}
+      </div>
       {props.mode == "entrainement" ? (
         <a href="/entrainement/exercice/1">
           <button class="round-button" style={myStyle}>

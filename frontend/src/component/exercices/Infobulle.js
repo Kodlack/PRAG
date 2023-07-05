@@ -30,9 +30,13 @@ export default function Infobulle(props) {
           sx={{ background: "#FFF6C5", margin: "50px", borderRadius: "6px" }}
         >
           <h3>Explication de la régle</h3>
-          <p
-            dangerouslySetInnerHTML={{ __html: props.value + props.lienExo }}
-          ></p>
+          {props.lienExo != undefined ? (
+            <p
+              dangerouslySetInnerHTML={{ __html: props.value + props.lienExo }}
+            ></p>
+          ) : (
+            <p dangerouslySetInnerHTML={{ __html: props.value }}></p>
+          )}
         </Container>
       </Modal>
     </div>

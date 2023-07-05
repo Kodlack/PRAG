@@ -17,16 +17,16 @@
 }
 
 input {
-  width: 100px;
+  width: 150px;
   color: #000042;
   font-family: "Cormorant Garamond", serif;
   font-size: 25px;
   font-weight: bolder;
-  border:none;
+  border: none;
   border-bottom: 2px solid gray;
 }
 
-input:focus{
+input:focus {
   outline-color: gray;
   border-radius: 10px;
   background-color: #f5f5f5;
@@ -43,8 +43,8 @@ input:focus{
   width: 100px;
   height: 45px;
   border-radius: 30px;
-  background-color: #F8F5F2;
-  color: #6A6A6A;
+  background-color: #f8f5f2;
+  color: #6a6a6a;
   font-family: "Cormorant Garamond", serif;
   font-weight: bold;
   font-size: 30px;
@@ -74,7 +74,7 @@ input:focus{
   font-size: 17px;
   font-weight: bold;
   color: #6a6a6a;
-  margin:5px;
+  margin: 5px;
 }
 
 .rectangle2 {
@@ -86,12 +86,12 @@ input:focus{
   font-family: "Cormorant Garamond", serif;
   font-size: 16px;
   color: #6a6a6a;
-  margin:5px;
+  margin: 5px;
   font-size: 26px;
   font-weight: bold;
 }
 
-.button2:hover{
+.button2:hover {
   box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
@@ -102,7 +102,7 @@ input:focus{
   background-color: rgba(248, 245, 242, 0.9);
   background-size: auto;
   background-blend-mode: lighten;
-  background-position:100% 0%;
+  background-position: 100% 0%;
 }
 
 .htext {
