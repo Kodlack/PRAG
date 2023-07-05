@@ -11,24 +11,25 @@ import EnonceFautif from "./EnonceFautif";
 import QCM from "./QCM";
 import Substitution from "./Substitution";
 
-export default function Exercice() {
+export default function Exercice(props) {
   const [exos, setExos] = useState([]);
   const [questions, setQuestions] = useState([]);
   // const [reponses, setReponses] = useState([null, null, null, null, null]);
   const [bonneReponses, setBonneReponses] = useState(0);
   const [indexExo, setIndexExo] = useState(1);
   const [suivant, setSuivant] = useState(false);
+  const [mode, setmode] = useState("interrogation");
 
   function uncheck(taille) {
     for (let i = 0; i < taille; i++) {
-      document.querySelectorAll("#questions")[i].style.color = "black";
+      document.querySelectorAll("#questions")[i].style.color = "#6a6a6a";
     }
     for (let i = 0; i < 5; i++) {
       document.querySelectorAll(".titre")[i].style.color = "#6a6a6a";
     }
   }
 
-  var param = [{ ide: 1 }, { ide: 9 }, { ide: 2 }, { ide: 4 }, { ide: 8 }];
+  var param = [{ ide: 1 }, { ide: 9 }, { ide: 4 }, { ide: 8 }, { ide: 2 }];
 
   function getExo(ideExo) {
     axios
@@ -66,7 +67,11 @@ export default function Exercice() {
           <div>
             <div class="bandeau">
               <div class="upright">
-                <div class="rectangle2">Exercice {indexExo}/15</div>
+                {mode == "interrogation" ? (
+                  <div class="rectangle2">Exercice {indexExo}/15</div>
+                ) : (
+                  ""
+                )}
                 <Infobulle
                   value={i.explication}
                   lienExo={i.lienExo}
@@ -81,7 +86,7 @@ export default function Exercice() {
                 </h1>
                 <p class="stext">Consigne : {i.consigne}</p>
               </div>
-              <div class="chrono">23:59</div>
+              {mode == "interrogation" ? <div class="chrono">23:59</div> : ""}
             </div>
           </div>
           {i.type == "QCM" ? (
@@ -124,7 +129,7 @@ export default function Exercice() {
           ) : (
             ""
           )}
-          {indexExo == 3 ? (
+          {indexExo == 3 && mode == "interrogation" ? (
             <p>
               Vous avez {(bonneReponses * 100) / 10}% de bonnes réponses sur
               cette série d'exercice.
@@ -145,7 +150,7 @@ export default function Exercice() {
         onClick={() => {
           getExo(param[indexExo]);
           setIndexExo(indexExo + 1);
-          uncheck(document.querySelectorAll("questions").length);
+          uncheck(document.querySelectorAll("#questions").length);
           setSuivant(true);
         }}
       >

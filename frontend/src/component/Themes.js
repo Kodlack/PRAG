@@ -41,7 +41,6 @@ export default function Themes(props) {
           </p>
         </div>
       </div>
-      <Etiq />
       <div class="grid-container">
         {categorie.map((i, index) => (
           <div class="theme">

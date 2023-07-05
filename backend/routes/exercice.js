@@ -61,7 +61,8 @@ router.post("/exercice/:ide", (req, res) => {
 });
 
 router.post("/exos", (req, res) => {
-  ExoModel.find(req.body)
+  console.log(req.body);
+  ExoModel.find(req.body, { subtheme: 1 })
     .then((exercice) => {
       res.send(exercice);
     })

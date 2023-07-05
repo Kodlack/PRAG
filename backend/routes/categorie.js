@@ -19,6 +19,17 @@ router.post("/admin/cate", async (req, res) => {
   }
 });
 
+router.post("/categorie", (req, res) => {
+  console.log(req.body.length);
+  categorieModel
+    .find({ subtheme: req.body[0].subtheme })
+    .then((thing) => {
+      console.log(thing);
+      res.status(200).json(thing);
+    })
+    .catch((error) => res.status(404).json({ error }));
+});
+
 router.get("/categorie", (req, res) => {
   categorieModel
     .find()

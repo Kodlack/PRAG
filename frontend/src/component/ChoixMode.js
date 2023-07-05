@@ -13,6 +13,7 @@ const ChoixMode = () => {
   const [niveau, setNiveau] = useState(0);
   const [mode, setMode] = useState("");
   const [bool, setBool] = useState(false);
+  const [choix, setChoix] = useState(false);
 
   function getExo() {
     let param = { level: 0 };
@@ -29,6 +30,7 @@ const ChoixMode = () => {
       .then((res) => {
         setExos(res.data);
         console.log(exos);
+        setChoix(true);
       })
       .catch((err) => {
         console.log(err);
@@ -45,40 +47,44 @@ const ChoixMode = () => {
 
   return (
     <div>
-      {/* {!bool ? ( */}
-      <div className="choix-mode">
-        <HeaderMode />
-        <div className="content-choix-mode">
-          <div className="choix-carte">
-            <CardEntrainement
-              activeButton={activeButton}
-              setActiveButton={setActiveButton}
-              setNiveau={setNiveau}
-              getExo={getExo}
-            />
-            <CardInterro
-              activeButton={activeButton}
-              setActiveButton={setActiveButton}
-              setNiveau={setNiveau}
-              niveau={niveau}
-              getExo={getExo}
-            />
+      {!bool ? (
+        <div className="choix-mode">
+          <HeaderMode />
+          <div className="content-choix-mode">
+            <div className="choix-carte">
+              <CardEntrainement
+                activeButton={activeButton}
+                setActiveButton={setActiveButton}
+                setNiveau={setNiveau}
+                getExo={getExo}
+              />
+              <CardInterro
+                activeButton={activeButton}
+                setActiveButton={setActiveButton}
+                setNiveau={setNiveau}
+                niveau={niveau}
+                getExo={getExo}
+              />
+            </div>
+            <button
+              class="round-button-choix-mode"
+              onClick={() => {
+                getExo();
+                setBool(true);
+              }}
+            >
+              Étape suivante
+            </button>
           </div>
-          <button
-            class="round-button-choix-mode"
-            onClick={() => {
-              getExo();
-              setBool(true);
-            }}
-          >
-            Étape suivante
-          </button>
         </div>
-      </div>
-      {/* ) : (
+      ) : (
         ""
-      )} */}
-      {/* {bool ? <Themes mode={mode} niveau={niveau} /> : ""} */}
+      )}
+      {choix ? (
+        <Etiq mode={mode} niveau={niveau} exos={exos} choix={choix} />
+      ) : (
+        ""
+      )}
     </div>
   );
 };
