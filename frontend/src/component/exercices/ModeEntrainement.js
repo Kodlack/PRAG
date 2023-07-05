@@ -77,6 +77,7 @@ export default function ModeEntrainement(props) {
             <div class="column middle">
               <h1 class="htext">
                 {i.theme} / {i.subtheme} <br /> Niveau {i.level} / {i.type}{" "}
+                <br />
                 Exercice n°
                 {indexExo}
               </h1>
@@ -142,6 +143,19 @@ export default function ModeEntrainement(props) {
       >
         Exercice suivant
       </Button>
+      <br />
+      <a href="/notions">
+        <Button
+          variant="contained"
+          sx={{
+            margin: "7px 0px 15px 10px",
+            background: "#376f98",
+            left: "80%",
+          }}
+        >
+          Terminer le mode
+        </Button>
+      </a>
     </div>
   );
 }

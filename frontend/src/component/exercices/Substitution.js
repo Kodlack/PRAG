@@ -24,19 +24,13 @@ export default function Substitution(props) {
         document.querySelectorAll("#questions")[compteur].style.color =
           "#35a329";
         compteur++;
+        bonneReponse++;
       } else {
         document.querySelectorAll("#questions")[compteur].style.color = "red";
         compteur++;
       }
     }
 
-    //change les couleurs des bonnes réponses trouvées
-    for (let i = 0; i < 5; i++) {
-      if (props.value[i].correctAnswer == reponses[i]) {
-        bonneReponse++;
-        // document.querySelectorAll("#questions")[i].style.color = "#35a329";
-      }
-    }
     props.setBonneReponses(props.bonneReponses + bonneReponse);
   }
 

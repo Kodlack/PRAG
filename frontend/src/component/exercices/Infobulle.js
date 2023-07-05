@@ -1,6 +1,8 @@
 import React from "react";
 import { Modal } from "@mui/material";
 import { Container } from "@mui/system";
+import pose7 from "../../photo/Pose7.png";
+import "../../css/richelieu.css";
 
 export default function Infobulle(props) {
   const [open, setOpen] = React.useState(false);
@@ -13,6 +15,7 @@ export default function Infobulle(props) {
 
   return (
     <div>
+      <img src={pose7} alt="pose7" id="richelieu7"></img>
       <button
         class="button2"
         style={{ backgroundColor: "#FBE62F" }}

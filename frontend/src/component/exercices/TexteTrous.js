@@ -27,6 +27,7 @@ export default function TexteTrous(props) {
         document.querySelectorAll("#questions")[compteur].style.color =
           "#35a329";
         compteur++;
+        bonneReponse++;
         console.log(reponses);
         console.log(props.value[i].correctAnswer[0]);
       } else {
@@ -35,16 +36,7 @@ export default function TexteTrous(props) {
       }
     }
 
-    //change les couleurs des bonnes réponses trouvées
-    for (let i = 0; i < 5; i++) {
-      if (props.value[i].correctAnswer == reponses[i]) {
-        bonneReponse++;
-        // document.querySelectorAll("#questions")[i].style.color = "#35a329";
-      }
-    }
-    console.log(props.bonneReponses);
     props.setBonneReponses(props.bonneReponses + bonneReponse);
-    console.log(props.bonneReponses);
   }
 
   const mystyle = {

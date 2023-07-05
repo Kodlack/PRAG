@@ -68,7 +68,9 @@ export default function ModeInterrogation(props) {
           <div class="row">
             <div class="column left">
               <div class="upright">
-                <div class="rectangle2">Exercice {indexExo}/15</div>
+                <div class="rectangle2">
+                  Exercice {indexExo}/{param.length}
+                </div>
                 <Infobulle
                   value={i.explication}
                   lienExo={i.lienExo}
@@ -127,34 +129,47 @@ export default function ModeInterrogation(props) {
           ) : (
             ""
           )}
-          {indexExo == param.length ? (
-            <p>
-              Vous avez {(bonneReponses * 100) / (5 * param.length)}% de bonnes
-              réponses sur cette série d'exercice.
-            </p>
-          ) : (
-            <p></p>
-          )}
         </div>
       ))}
-      <Button
-        variant="contained"
-        type="reset"
-        sx={{
-          margin: "7px 0px 15px 10px",
-          background: "#376f98",
-          left: "80%",
-        }}
-        onClick={() => {
-          getExo(param[indexExo]);
-          setIndexExo(indexExo + 1);
-          uncheck(document.querySelectorAll("#questions").length);
-          setSuivant(true);
-          console.log(bonneReponses);
-        }}
-      >
-        Exercice suivant
-      </Button>
+      {indexExo != param.length ? (
+        <Button
+          variant="contained"
+          type="reset"
+          sx={{
+            margin: "7px 0px 15px 10px",
+            background: "#376f98",
+            left: "80%",
+          }}
+          onClick={() => {
+            getExo(param[indexExo]);
+            setIndexExo(indexExo + 1);
+            uncheck(document.querySelectorAll("#questions").length);
+            setSuivant(true);
+            console.log(bonneReponses);
+          }}
+        >
+          Exercice suivant
+        </Button>
+      ) : (
+        <Button
+          variant="contained"
+          sx={{
+            margin: "7px 0px 15px 10px",
+            background: "#376f98",
+            left: "80%",
+          }}
+        >
+          Terminer
+        </Button>
+      )}
+      {indexExo == param.length ? (
+        <p>
+          Vous avez {(bonneReponses * 100) / (5 * param.length)}% de bonnes
+          réponses sur cette série d'exercice.
+        </p>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

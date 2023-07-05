@@ -1,0 +1,44 @@
+#richelieu7 {
+  height: 105px;
+  width: 90px;
+  padding-top: 35px;
+  position: absolute;
+}
+#richelieu5B {
+  height: 105px;
+  width: 90px;
+  padding-left: 500px;
+  padding-top: 1540px;
+  position: absolute;
+}
+
+#richelieu3 {
+  height: 105px;
+  width: 90px;
+  padding-left: 260px;
+  position: absolute;
+}
+
+#richelieu5 {
+  height: 105px;
+  width: 90px;
+  padding-left: 380px;
+  padding-top: 480px;
+  position: absolute;
+}
+
+#richelieu1 {
+  height: 105px;
+  width: 90px;
+  padding-left: 930px;
+  padding-top: 1570px;
+  position: absolute;
+}
+#texterichelieu1 {
+  color: #6a6a6a;
+  font-family: "Cormorant Garamond", serif;
+  padding-top: 1530px;
+  padding-left: 990px;
+  position: absolute;
+  font-weight: bold;
+}
