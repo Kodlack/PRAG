@@ -9,11 +9,12 @@ import BasPage from "./component/BasPage";
 import AdminLog from "./component/AdminComponent/AdminLog";
 import EspaceAdmin from "./component/AdminComponent/EspaceAdmin";
 import Themes from "./component/Themes";
-import Etiq from "./component/Etiq";
+import ChoixTheme from "./component/ChoixTheme";
 import Decouverte from "./component/exercices/Decouverte";
 import ChoixMode from "./component/ChoixMode";
 import ModeEntrainement from "./component/exercices/ModeEntrainement";
 import ModeInterrogation from "./component/exercices/ModeInterrogation";
+import TexteTrous from "./component/exercices/TexteTrous";
 
 const router = createBrowserRouter([
   {
@@ -49,8 +50,12 @@ const router = createBrowserRouter([
     element: <ChoixMode />,
   },
   {
-    path: "/etiq",
-    element: <Etiq />,
+    path: "/choixtheme",
+    element: <ChoixTheme />,
+  },
+  {
+    path: "/textetrous",
+    element: <TexteTrous />,
   },
 ]);
 

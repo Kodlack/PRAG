@@ -5,7 +5,7 @@ import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import axios from "axios";
 
-const Etiq = (props) => {
+const ChoixTheme = (props) => {
   const [checked, setChecked] = useState([]);
   const [categorie, setCategorie] = useState([]);
 
@@ -20,7 +20,7 @@ const Etiq = (props) => {
     console.log(props.exos);
     const fetchData = async () => {
       const date = await axios
-        .post("http://localhost:3000/categorie", props.exos)
+        .get("http://localhost:3000/categorie")
         .then((res) => {
           setCategorie(res.data);
           console.log(res.data);
@@ -61,10 +61,10 @@ const Etiq = (props) => {
             text ever since the 1500s.
           </p>
         </div>
+        <p>Niveau choisi : {props.niveau}</p>
       </div>
-      <p>Niveau choisi : {props.niveau}</p>
-      {["Syntaxe", "Lexique", "Morphologie"].map((j, jdex) => (
-        <div>
+        <div class="grid-container">
+        {["Syntaxe", "Lexique", "Morphologie"].map((j, jdex) => (
           <div class="theme">
             <h1 class="titre">
               <FormControlLabel
@@ -86,17 +86,21 @@ const Etiq = (props) => {
               <p class="contenu">
                 <FormControlLabel
                   control={
-                    <Checkbox
-                      name={i.subtheme}
-                      // checked={checked[index]}
-                      onChange={(e) => {
-                        // handleChange2();
-                        console.log(e.target.name);
-                      }}
-                    />
+                    i.theme == j ? (
+                      <Checkbox
+                        name={i.subtheme}
+                        // checked={checked[index]}
+                        onChange={(e) => {
+                          // handleChange2();
+                          console.log(e.target.name);
+                        }}
+                      />
+                    ) : (
+                      <p id="delete" />
+                    )
                   }
                 />
-                {i.subtheme}
+                {i.theme == j ? i.subtheme : ""}
               </p>
             ))}
             {/* <p class="contenu">
@@ -116,9 +120,8 @@ const Etiq = (props) => {
             Lorem Ipsum is simply dummy Lorem Ipsum is simply dummy
           </p> */}
           </div>
-          <br />
+          ))}
         </div>
-      ))}
       {props.mode == "entrainement" ? (
         <a href="/entrainement/exercice/1">
           <button class="round-button" style={myStyle}>
@@ -136,4 +139,4 @@ const Etiq = (props) => {
   );
 };
 
-export default Etiq;
+export default ChoixTheme;

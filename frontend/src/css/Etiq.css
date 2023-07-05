@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap");
 
 .theme {
-  width: 350px;
   box-shadow: 0 20px 20px rgb(218, 223, 224);
   background-color: rgb(255, 255, 255);
   text-align: center;
@@ -68,4 +67,8 @@
 
 #regle {
   color: green;
+}
+
+#delete {
+  color: aqua;
 }
