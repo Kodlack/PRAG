@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../css/Themes.css";
 import axios from "axios";
-import Etiq from "./Etiq";
 
 export default function Themes(props) {
   const [categorie, setCategorie] = useState([]);

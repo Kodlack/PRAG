@@ -4,8 +4,7 @@ import HeaderMode from "../component/HeaderMode";
 import CardEntrainement from "../component/CardEntrainement";
 import CardInterro from "../component/CardInterro";
 import axios from "axios";
-import Etiq from "./Etiq";
-import Themes from "./Themes";
+import ChoixTheme from "./ChoixTheme";
 
 const ChoixMode = () => {
   const [activeButton, setActiveButton] = useState("");
@@ -82,7 +81,7 @@ const ChoixMode = () => {
         ""
       )}
       {choix ? (
-        <Etiq mode={mode} niveau={niveau} exos={exos} choix={choix} />
+        <ChoixTheme mode={mode} niveau={niveau} exos={exos} choix={choix} />
       ) : (
         ""
       )}
