@@ -8,6 +8,7 @@ import axios from "axios";
 const Etiq = (props) => {
   const [checked, setChecked] = useState([]);
   const [categorie, setCategorie] = useState([]);
+  const [choixNotions, setChoixNotions] = useState([]);
 
   const myStyle = {
     marginBottom: "40px",
@@ -63,6 +64,7 @@ const Etiq = (props) => {
         </div>
       </div>
       <p>Niveau choisi : {props.niveau}</p>
+      <p>Mode choisi : {props.mode}</p>
       {["Syntaxe", "Lexique", "Morphologie"].map((j, jdex) => (
         <div>
           <div class="theme">
@@ -84,22 +86,19 @@ const Etiq = (props) => {
             </h1>
             {categorie.map((i, index) => (
               <p class="contenu">
-                <FormControlLabel
-                  control={
-                    i.theme == j ? (
-                      <Checkbox
-                        name={i.subtheme}
-                        // checked={checked[index]}
-                        onChange={(e) => {
-                          // handleChange2();
-                          console.log(e.target.name);
-                        }}
-                      />
-                    ) : (
-                      <p id="delete" />
-                    )
-                  }
-                />
+                {i.theme == j ? (
+                  <Checkbox
+                    name={i.subtheme}
+                    // checked={checked[index]}
+                    onChange={(e) => {
+                      // handleChange2();
+                      choixNotions.push(e.target.name);
+                      console.log(choixNotions);
+                    }}
+                  />
+                ) : (
+                  <></>
+                )}
                 {i.theme == j ? i.subtheme : ""}
               </p>
             ))}

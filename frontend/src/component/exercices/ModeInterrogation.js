@@ -134,23 +134,45 @@ export default function ModeInterrogation(props) {
           )}
         </div>
       ))}
-      <Button
-        variant="contained"
-        type="reset"
-        sx={{
-          margin: "7px 0px 15px 10px",
-          background: "#376f98",
-          left: "80%",
-        }}
-        onClick={() => {
-          getExo(param[indexExo]);
-          setIndexExo(indexExo + 1);
-          uncheck(document.querySelectorAll("#questions").length);
-          setSuivant(true);
-        }}
-      >
-        Exercice suivant
-      </Button>
+      {indexExo !== param.length ? (
+        <Button
+          variant="contained"
+          type="reset"
+          sx={{
+            margin: "7px 0px 15px 10px",
+            background: "#376f98",
+            left: "80%",
+          }}
+          onClick={() => {
+            getExo(param[indexExo]);
+            setIndexExo(indexExo + 1);
+            uncheck(document.querySelectorAll("#questions").length);
+            setSuivant(true);
+          }}
+        >
+          Exercice suivant
+        </Button>
+      ) : (
+        <Button
+          variant="contained"
+          type="reset"
+          sx={{
+            margin: "7px 0px 15px 10px",
+            background: "#376f98",
+            left: "80%",
+          }}
+          onClick={() => {
+            return (
+              <p>
+                Vous avez {(bonneReponses * 100) / 10}% de bonnes réponses sur
+                cette série d'exercice.
+              </p>
+            );
+          }}
+        >
+          Terminer
+        </Button>
+      )}
     </div>
   );
 }

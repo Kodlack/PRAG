@@ -71,7 +71,6 @@ export default function ModeEntrainement(props) {
                   lienExo={i.lienExo}
                 ></Infobulle>
               </div>
-
               <div class="qcmtheme">
                 <h1 class="htext">
                   {i.theme} / {i.subtheme} <br /> Niveau {i.level} / {i.type}{" "}
@@ -140,6 +139,19 @@ export default function ModeEntrainement(props) {
         }}
       >
         Exercice suivant
+      </Button>
+      <br />
+      <Button
+        variant="contained"
+        type="reset"
+        sx={{
+          margin: "7px 0px 15px 10px",
+          background: "#376f98",
+          left: "80%",
+        }}
+        onClick={() => {}}
+      >
+        Terminer
       </Button>
     </div>
   );
