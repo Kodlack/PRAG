@@ -4,9 +4,10 @@ const router = express.Router();
 
 router.post("/admin/cate", async (req, res) => {
   delete req.body._id;
-  const { subtheme } = req.body;
+  const { theme, subtheme } = req.body;
 
   var categorie = new categorieModel({
+    theme,
     subtheme,
   });
 

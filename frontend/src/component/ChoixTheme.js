@@ -20,7 +20,7 @@ const ChoixTheme = (props) => {
     console.log(props.exos);
     const fetchData = async () => {
       const date = await axios
-        .post("http://localhost:3000/categorie", props.exos)
+        .get("http://localhost:3000/categorie")
         .then((res) => {
           setCategorie(res.data);
           console.log(res.data);
@@ -86,17 +86,21 @@ const ChoixTheme = (props) => {
               <p class="contenu">
                 <FormControlLabel
                   control={
-                    <Checkbox
-                      name={i.subtheme}
-                      // checked={checked[index]}
-                      onChange={(e) => {
-                        // handleChange2();
-                        console.log(e.target.name);
-                      }}
-                    />
+                    i.theme == j ? (
+                      <Checkbox
+                        name={i.subtheme}
+                        // checked={checked[index]}
+                        onChange={(e) => {
+                          // handleChange2();
+                          console.log(e.target.name);
+                        }}
+                      />
+                    ) : (
+                      <p id="delete" />
+                    )
                   }
                 />
-                {i.subtheme}
+                {i.theme == j ? i.subtheme : ""}
               </p>
             ))}
             {/* <p class="contenu">

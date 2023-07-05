@@ -5,11 +5,15 @@ import axios from "axios";
 import { useState } from "react";
 
 export default function AjoutCategorie() {
+  const [theme, setTheme] = useState("");
   const [categorie, setCategorie] = useState("");
 
   const ajoutDataCatego = async () => {
     const date = await axios
-      .post("http://localhost:3000/admin/cate", { subtheme: categorie })
+      .post("http://localhost:3000/admin/cate", {
+        theme: theme,
+        subtheme: categorie,
+      })
       .then((res) => {
         console.log("data ajoutééé");
       })
@@ -22,7 +26,7 @@ export default function AjoutCategorie() {
       <Box
         sx={{
           width: "350px",
-          height: "200px",
+          height: "250px",
           backgroundColor: "#F8F5F2",
           margin: "20px",
           borderRadius: "7px",
@@ -32,6 +36,12 @@ export default function AjoutCategorie() {
         }}
       >
         <p id="titre">Ajout catégorie</p>
+        <TextField
+          id="outlined-basic"
+          label="Nom thème"
+          sx={{ backgroundColor: "white", width: "290px" }}
+          onChange={(e) => setTheme(e.target.value)}
+        />
         <TextField
           id="outlined-basic"
           label="Nom catégorie"

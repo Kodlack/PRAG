@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const categorieSchema = mongoose.Schema({
+  theme: String,
   subtheme: String,
 });
 

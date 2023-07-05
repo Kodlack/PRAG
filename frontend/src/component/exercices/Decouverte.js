@@ -12,12 +12,13 @@ import QCM from "./QCM";
 export default function Decouverte() {
   const [exos, setExos] = useState([]);
   const [questions, setQuestions] = useState([]);
+  const [bonneReponses, setBonneReponses] = useState(0);
   const [indexExo, setIndexExo] = useState(1);
   const [suivant, setSuivant] = useState(false);
 
   function uncheck(taille) {
     for (let i = 0; i < taille; i++) {
-      document.querySelectorAll("button#questions")[i].style.color = "black";
+      document.querySelectorAll("#questions")[i].style.color = "#6a6a6a";
     }
     for (let i = 0; i < 5; i++) {
       document.querySelectorAll(".titre")[i].style.color = "#6a6a6a";
@@ -77,63 +78,68 @@ export default function Decouverte() {
               </div>
             </div>
           </div>
-
-          {/* {i.type == "QCM" ? (
-            i.questions.map((j, inex) => (
-              <div key={inex}>
-                <p>{j.enonce.debut}</p>
-                {j.answers.map((k, indexk) => (
-                  <div>
-                    <label key={indexk} id="nomquestions">
-                      <input
-                        id="questions"
-                        name={j.idq}
-                        type="radio"
-                        value={indexk}
-                        onClick={(e) => {
-                          reponses[inex] = parseInt(e.target.value);
-                          // reponses.push(e.target.value);
-                        }}
-                        onLoad={(e) => {}}
-                      />
-                      {k}
-                    </label>
-                    <br />
-                  </div>
-                ))}
-                <p id="enonceFin">{j.enonce.fin}</p>
-                {buttonValider ? (
-                  <p dangerouslySetInnerHTML={{ __html: j.regle }} />
-                ) : (
-                  <p></p>
-                )}
-              </div>
-            ))
+          {i.type === "QCM" ? (
+            <QCM
+              value={questions}
+              suivant={suivant}
+              bonneReponses={bonneReponses}
+              setBonneReponses={setBonneReponses}
+            />
           ) : (
-            <p></p>
-          )} */}
-          {i.type == "QCM" ? <QCM value={questions} suivant={suivant} /> : ""}
-          {i.type == "Texte a trou" ? <TexteTrous value={questions} /> : ""}
-          {i.type == "Enoncé fautif" ? <EnonceFautif value={questions} /> : ""}
+            ""
+          )}
+          {i.type === "Texte a trou" ? (
+            <TexteTrous
+              value={questions}
+              bonneReponses={bonneReponses}
+              setBonneReponses={setBonneReponses}
+            />
+          ) : (
+            ""
+          )}
+          {i.type === "Enoncé fautif" ? (
+            <EnonceFautif
+              value={questions}
+              bonneReponses={bonneReponses}
+              setBonneReponses={setBonneReponses}
+            />
+          ) : (
+            ""
+          )}
         </div>
       ))}
-      <Button
-        variant="contained"
-        type="reset"
-        sx={{
-          margin: "7px 0px 15px 10px",
-          background: "#376f98",
-          left: "80%",
-        }}
-        onClick={() => {
-          getExo(param[indexExo]);
-          setIndexExo(indexExo + 1);
-          uncheck(document.querySelectorAll("button#questions").length);
-          setSuivant(true);
-        }}
-      >
-        Exercice suivant
-      </Button>
+      {indexExo !== param.length ? (
+        <Button
+          variant="contained"
+          type="reset"
+          sx={{
+            margin: "7px 0px 15px 10px",
+            background: "#376f98",
+            left: "80%",
+          }}
+          onClick={() => {
+            getExo(param[indexExo]);
+            setIndexExo(indexExo + 1);
+            uncheck(document.querySelectorAll("#questions").length);
+            setSuivant(true);
+          }}
+        >
+          Exercice suivant
+        </Button>
+      ) : (
+        <Button
+          variant="contained"
+          type="reset"
+          sx={{
+            margin: "7px 0px 15px 10px",
+            background: "#376f98",
+            left: "80%",
+          }}
+          onClick={() => {}}
+        >
+          Terminer
+        </Button>
+      )}
     </div>
   );
 }
