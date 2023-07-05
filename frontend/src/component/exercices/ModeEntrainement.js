@@ -22,6 +22,8 @@ export default function ModeEntrainement(props) {
   function uncheck(taille) {
     for (let i = 0; i < taille; i++) {
       document.querySelectorAll("#questions")[i].style.color = "#6a6a6a";
+      document.querySelectorAll("#questions")[i].style.backgroundColor =
+        "#d9d9d9";
     }
     for (let i = 0; i < 5; i++) {
       document.querySelectorAll(".titre")[i].style.color = "#6a6a6a";
@@ -141,18 +143,20 @@ export default function ModeEntrainement(props) {
         Exercice suivant
       </Button>
       <br />
-      <Button
-        variant="contained"
-        type="reset"
-        sx={{
-          margin: "7px 0px 15px 10px",
-          background: "#376f98",
-          left: "80%",
-        }}
-        onClick={() => {}}
-      >
-        Terminer
-      </Button>
+      <a href="/notions">
+        <Button
+          variant="contained"
+          type="reset"
+          sx={{
+            margin: "7px 0px 15px 10px",
+            background: "#376f98",
+            left: "80%",
+          }}
+          onClick={() => {}}
+        >
+          Terminer
+        </Button>
+      </a>
     </div>
   );
 }

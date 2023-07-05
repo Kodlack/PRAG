@@ -22,6 +22,8 @@ export default function ModeInterrogation(props) {
   function uncheck(taille) {
     for (let i = 0; i < taille; i++) {
       document.querySelectorAll("#questions")[i].style.color = "#6a6a6a";
+      document.querySelectorAll("#questions")[i].style.backgroundColor =
+        "#d9d9d9";
     }
     for (let i = 0; i < 5; i++) {
       document.querySelectorAll(".titre")[i].style.color = "#6a6a6a";
