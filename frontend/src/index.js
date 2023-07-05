@@ -14,6 +14,7 @@ import Decouverte from "./component/exercices/Decouverte";
 import ChoixMode from "./component/ChoixMode";
 import ModeEntrainement from "./component/exercices/ModeEntrainement";
 import ModeInterrogation from "./component/exercices/ModeInterrogation";
+import TexteTrous from "./component/exercices/TexteTrous";
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
   {
     path: "/choixtheme",
     element: <ChoixTheme />,
+  },
+  {
+    path: "/textetrous",
+    element: <TexteTrous />,
   },
 ]);
 
