@@ -5,7 +5,7 @@ import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import axios from "axios";
 
-const Etiq = (props) => {
+const ChoixTheme = (props) => {
   const [checked, setChecked] = useState([]);
   const [categorie, setCategorie] = useState([]);
   const [choixNotions, setChoixNotions] = useState([]);
@@ -62,11 +62,11 @@ const Etiq = (props) => {
             text ever since the 1500s.
           </p>
         </div>
+        <p class="stext">Niveau choisi : {props.niveau}</p>
+        <p class="stext">Mode choisi : {props.mode}</p>
       </div>
-      <p>Niveau choisi : {props.niveau}</p>
-      <p>Mode choisi : {props.mode}</p>
-      {["Syntaxe", "Lexique", "Morphologie"].map((j, jdex) => (
-        <div>
+      <div class="grid-container">
+        {["Syntaxe", "Lexique", "Morphologie"].map((j, jdex) => (
           <div class="theme">
             <h1 class="titre">
               <FormControlLabel
@@ -119,9 +119,8 @@ const Etiq = (props) => {
             Lorem Ipsum is simply dummy Lorem Ipsum is simply dummy
           </p> */}
           </div>
-          <br />
-        </div>
-      ))}
+        ))}
+      </div>
       {props.mode == "entrainement" ? (
         <a href="/entrainement/exercice/1">
           <button class="round-button" style={myStyle}>
@@ -139,4 +138,4 @@ const Etiq = (props) => {
   );
 };
 
-export default Etiq;
+export default ChoixTheme;
