@@ -8,9 +8,10 @@ const HeaderMode = () => {
         <img src={academie} alt="academie" />
         <h1>Choisissez un mode d’apprentissage</h1>
         <p>
-            Lorem Ipsum is simply dummy text of the printing and 
-            typesetting printing and typesetting printing and 
-            typesettingy's standard dummy text ever since the 1500s.
+          Donnez libre cours à votre apprentissage en sélectionnant le mode 
+          entraînement pour pratiquer intensivement, puis testez-vous avec 
+          confiance en basculant vers le mode interrogation, afin d'évaluer 
+          vos compétences de manière approfondie.
         </p>
     </div>
   );

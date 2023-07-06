@@ -9,9 +9,10 @@ const CardInterro = ({ activeButton, setActiveButton }) => {
     <div className="card-interro">
       <h2>Mode interrgation</h2>
       <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        printing and typesetting printing and typesettingy's standard dummy text
-        ever since the 1500s.
+        Sélectionner la difficulté souhaitée et vous confronter 
+        à un nombre prédéfini d'exercices. À la fin de la session, 
+        un affichage des résultats mettra en évidence vos performances 
+        globales.
       </p>
       <h3>Choisir une difficulté :</h3>
       <div className="buttons-mode">
@@ -44,20 +45,19 @@ const CardInterro = ({ activeButton, setActiveButton }) => {
           id="fiContent"
           className={activeButton === "fiContent" ? "active-content" : ""}
         >
-          Le mode Facile is simply dummy text of the printing and typesetting.
+          Le mode Facile vous propose 15 exercices de niveau 1.
         </p>
         <p
           id="miContent"
           className={activeButton === "miContent" ? "active-content" : ""}
         >
-          Le mode Moyen is simply dummy text of the printing and typesetting.
+          Le mode Moyen vous propose 20 exercices de niveau 2.
         </p>
         <p
           id="diContent"
           className={activeButton === "diContent" ? "active-content" : ""}
         >
-          Le mode Difficile is simply dummy text of the printing and
-          typesetting.
+          Le mode Difficile vous propose 25 exercices de niveau 3.
         </p>
       </div>
     </div>

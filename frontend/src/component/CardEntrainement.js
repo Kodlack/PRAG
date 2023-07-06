@@ -9,9 +9,10 @@ const CardEntrainement = ({ activeButton, setActiveButton }) => {
     <div className="card-entrainement">
       <h2>Mode entraînement</h2>
       <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        printing and typesetting printing and typesettingy's standard dummy text
-        ever since the 1500s.
+        Explorez un mode entraînement sur mesure, vous permettant 
+        de sélectionner les notions qui vous intéressent et de 
+        réaliser des exercices à l'infini, avec des résultats détaillés 
+        à la fin de chaque exercice.
       </p>
       <h3>Choisir une difficulté :</h3>
       <div className="buttons-mode">
@@ -42,20 +43,19 @@ const CardEntrainement = ({ activeButton, setActiveButton }) => {
           id="feContent"
           className={activeButton === "feContent" ? "active-content" : ""}
         >
-          Le mode Facile is simply dummy text of the printing and typesetting.
+          Le mode Facile vous propose des exercice de niveau 1.
         </p>
         <p
           id="meContent"
           className={activeButton === "meContent" ? "active-content" : ""}
         >
-          Le mode Moyen is simply dummy text of the printing and typesetting.
+          Le mode Moyen vous propose des exercice de niveau 2.
         </p>
         <p
           id="deContent"
           className={activeButton === "deContent" ? "active-content" : ""}
         >
-          Le mode Difficile is simply dummy text of the printing and
-          typesetting.
+          Le mode Moyen vous propose des exercice de niveau 3.
         </p>
       </div>
     </div>
