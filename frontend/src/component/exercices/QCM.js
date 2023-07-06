@@ -4,17 +4,10 @@ import { useEffect, useState } from "react";
 export default function QCM(props) {
   const [reponses, setReponses] = useState([null, null, null, null, null]);
   const [buttonValider, setButtonValider] = useState(false);
-  const [activeButtonQuestion, setActiveButtonQuestion] = useState([
-    null,
-    null,
-    null,
-    null,
-    null
-  ]);
-  const [boutonsDesactives, setBoutonsDesactives] = useState(false);
+  const [activeButtonQuestion, setActiveButtonQuestion] = useState([null, null, null, null, null]);
+  const [resetButtons, setResetButtons] = useState(false);
 
   const handleClick = (i, content) => {
-    if (buttonValider) return; // Ne pas gérer le clic si le bouton "Valider" a été cliqué
     const newActiveButtonQuestion = [...activeButtonQuestion];
     newActiveButtonQuestion[i] = parseInt(content);
     setActiveButtonQuestion(newActiveButtonQuestion);
@@ -27,14 +20,13 @@ export default function QCM(props) {
 
   const handleButtonValider = () => {
     setButtonValider(true);
-    setBoutonsDesactives(true);
   };
 
   const resetState = () => {
     setReponses([null, null, null, null, null]);
     setButtonValider(false);
     setActiveButtonQuestion([null, null, null, null, null]);
-    setBoutonsDesactives(false);
+    setResetButtons(true);
   };
 
   useEffect(() => {
@@ -45,7 +37,6 @@ export default function QCM(props) {
     let listeQuestionRep = [];
     let compteur = 0;
     let bonneReponse = 0;
-
     let listerep = [];
 
     // Création d'une indexation pour pouvoir comparer les index des questions
@@ -70,8 +61,6 @@ export default function QCM(props) {
         } else {
           button.style.color = "red";
         }
-        button.disabled = boutonsDesactives; // Désactiver les boutons de réponse
-
         compteur++;
       }
     }
@@ -85,6 +74,21 @@ export default function QCM(props) {
     }
     props.setBonneReponses(props.bonneReponses + bonneReponse);
   }
+
+  useEffect(() => {
+    if (resetButtons) {
+      const buttons = document.querySelectorAll(".square-button");
+      buttons.forEach((button) => {
+        button.style.backgroundColor = "";
+        button.style.color = "";
+      });
+      const titles = document.querySelectorAll(".titre");
+      titles.forEach((title)=> {
+        title.style.color = "";
+      });
+      setResetButtons(false);
+    }
+  }, [resetButtons]);
 
   return (
       <div style={{ textAlign: "center" }}>
@@ -105,7 +109,6 @@ export default function QCM(props) {
                         className={
                           activeButtonQuestion[inex] == indexk ? "active" : "square-button"
                         }
-                        disabled={boutonsDesactives} // Désactiver les boutons de réponse
                     >
                       {k}
                     </button>
