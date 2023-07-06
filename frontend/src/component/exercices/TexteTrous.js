@@ -48,15 +48,15 @@ export default function TexteTrous(props) {
     <div style={{ textAlign: "center" }}>
       <div class="qcm-container">
         {props.value.map((j, inex) => (
-          <div key={inex} class="themequestion">
-            <p class="contenu" style={mystyle}>
-              Compléter la seconde phrase sur le modèle de la première
-            </p>
+          <div key={inex} class="themequestion" style={{height:"250px"}}>
             <p
               class="titre"
               style={mystyle}
               dangerouslySetInnerHTML={{ __html: j.enonce.debut }}
             />
+            <p class="contenu" style={{margin:"30px"}}>
+              Compléter la seconde phrase sur le modèle de la première.
+            </p>
             {j.answers.map((k, indexk) => (
               <div class="titreTexteTrou">
                 {indexk !== j.correctAnswer[0] ? (
