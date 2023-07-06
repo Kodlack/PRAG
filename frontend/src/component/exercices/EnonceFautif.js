@@ -5,20 +5,32 @@ export default function EnonceFautif(props) {
   const [reponses, setReponses] = useState([null, null, null, null, null]);
   const [buttonValider, setButtonValider] = useState(false);
   const [enonce, setEnonce] = useState([]);
-  const [activeButton, setActiveButton] = useState(false);
-  const [activeMot, setActiveMot] = useState(null);
+  const [activeButton, setActiveButton] = useState([false, false, false, false, false]);
+  const [activeMot, setActiveMot] = useState([null, null, null, null, null]);
 
 
-  const handleClick = () => {
+  const handleClick = (j) => {
     //if (buttonValider) return; // Ne pas gérer le clic si le bouton "Valider" a été cliqué
-    setActiveButton(activeButton == true ? false : true);
-    setActiveMot(null);
+    const newActiveButton = [...activeButton];
+    newActiveButton[j] = (newActiveButton[j] == true ? false : true);
+    setActiveButton(newActiveButton);
+    //setActiveButton(activeButton == j ? null : j);
+    const newActiveMot = [...activeMot];
+    newActiveMot[j] = null;
+    setActiveMot(newActiveMot);
+    //setActiveMot(null);
   };
 
-  const handleClickMot = (j) => {
+  const handleClickMot = (j, k) => {
     //if (buttonValider) return; // Ne pas gérer le clic si le bouton "Valider" a été cliqué
-    setActiveMot(activeMot == j ? null : j);
-    setActiveButton(false);
+    const newActiveMot = [...activeMot];
+    newActiveMot[j] = newActiveMot[j] == k ? null : k;
+    setActiveMot(newActiveMot);
+    //setActiveMot(activeMot == k ? null : k);
+    const newActiveButton = [...activeButton];
+    newActiveButton[j] = false;
+    setActiveButton(newActiveButton);
+    //setActiveButton(null);
   };
 
   const resetState = () => {
@@ -89,11 +101,11 @@ export default function EnonceFautif(props) {
                 id="questions"
                 name={j.idq}
                 className={
-                  activeMot == k ? "boutonEnonce2" : "boutonEnonce"
+                  (activeMot != null && activeMot[inex] == indexk)  ? "boutonEnonce2" : "boutonEnonce"
                 }
                 value={indexk}
                 onClick={(e) => {
-                  handleClickMot(k);
+                  handleClickMot(inex, indexk);
                   reponses[inex] = parseInt(e.target.value);
                   console.log(e.target.value);
                 }}
@@ -110,9 +122,9 @@ export default function EnonceFautif(props) {
               <p></p>
             )}
             <button id="pasdefaute" 
-            onClick={(e) => handleClick()}
+            onClick={(e) => handleClick(inex)}
             className={
-              activeButton == true ? "active" : "square-button"
+              activeButton[inex] == true ? "active" : "square-button"
             }
             >
               Pas de faute
