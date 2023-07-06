@@ -3,6 +3,7 @@ import { Modal } from "@mui/material";
 import { Container } from "@mui/system";
 import pose7 from "../../photo/Pose7.png";
 import "../../css/richelieu.css";
+import "../../css/Infobulle.css";
 
 export default function Infobulle(props) {
   const [open, setOpen] = React.useState(false);
@@ -29,18 +30,20 @@ export default function Infobulle(props) {
         open={open}
         onClose={handleClose}
       >
-        <Container
-          sx={{ background: "#FFF6C5", margin: "50px", borderRadius: "6px" }}
-        >
-          <h3>Explication de la régle</h3>
-          {props.lienExo != undefined ? (
-            <p
-              dangerouslySetInnerHTML={{ __html: props.value + props.lienExo }}
-            ></p>
-          ) : (
-            <p dangerouslySetInnerHTML={{ __html: props.value }}></p>
-          )}
-        </Container>
+        <div className="content-infobulle">
+            <Container>
+                <h2>Explication de la régle</h2>
+                <div className="content-texte">
+                    {props.lienExo != undefined ? (
+                        <p
+                            dangerouslySetInnerHTML={{ __html: props.value + props.lienExo }}
+                        ></p>
+                    ) : (
+                        <p dangerouslySetInnerHTML={{ __html: props.value }}></p>
+                    )}
+                </div>
+            </Container>
+        </div>
       </Modal>
     </div>
   );
