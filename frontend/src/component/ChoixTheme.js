@@ -87,8 +87,8 @@ const ChoixTheme = (props) => {
             grâce à la possibilité de sélectionner les notions qui vous intéressent.
           </p>
         </div>
-        <p class="stext">Niveau choisi : {props.niveau}</p>
-        <p class="stext">Mode choisi : {props.mode}</p>
+        <p class="htext">Niveau choisi : {props.niveau}</p>
+        <p class="htext">Mode choisi : {props.mode}</p>
       </div>
       <div class="grid-container">
         {["Syntaxe", "Lexique", "Morphologie"].map((j, jdex) => (

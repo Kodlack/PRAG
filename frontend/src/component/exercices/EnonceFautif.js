@@ -5,6 +5,21 @@ export default function EnonceFautif(props) {
   const [reponses, setReponses] = useState([null, null, null, null, null]);
   const [buttonValider, setButtonValider] = useState(false);
   const [enonce, setEnonce] = useState([]);
+  const [activeButton, setActiveButton] = useState(false);
+  const [activeMot, setActiveMot] = useState(null);
+
+
+  const handleClick = () => {
+    //if (buttonValider) return; // Ne pas gérer le clic si le bouton "Valider" a été cliqué
+    setActiveButton(activeButton == true ? false : true);
+    setActiveMot(null);
+  };
+
+  const handleClickMot = (j) => {
+    //if (buttonValider) return; // Ne pas gérer le clic si le bouton "Valider" a été cliqué
+    setActiveMot(activeMot == j ? null : j);
+    setActiveButton(false);
+  };
 
   const resetState = () => {
     setReponses([null, null, null, null, null]);
@@ -73,9 +88,12 @@ export default function EnonceFautif(props) {
               <button
                 id="questions"
                 name={j.idq}
-                className="boutonEnonce"
+                className={
+                  activeMot == k ? "boutonEnonce2" : "boutonEnonce"
+                }
                 value={indexk}
                 onClick={(e) => {
+                  handleClickMot(k);
                   reponses[inex] = parseInt(e.target.value);
                   console.log(e.target.value);
                 }}
@@ -91,7 +109,12 @@ export default function EnonceFautif(props) {
             ) : (
               <p></p>
             )}
-            <button id="pasdefaute" className="square-button">
+            <button id="pasdefaute" 
+            onClick={(e) => handleClick()}
+            className={
+              activeButton == true ? "active" : "square-button"
+            }
+            >
               Pas de faute
             </button>
           </div>
