@@ -9,6 +9,18 @@ const ChoixTheme = (props) => {
   const [checked, setChecked] = useState([]);
   const [categorie, setCategorie] = useState([]);
   const [choixNotions, setChoixNotions] = useState([]);
+  const [activeButtonQuestion, setActiveButtonQuestion] = useState([
+    new Array(5).fill(false),
+    new Array(5).fill(false),
+    new Array(5).fill(false),
+  ]);
+
+  const handleClick = (i, content) => {
+    //if (buttonValider) return; // Ne pas gérer le clic si le bouton "Valider" a été cliqué
+    const newActiveButtonQuestion = [...activeButtonQuestion];
+    newActiveButtonQuestion[i][content] = newActiveButtonQuestion[i][content] == true ? false : true;
+    setActiveButtonQuestion(newActiveButtonQuestion);
+  };
 
   const myStyle = {
     marginBottom: "40px",
@@ -49,6 +61,20 @@ const ChoixTheme = (props) => {
     setChecked([checked[0], checked[1], event.target.checked]);
   };
 
+  const [checkedState, setCheckedState] = useState(
+    new Array(13).fill(true)
+  );
+
+  const handleOnChange = (position) => {
+    const updatedCheckedState = checkedState.map((item, index) =>
+      index === position ? !item : item
+    );
+
+    setCheckedState(updatedCheckedState);
+  };
+
+  
+
   return (
     <div class="bga" style={{ textAlign: "center" }}>
       <div>
@@ -69,11 +95,12 @@ const ChoixTheme = (props) => {
         {["Syntaxe", "Lexique", "Morphologie"].map((j, jdex) => (
           <div class="theme">
             <h1 class="titre">
-              <FormControlLabel
+{/* 
+ <FormControlLabel
                 control={
                   <Checkbox
                     sx={{ "& .MuiSvgIcon-root": { fontSize: 36 } }}
-                    // checked={checked[0] && checked[1] && checked[2]}
+                    checked={activeButtonQuestion[jdex][0] && activeButtonQuestion[jdex][1] && activeButtonQuestion[jdex][2]}
                     // indeterminate={
                     //   (checked[0] || checked[1] || checked[2]) &&
                     //   !(checked[0] && checked[1] && checked[2])
@@ -82,24 +109,39 @@ const ChoixTheme = (props) => {
                   />
                 }
               />
+ */}
+           
               {j}
             </h1>
             {categorie.map((i, index) => (
               <p class="contenu">
                 {i.theme == j ? (
-                  <Checkbox
+                  /*<Checkbox
                     name={i.subtheme}
+                    checked={checkedState[index]}
                     // checked={checked[index]}
                     onChange={(e) => {
+                      handleOnChange(index)
                       // handleChange2();
                       choixNotions.push(e.target.name);
                       console.log(choixNotions);
                     }}
-                  />
+                  />*/
+                  <button
+                        //name={i.theme}
+                        style={{width:"300px"}}
+                        onClick={(e) => handleClick(jdex, index)}
+                        className={
+                          activeButtonQuestion[jdex][index] == true ? "active2" : "square-button"
+                        }
+                        //disabled={boutonsDesactives} // Désactiver les boutons de réponse
+                    >
+                      {i.subtheme}
+                    </button>
                 ) : (
                   <></>
                 )}
-                {i.theme == j ? i.subtheme : ""}
+                
               </p>
             ))}
             {/* <p class="contenu">

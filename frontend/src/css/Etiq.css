@@ -79,6 +79,18 @@
   margin: 5% 2% 0 0;
 }
 
+.active2 {
+  color: white;
+  background-color: rgb(0, 128, 0, 0.8);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  border-radius: 10px;
+  height: 40px;
+  width: 30%;
+  border: none;
+  margin: 5% 2% 0 0;
+}
+
 #regle {
   color: green;
 }
