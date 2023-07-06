@@ -51,8 +51,8 @@
 }
 
 .boutonEnonce2 {
-  color: #ffffff;
-  background-color: rgba(55, 112, 152, 0.8);
+  color: rgba(55, 112, 152);
+  background-color: #ebeaea;
   font-family: "Cormorant Garamond", serif;
   font-size: 16px;
   font-weight: bold;
