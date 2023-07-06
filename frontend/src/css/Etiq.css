@@ -10,6 +10,7 @@
 }
 
 .themequestion {
+  min-height: 250px;
   width: 50%;
   box-shadow: 0 20px 20px #dadfe0;
   background-color: #ffffff;
