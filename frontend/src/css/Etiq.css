@@ -77,7 +77,7 @@
 
 .active {
   color: white;
-  background-color: rgba(55, 112, 152, 0.8);
+  background-color: #377098cc;
   font-family: "Cormorant Garamond", serif;
   font-size: 20px;
   border-radius: 10px;
