@@ -55,6 +55,19 @@
     float: right;
     margin: 12% 2% 0 0;
   }
+
+  .round-button-org {
+    color: #ffffff;
+    background-color: #db7b44;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 90%;
+    border-radius: 25px;
+    height: 30px;
+    width: 200px;
+    border: none;
+    float: right;
+    margin: 12% 2% 0 0;
+  }
 }
 
 .slide h1 {
