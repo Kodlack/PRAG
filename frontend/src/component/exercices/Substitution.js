@@ -1,13 +1,12 @@
 import { Button, TextField, Typography } from "@mui/material";
-import { fontFamily, fontSize } from "@mui/system";
 import { useEffect, useState } from "react";
 
 export default function Substitution(props) {
-  const [reponses, setReponses] = useState([null, null, null, null, null]);
+  const [reponses, setReponses] = useState(["", "", "", "", ""]);
   const [buttonValider, setButtonValider] = useState(false);
 
   const resetState = () => {
-    setReponses([null, null, null, null, null]);
+    setReponses(["", "", "", "", ""]);
     setButtonValider(false);
   };
 
@@ -26,6 +25,8 @@ export default function Substitution(props) {
           "#35a329";
         compteur++;
         bonneReponse++;
+        console.log(reponses);
+        console.log(props.value[i].correctAnswer[0]);
       } else {
         document.querySelectorAll("#questions")[compteur].style.color = "red";
         compteur++;
@@ -36,35 +37,34 @@ export default function Substitution(props) {
   }
 
   return (
-      <div style={{ textAlign: "center" }}>
+    <div style={{ textAlign: "center" }}>
       <div class="qcm-container">
         {props.value.map((j, inex) => (
           <div key={inex} class="themequestion">
             <p className="titre">{j.enonce.debut}</p>
-            {/* <input className="input"
-              id="questions"
-              type="text"
-              onChange={(e) => {
-                reponses[inex] = e.target.value;
-                console.log(reponses[inex]);
-              }}
-            ></input> */}
             <Typography fontSize={"24px"}>
-            <TextField 
-            multiline
-            maxRows={2}
-            variant="filled"
-            sx={{
-              width:"80%",
-            }}
-            inputProps={{ style: { fontSize : "24px", fontFamily : "Cormorant Garamond", fontWeight : "bold" } }}
-            onChange={(e) => {
-                reponses[inex] = e.target.value;
-                console.log(reponses[inex]);
-              }}>
-            </TextField>
+              <TextField
+                id="questions"
+                multiline
+                maxRows={2}
+                variant="filled"
+                sx={{
+                  width: "80%",
+                }}
+                inputProps={{
+                  style: {
+                    fontSize: "24px",
+                    fontFamily: "Cormorant Garamond",
+                    fontWeight: "bold",
+                  },
+                }}
+                onChange={(e) => {
+                  reponses[inex] = e.target.value;
+                  console.log(e.target.value);
+                  console.log(reponses);
+                }}
+              ></TextField>
             </Typography>
-            
             {buttonValider ? (
               <p
                 id="regle"

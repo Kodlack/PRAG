@@ -10,6 +10,7 @@ import TexteTrous from "./TexteTrous";
 import EnonceFautif from "./EnonceFautif";
 import QCM from "./QCM";
 import Substitution from "./Substitution";
+import ResultatInterro from "../ResultatInterro";
 
 export default function ModeInterrogation(props) {
   const [exos, setExos] = useState([]);
@@ -80,6 +81,7 @@ export default function ModeInterrogation(props) {
             <div class="column middle">
               <h1 class="htext">
                 {i.theme} / {i.subtheme} <br /> Niveau {i.level} / {i.type}{" "}
+                <br />
                 Exercice n°
                 {indexExo}
               </h1>
@@ -151,16 +153,18 @@ export default function ModeInterrogation(props) {
           Exercice suivant
         </Button>
       ) : (
-        <Button
-          variant="contained"
-          sx={{
-            margin: "7px 0px 15px 10px",
-            background: "#376f98",
-            left: "80%",
-          }}
-        >
-          Terminer
-        </Button>
+        <a href="/resultat">
+          <Button
+            variant="contained"
+            sx={{
+              margin: "7px 0px 15px 10px",
+              background: "#376f98",
+              left: "80%",
+            }}
+          >
+            Terminer
+          </Button>
+        </a>
       )}
       {indexExo == param.length ? (
         <p>
