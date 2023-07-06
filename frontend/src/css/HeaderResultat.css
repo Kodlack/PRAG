@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap');
+
+.header-resultat {
+    font-family: 'Cormorant Garamond', serif;
+    background-color: #F8F5F2;
+    text-align: center;
+    padding: 2% 25% 2% 25%;
+    color: #6A6A6A;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-resultat h1{
+    font-size: 3em;
+    margin: 0;
+}
+
+.header-resultat img{
+    position: absolute;
+    z-index: 0;
+    width: 105%;
+    top: -185%; 
+    left : 50%;
+
+    filter: opacity(15%) brightness(1);
+}

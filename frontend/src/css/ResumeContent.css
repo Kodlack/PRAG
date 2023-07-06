@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap');
+
+.resume-content{
+    font-family: 'Cormorant Garamond', serif;
+    background-color: white;
+    width: 60%;
+    padding: 0 5% 0 5%;
+    color: #6A6A6A;
+    border-radius: 25px;
+    border: solid rgba(0, 0, 0, 0.18);
+
+}
+
+.resume-content h2{
+    font-size: 2em;
+    text-align: center;
+}

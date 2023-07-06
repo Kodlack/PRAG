@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap');
+
+.card-resume-exo{
+    font-family: 'Cormorant Garamond', serif;
+    background-color: #F8F5F2;
+    width: auto;
+    padding: 1% 3% 3% 2%;
+    color: #6A6A6A;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(83, 83, 83, 0.572);
+    margin-bottom: 3%;
+}
+
+.card-resume-exo p{
+    font-size: 120%;
+    margin-top: 0;
+}
+
+.resume-raw{
+    display: flex;
+}
+
+.resultat-question {
+    height: 40px;
+    width: 40px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 150%;
+}
+
+.resume-exo{
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin: 0 5% 0 20%;
+}
+
+.plus-btn{
+    color: #6A6A6A;
+    background-color: #D9D9D9;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    border-radius: 8px;
+    height: 40px;
+    border: none;
+    float: right;
+}
+
+.richelieu{
+    flex: 1;
+    border-radius: 50px;
+    height: 90px;
+    width: 70px;
+    border: solid rgba(0, 0, 0, 0.18);
+    overflow: hidden;
+    margin: 2% 3% 2% 2%;
+}
+
+.richelieu img{
+    width: 100%;
+}
+
+.resume-info{
+    flex: 2 60%;
+}
+
+.resume-conseil{
+    background-color: #FFF6C5;
+    border-radius: 10px;
+    margin: 5% 25% 1% 0;
+    padding: 3% 3% 7% 3%;
+}
+
+.resume-conseil p{
+    font-size: 15px;
+    margin-bottom: 2%;
+}
+
+.resume-conseil button{
+    float: right;
+    color: #FFFFFF;
+    background-color: #376F98;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 90%;
+    border-radius: 25px;
+    height: 20px;
+    border: none;
+    padding: 0 3% 2% 3%;
+}
