@@ -38,11 +38,14 @@ export default function EnonceFautif(props) {
     for (let i = 0; i < 5; i++) {
       for (let j = 0; j < props.value[i].answers.length; j++) {
         if (listeQuestionRep[i][j] == props.value[i].correctAnswer[0]) {
-          document.querySelectorAll("#questions")[compteur].style.color = "red";
+          if (props.mode != "interrogation")
+            document.querySelectorAll("#questions")[compteur].style.color =
+              "red";
           compteur++;
         } else {
-          document.querySelectorAll("#questions")[compteur].style.color =
-            "#35a329";
+          if (props.mode != "interrogation")
+            document.querySelectorAll("#questions")[compteur].style.color =
+              "#35a329";
           compteur++;
         }
       }
@@ -77,29 +80,10 @@ export default function EnonceFautif(props) {
                   console.log(e.target.value);
                 }}
               >
-                {/* <p
-                value={indexk}
-                  onClick={(e) => {
-                    reponses[inex] = parseInt(e.target.value);
-                    console.log(e.target.value);
-                  }}
-                > */}
                 {k}
-                {/* </p> */}
               </button>
             ))}
-            {/* {j.answers.map((k, indexk) => (
-              <p
-                name={j.idq}
-                value={indexk}
-                onClick={(e) => {
-                  reponses[inex] = parseInt(e.target.value);
-                }}
-              >
-                {k}
-              </p>
-            ))} */}
-            {buttonValider ? (
+            {buttonValider && props.mode != "interrogation" ? (
               <p
                 id="regle"
                 dangerouslySetInnerHTML={{ __html: j.regle + j.lienQ }}

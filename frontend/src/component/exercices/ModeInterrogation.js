@@ -2,15 +2,15 @@ import { Button } from "@mui/material";
 import "../../css/background.css";
 import "../../css/Themes.css";
 import "../../css/Etiq.css";
+import "../../css/richelieu.css";
 import "../../css/exercices.css";
+import pose4 from "../../photo/Pose4.png";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Infobulle from "./Infobulle";
 import TexteTrous from "./TexteTrous";
 import EnonceFautif from "./EnonceFautif";
 import QCM from "./QCM";
 import Substitution from "./Substitution";
-import ResultatInterro from "../ResultatInterro";
 
 export default function ModeInterrogation(props) {
   const [exos, setExos] = useState([]);
@@ -19,6 +19,7 @@ export default function ModeInterrogation(props) {
   const [bonneReponses, setBonneReponses] = useState(0);
   const [indexExo, setIndexExo] = useState(1);
   const [suivant, setSuivant] = useState(false);
+  const [mode, setMode] = useState("interrogation");
 
   function uncheck(taille) {
     for (let i = 0; i < taille; i++) {
@@ -72,10 +73,7 @@ export default function ModeInterrogation(props) {
                 <div class="rectangle2">
                   Exercice {indexExo}/{param.length}
                 </div>
-                <Infobulle
-                  value={i.explication}
-                  lienExo={i.lienExo}
-                ></Infobulle>
+                <img src={pose4} alt="pose4" id="richelieu4" />
               </div>
             </div>
             <div class="column middle">
@@ -97,6 +95,7 @@ export default function ModeInterrogation(props) {
               suivant={suivant}
               bonneReponses={bonneReponses}
               setBonneReponses={setBonneReponses}
+              mode={mode}
             />
           ) : (
             ""
@@ -107,6 +106,7 @@ export default function ModeInterrogation(props) {
               suivant={suivant}
               bonneReponses={bonneReponses}
               setBonneReponses={setBonneReponses}
+              mode={mode}
             />
           ) : (
             ""
@@ -117,6 +117,7 @@ export default function ModeInterrogation(props) {
               suivant={suivant}
               bonneReponses={bonneReponses}
               setBonneReponses={setBonneReponses}
+              mode={mode}
             />
           ) : (
             ""
@@ -127,6 +128,7 @@ export default function ModeInterrogation(props) {
               suivant={suivant}
               bonneReponses={bonneReponses}
               setBonneReponses={setBonneReponses}
+              mode={mode}
             />
           ) : (
             ""

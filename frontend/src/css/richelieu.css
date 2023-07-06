@@ -1,9 +1,17 @@
+#richelieu4 {
+  height: 105px;
+  width: 90px;
+  padding-top: 35px;
+  position: absolute;
+}
+
 #richelieu7 {
   height: 105px;
   width: 90px;
   padding-top: 35px;
   position: absolute;
 }
+
 #richelieu5B {
   height: 105px;
   width: 90px;
@@ -34,6 +42,7 @@
   padding-top: 1570px;
   position: absolute;
 }
+
 #texterichelieu1 {
   color: #6a6a6a;
   font-family: "Cormorant Garamond", serif;

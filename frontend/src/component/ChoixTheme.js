@@ -83,9 +83,8 @@ const ChoixTheme = (props) => {
             Choisissez les notions que vous souhaitez exercer
           </h1>
           <p class="stext">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            printing and typesetting printing and typesettingy's standard dummy
-            text ever since the 1500s.
+            Plongez dans une expérience d'apprentissage personnalisée 
+            grâce à la possibilité de sélectionner les notions qui vous intéressent.
           </p>
         </div>
         <p class="stext">Niveau choisi : {props.niveau}</p>

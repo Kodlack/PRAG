@@ -21,14 +21,16 @@ export default function Substitution(props) {
     //comparer questions afficher avec ceux de la base de données pour afficher les bonnes et mauvaises réponse
     for (let i = 0; i < 5; i++) {
       if (reponses[i] == props.value[i].correctAnswer[0]) {
-        document.querySelectorAll("#questions")[compteur].style.color =
-          "#35a329";
+        if (props.mode != "interrogation")
+          document.querySelectorAll("#questions")[compteur].style.color =
+            "#35a329";
         compteur++;
         bonneReponse++;
         console.log(reponses);
         console.log(props.value[i].correctAnswer[0]);
       } else {
-        document.querySelectorAll("#questions")[compteur].style.color = "red";
+        if (props.mode != "interrogation")
+          document.querySelectorAll("#questions")[compteur].style.color = "red";
         compteur++;
       }
     }
@@ -65,7 +67,7 @@ export default function Substitution(props) {
                 }}
               ></TextField>
             </Typography>
-            {buttonValider ? (
+            {buttonValider && props.mode != "interrogation" ? (
               <p
                 id="regle"
                 dangerouslySetInnerHTML={{ __html: j.regle + j.lienQ }}

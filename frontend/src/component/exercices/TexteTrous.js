@@ -24,12 +24,14 @@ export default function TexteTrous(props) {
       if (
         reponses[i] == props.value[i].answers[props.value[i].correctAnswer[0]]
       ) {
-        document.querySelectorAll("#questions")[compteur].style.color =
-          "#35a329";
+        if (props.mode != "interrogation")
+          document.querySelectorAll("#questions")[compteur].style.color =
+            "#35a329";
         compteur++;
         bonneReponse++;
       } else {
-        document.querySelectorAll("#questions")[compteur].style.color = "red";
+        if (props.mode != "interrogation")
+          document.querySelectorAll("#questions")[compteur].style.color = "red";
         compteur++;
       }
     }
@@ -73,7 +75,7 @@ export default function TexteTrous(props) {
                 )}
               </div>
             ))}
-            {buttonValider ? (
+            {buttonValider && props.mode != "interrogation" ? (
               <p dangerouslySetInnerHTML={{ __html: j.regle + j.lienQ }} />
             ) : (
               ""

@@ -9,12 +9,11 @@ export default function QCM(props) {
     null,
     null,
     null,
-    null
+    null,
   ]);
-  const [boutonsDesactives, setBoutonsDesactives] = useState(false);
+  const [resetButtons, setResetButtons] = useState(false);
 
   const handleClick = (i, content) => {
-    if (buttonValider) return; // Ne pas gérer le clic si le bouton "Valider" a été cliqué
     const newActiveButtonQuestion = [...activeButtonQuestion];
     newActiveButtonQuestion[i] = parseInt(content);
     setActiveButtonQuestion(newActiveButtonQuestion);
@@ -27,14 +26,13 @@ export default function QCM(props) {
 
   const handleButtonValider = () => {
     setButtonValider(true);
-    setBoutonsDesactives(true);
   };
 
   const resetState = () => {
     setReponses([null, null, null, null, null]);
     setButtonValider(false);
     setActiveButtonQuestion([null, null, null, null, null]);
-    setBoutonsDesactives(false);
+    setResetButtons(true);
   };
 
   useEffect(() => {
@@ -45,7 +43,6 @@ export default function QCM(props) {
     let listeQuestionRep = [];
     let compteur = 0;
     let bonneReponse = 0;
-
     let listerep = [];
 
     // Création d'une indexation pour pouvoir comparer les index des questions
@@ -62,16 +59,18 @@ export default function QCM(props) {
       for (let j = 0; j < props.value[i].answers.length; j++) {
         const button = document.querySelectorAll("#questions")[compteur];
         if (listeQuestionRep[i][j] === props.value[i].correctAnswer[0]) {
-          button.style.backgroundColor = "#35a329";
-          button.style.color = "white";
+          if (props.mode != "interrogation") {
+            button.style.backgroundColor = "#35a329";
+            button.style.color = "white";
+          }
         } else if (activeButtonQuestion[i] === j) {
-          button.style.backgroundColor = "red";
-          button.style.color = "white";
+          if (props.mode != "interrogation") {
+            button.style.backgroundColor = "red";
+            button.style.color = "white";
+          }
         } else {
-          button.style.color = "red";
+          if (props.mode != "interrogation") button.style.color = "red";
         }
-        button.disabled = boutonsDesactives; // Désactiver les boutons de réponse
-
         compteur++;
       }
     }
@@ -80,59 +79,74 @@ export default function QCM(props) {
     for (let i = 0; i < 5; i++) {
       if (props.value[i].correctAnswer == reponses[i]) {
         bonneReponse++;
-        document.querySelectorAll(".titre")[i].style.color = "#35a329";
       }
     }
     props.setBonneReponses(props.bonneReponses + bonneReponse);
   }
 
+  useEffect(() => {
+    if (resetButtons) {
+      const buttons = document.querySelectorAll(".square-button");
+      buttons.forEach((button) => {
+        button.style.backgroundColor = "";
+        button.style.color = "";
+      });
+      const titles = document.querySelectorAll(".titre");
+      titles.forEach((title) => {
+        title.style.color = "";
+      });
+      setResetButtons(false);
+    }
+  }, [resetButtons]);
+
   return (
-      <div style={{ textAlign: "center" }}>
-        <div className="qcm-container">
-          {props.value.map((j, inex) => (
-              <div key={inex} className="themequestion">
-                <p className="titre">
-                  {j.enonce.debut} ... {j.enonce.fin}
-                </p>
-                <p className="contenu">Sélectionnez la bonne réponse :</p>
-                {j.answers.map((k, indexk) => (
-                    <button
-                        id="questions"
-                        name={j.answers[indexk]}
-                        type="radio"
-                        value={indexk}
-                        onClick={(e) => handleClick(inex, indexk)}
-                        className={
-                          activeButtonQuestion[inex] == indexk ? "active" : "square-button"
-                        }
-                        disabled={boutonsDesactives} // Désactiver les boutons de réponse
-                    >
-                      {k}
-                    </button>
-                ))}
-                {buttonValider ? (
-                    <p
-                        id="regle"
-                        dangerouslySetInnerHTML={{ __html: j.regle + j.lienQ }}
-                    />
-                ) : (
-                    ""
-                )}
-              </div>
-          ))}
-        </div>
-        <Button
-            variant="contained"
-            type="submit"
-            color="success"
-            sx={{ margin: "7px 0px 0px 10px" }}
-            onClick={() => {
-              verifReponse();
-              handleButtonValider();
-            }}
-        >
-          Valider
-        </Button>
+    <div style={{ textAlign: "center" }}>
+      <div className="qcm-container">
+        {props.value.map((j, inex) => (
+          <div key={inex} className="themequestion">
+            <p className="titre">
+              {j.enonce.debut} ... {j.enonce.fin}
+            </p>
+            <p className="contenu">Sélectionnez la bonne réponse :</p>
+            {j.answers.map((k, indexk) => (
+              <button
+                id="questions"
+                name={j.answers[indexk]}
+                type="radio"
+                value={indexk}
+                onClick={(e) => handleClick(inex, indexk)}
+                className={
+                  activeButtonQuestion[inex] == indexk
+                    ? "active"
+                    : "square-button"
+                }
+              >
+                {k}
+              </button>
+            ))}
+            {buttonValider && props.mode != "interrogation" ? (
+              <p
+                id="regle"
+                dangerouslySetInnerHTML={{ __html: j.regle + j.lienQ }}
+              />
+            ) : (
+              ""
+            )}
+          </div>
+        ))}
       </div>
+      <Button
+        variant="contained"
+        type="submit"
+        color="success"
+        sx={{ margin: "7px 0px 0px 10px" }}
+        onClick={() => {
+          verifReponse();
+          handleButtonValider();
+        }}
+      >
+        Valider
+      </Button>
+    </div>
   );
 }

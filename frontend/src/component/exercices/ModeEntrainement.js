@@ -18,6 +18,7 @@ export default function ModeEntrainement(props) {
   const [bonneReponses, setBonneReponses] = useState(0);
   const [indexExo, setIndexExo] = useState(1);
   const [suivant, setSuivant] = useState(false);
+  const [mode, setMode] = useState("entrainement");
 
   function uncheck(taille) {
     for (let i = 0; i < taille; i++) {
@@ -90,6 +91,7 @@ export default function ModeEntrainement(props) {
               suivant={suivant}
               bonneReponses={bonneReponses}
               setBonneReponses={setBonneReponses}
+              mode={mode}
             />
           ) : (
             ""
@@ -100,6 +102,7 @@ export default function ModeEntrainement(props) {
               suivant={suivant}
               bonneReponses={bonneReponses}
               setBonneReponses={setBonneReponses}
+              mode={mode}
             />
           ) : (
             ""
@@ -110,6 +113,7 @@ export default function ModeEntrainement(props) {
               suivant={suivant}
               bonneReponses={bonneReponses}
               setBonneReponses={setBonneReponses}
+              mode={mode}
             />
           ) : (
             ""
@@ -120,6 +124,7 @@ export default function ModeEntrainement(props) {
               suivant={suivant}
               bonneReponses={bonneReponses}
               setBonneReponses={setBonneReponses}
+              mode={mode}
             />
           ) : (
             ""
