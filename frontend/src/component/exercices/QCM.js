@@ -116,9 +116,7 @@ export default function QCM(props) {
                 value={indexk}
                 onClick={(e) => handleClick(inex, indexk)}
                 className={
-                  activeButtonQuestion[inex] == indexk
-                    ? "active"
-                    : "square-button"
+                  activeButtonQuestion[inex] == indexk ? "active" : "square-button"
                 }
               >
                 {k}

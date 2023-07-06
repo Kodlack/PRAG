@@ -10,8 +10,8 @@ function Navigation() {
             <a href="/">Accueil</a>
           </li>
           <li className="left-link">
-            <a href="https://www.academie-francaise.fr/" target="_blank">
-              Académie Française
+            <a href="/decouverte" className="left-link">
+              Découvrir
             </a>
           </li>
         </ul>
@@ -25,13 +25,13 @@ function Navigation() {
 
         <ul className="nav-links-right">
           <li className="right-link">
-            <a href="/decouverte" className="right-link">
-              Découvrir
+            <a href="/notions" >
+              S'exercer
             </a>
           </li>
           <li className="right-link">
-            <a href="/notions" className="right-link">
-              Toutes les notions
+            <a href="https://www.academie-francaise.fr/" target="_blank" className="right-link">
+              Académie Française
             </a>
           </li>
         </ul>
