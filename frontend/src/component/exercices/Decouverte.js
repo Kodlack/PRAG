@@ -8,7 +8,6 @@ import "../../css/richelieu.css";
 import pose1 from "../../photo/Pose1.png";
 import pose3 from "../../photo/Pose3.png";
 import pose5 from "../../photo/Pose5.png";
-import pose7 from "../../photo/Pose7.png";
 import axios from "axios";
 import Infobulle from "./Infobulle";
 import TexteTrous from "./TexteTrous";

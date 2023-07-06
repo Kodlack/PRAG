@@ -4,7 +4,13 @@ import { useEffect, useState } from "react";
 export default function QCM(props) {
   const [reponses, setReponses] = useState([null, null, null, null, null]);
   const [buttonValider, setButtonValider] = useState(false);
-  const [activeButtonQuestion, setActiveButtonQuestion] = useState([null, null, null, null, null]);
+  const [activeButtonQuestion, setActiveButtonQuestion] = useState([
+    null,
+    null,
+    null,
+    null,
+    null,
+  ]);
   const [resetButtons, setResetButtons] = useState(false);
 
   const handleClick = (i, content) => {
@@ -53,13 +59,17 @@ export default function QCM(props) {
       for (let j = 0; j < props.value[i].answers.length; j++) {
         const button = document.querySelectorAll("#questions")[compteur];
         if (listeQuestionRep[i][j] === props.value[i].correctAnswer[0]) {
-          button.style.backgroundColor = "#35a329";
-          button.style.color = "white";
+          if (props.mode != "interrogation") {
+            button.style.backgroundColor = "#35a329";
+            button.style.color = "white";
+          }
         } else if (activeButtonQuestion[i] === j) {
-          button.style.backgroundColor = "red";
-          button.style.color = "white";
+          if (props.mode != "interrogation") {
+            button.style.backgroundColor = "red";
+            button.style.color = "white";
+          }
         } else {
-          button.style.color = "red";
+          if (props.mode != "interrogation") button.style.color = "red";
         }
         compteur++;
       }
@@ -69,7 +79,6 @@ export default function QCM(props) {
     for (let i = 0; i < 5; i++) {
       if (props.value[i].correctAnswer == reponses[i]) {
         bonneReponse++;
-        document.querySelectorAll(".titre")[i].style.color = "#35a329";
       }
     }
     props.setBonneReponses(props.bonneReponses + bonneReponse);
@@ -83,7 +92,7 @@ export default function QCM(props) {
         button.style.color = "";
       });
       const titles = document.querySelectorAll(".titre");
-      titles.forEach((title)=> {
+      titles.forEach((title) => {
         title.style.color = "";
       });
       setResetButtons(false);
@@ -91,51 +100,53 @@ export default function QCM(props) {
   }, [resetButtons]);
 
   return (
-      <div style={{ textAlign: "center" }}>
-        <div className="qcm-container">
-          {props.value.map((j, inex) => (
-              <div key={inex} className="themequestion">
-                <p className="titre">
-                  {j.enonce.debut} ... {j.enonce.fin}
-                </p>
-                <p className="contenu">Sélectionnez la bonne réponse :</p>
-                {j.answers.map((k, indexk) => (
-                    <button
-                        id="questions"
-                        name={j.answers[indexk]}
-                        type="radio"
-                        value={indexk}
-                        onClick={(e) => handleClick(inex, indexk)}
-                        className={
-                          activeButtonQuestion[inex] == indexk ? "active" : "square-button"
-                        }
-                    >
-                      {k}
-                    </button>
-                ))}
-                {buttonValider ? (
-                    <p
-                        id="regle"
-                        dangerouslySetInnerHTML={{ __html: j.regle + j.lienQ }}
-                    />
-                ) : (
-                    ""
-                )}
-              </div>
-          ))}
-        </div>
-        <Button
-            variant="contained"
-            type="submit"
-            color="success"
-            sx={{ margin: "7px 0px 0px 10px" }}
-            onClick={() => {
-              verifReponse();
-              handleButtonValider();
-            }}
-        >
-          Valider
-        </Button>
+    <div style={{ textAlign: "center" }}>
+      <div className="qcm-container">
+        {props.value.map((j, inex) => (
+          <div key={inex} className="themequestion">
+            <p className="titre">
+              {j.enonce.debut} ... {j.enonce.fin}
+            </p>
+            <p className="contenu">Sélectionnez la bonne réponse :</p>
+            {j.answers.map((k, indexk) => (
+              <button
+                id="questions"
+                name={j.answers[indexk]}
+                type="radio"
+                value={indexk}
+                onClick={(e) => handleClick(inex, indexk)}
+                className={
+                  activeButtonQuestion[inex] == indexk
+                    ? "active"
+                    : "square-button"
+                }
+              >
+                {k}
+              </button>
+            ))}
+            {buttonValider && props.mode != "interrogation" ? (
+              <p
+                id="regle"
+                dangerouslySetInnerHTML={{ __html: j.regle + j.lienQ }}
+              />
+            ) : (
+              ""
+            )}
+          </div>
+        ))}
       </div>
+      <Button
+        variant="contained"
+        type="submit"
+        color="success"
+        sx={{ margin: "7px 0px 0px 10px" }}
+        onClick={() => {
+          verifReponse();
+          handleButtonValider();
+        }}
+      >
+        Valider
+      </Button>
+    </div>
   );
 }
