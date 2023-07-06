@@ -87,94 +87,96 @@ const ChoixTheme = (props) => {
             grâce à la possibilité de sélectionner les notions qui vous intéressent.
           </p>
         </div>
+      </div>
+      <div class="middle-theme">
         <p class="htext">Niveau choisi : {props.niveau}</p>
         <p class="htext">Mode choisi : {props.mode}</p>
-      </div>
-      <div class="grid-container">
-        {["Syntaxe", "Lexique", "Morphologie"].map((j, jdex) => (
-          <div class="theme">
-            <h1 class="titre">
-{/* 
- <FormControlLabel
+        <div class="grid-container">
+          {["Syntaxe", "Lexique", "Morphologie"].map((j, jdex) => (
+            <div class="theme">
+              <h1 class="titre">
+  {/* 
+  <FormControlLabel
+                  control={
+                    <Checkbox
+                      sx={{ "& .MuiSvgIcon-root": { fontSize: 36 } }}
+                      checked={activeButtonQuestion[jdex][0] && activeButtonQuestion[jdex][1] && activeButtonQuestion[jdex][2]}
+                      // indeterminate={
+                      //   (checked[0] || checked[1] || checked[2]) &&
+                      //   !(checked[0] && checked[1] && checked[2])
+                      // }
+                      // onChange={handleChange1}
+                    />
+                  }
+                />
+  */}
+            
+                {j}
+              </h1>
+              {categorie.map((i, index) => (
+                <p class="contenu">
+                  {i.theme == j ? (
+                    /*<Checkbox
+                      name={i.subtheme}
+                      checked={checkedState[index]}
+                      // checked={checked[index]}
+                      onChange={(e) => {
+                        handleOnChange(index)
+                        // handleChange2();
+                        choixNotions.push(e.target.name);
+                        console.log(choixNotions);
+                      }}
+                    />*/
+                    <button
+                          //name={i.theme}
+                          style={{width:"300px"}}
+                          onClick={(e) => handleClick(jdex, index)}
+                          className={
+                            activeButtonQuestion[jdex][index] == true ? "active2" : "square-button"
+                          }
+                          //disabled={boutonsDesactives} // Désactiver les boutons de réponse
+                      >
+                        {i.subtheme}
+                      </button>
+                  ) : (
+                    <></>
+                  )}
+                  
+                </p>
+              ))}
+              {/* <p class="contenu">
+              <FormControlLabel
                 control={
-                  <Checkbox
-                    sx={{ "& .MuiSvgIcon-root": { fontSize: 36 } }}
-                    checked={activeButtonQuestion[jdex][0] && activeButtonQuestion[jdex][1] && activeButtonQuestion[jdex][2]}
-                    // indeterminate={
-                    //   (checked[0] || checked[1] || checked[2]) &&
-                    //   !(checked[0] && checked[1] && checked[2])
-                    // }
-                    // onChange={handleChange1}
-                  />
+                  <Checkbox checked={checked[1]} onChange={handleChange3} />
                 }
               />
- */}
-           
-              {j}
-            </h1>
-            {categorie.map((i, index) => (
-              <p class="contenu">
-                {i.theme == j ? (
-                  /*<Checkbox
-                    name={i.subtheme}
-                    checked={checkedState[index]}
-                    // checked={checked[index]}
-                    onChange={(e) => {
-                      handleOnChange(index)
-                      // handleChange2();
-                      choixNotions.push(e.target.name);
-                      console.log(choixNotions);
-                    }}
-                  />*/
-                  <button
-                        //name={i.theme}
-                        style={{width:"300px"}}
-                        onClick={(e) => handleClick(jdex, index)}
-                        className={
-                          activeButtonQuestion[jdex][index] == true ? "active2" : "square-button"
-                        }
-                        //disabled={boutonsDesactives} // Désactiver les boutons de réponse
-                    >
-                      {i.subtheme}
-                    </button>
-                ) : (
-                  <></>
-                )}
-                
-              </p>
-            ))}
-            {/* <p class="contenu">
-            <FormControlLabel
-              control={
-                <Checkbox checked={checked[1]} onChange={handleChange3} />
-              }
-            />
-            Lorem Ipsum is simply dummy Lorem Ipsum is simply dummy
-          </p>
-          <p class="contenu">
-            <FormControlLabel
-              control={
-                <Checkbox checked={checked[2]} onChange={handleChange4} />
-              }
-            />
-            Lorem Ipsum is simply dummy Lorem Ipsum is simply dummy
-          </p> */}
-          </div>
-        ))}
+              Lorem Ipsum is simply dummy Lorem Ipsum is simply dummy
+            </p>
+            <p class="contenu">
+              <FormControlLabel
+                control={
+                  <Checkbox checked={checked[2]} onChange={handleChange4} />
+                }
+              />
+              Lorem Ipsum is simply dummy Lorem Ipsum is simply dummy
+            </p> */}
+            </div>
+          ))}
+        </div>
+        {props.mode == "entrainement" ? (
+          <a href="/entrainement/exercice/1">
+            <button class="round-button" style={myStyle}>
+              Démarrer
+            </button>
+          </a>
+        ) : (
+          <a href="/exercice/1">
+            <button class="round-button" style={myStyle}>
+              Démarrer
+            </button>
+          </a>
+        )}
       </div>
-      {props.mode == "entrainement" ? (
-        <a href="/entrainement/exercice/1">
-          <button class="round-button" style={myStyle}>
-            Démarrer
-          </button>
-        </a>
-      ) : (
-        <a href="/exercice/1">
-          <button class="round-button" style={myStyle}>
-            Démarrer
-          </button>
-        </a>
-      )}
     </div>
   );
 };
