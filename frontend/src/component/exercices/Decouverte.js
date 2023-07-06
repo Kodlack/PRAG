@@ -1,6 +1,7 @@
 import { Button } from "@mui/material";
 import { useEffect, useState } from "react";
 import "../../css/background.css";
+import "../../css/Etiq.css";
 import "../../css/Themes.css";
 import "../../css/exercices.css";
 import "../../css/richelieu.css";
@@ -110,6 +111,7 @@ export default function Decouverte() {
           {i.type === "Texte a trou" ? (
             <TexteTrous
               value={questions}
+              suivant={suivant}
               bonneReponses={bonneReponses}
               setBonneReponses={setBonneReponses}
             />
@@ -119,6 +121,7 @@ export default function Decouverte() {
           {i.type === "Enoncé fautif" ? (
             <EnonceFautif
               value={questions}
+              suivant={suivant}
               bonneReponses={bonneReponses}
               setBonneReponses={setBonneReponses}
             />

@@ -28,8 +28,6 @@ export default function TexteTrous(props) {
           "#35a329";
         compteur++;
         bonneReponse++;
-        console.log(reponses);
-        console.log(props.value[i].correctAnswer[0]);
       } else {
         document.querySelectorAll("#questions")[compteur].style.color = "red";
         compteur++;
@@ -64,10 +62,10 @@ export default function TexteTrous(props) {
                     {k}{" "}
                   </label>
                 ) : (
-                  <input class="input"
+                  <input
+                    class="input"
                     id="questions"
                     type="text"
-                    placeholder=". . . . . . . . ."
                     onChange={(e) => {
                       reponses[inex] = e.target.value;
                     }}

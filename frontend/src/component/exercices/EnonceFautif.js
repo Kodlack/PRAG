@@ -32,6 +32,8 @@ export default function EnonceFautif(props) {
       listerep = [];
     }
 
+    console.log(reponses);
+    console.log(listeQuestionRep);
     //comparer questions afficher avec ceux de la base de données pour afficher les bonnes et mauvaises réponse
     for (let i = 0; i < 5; i++) {
       for (let j = 0; j < props.value[i].answers.length; j++) {
@@ -58,25 +60,35 @@ export default function EnonceFautif(props) {
 
   return (
     <div style={{ textAlign: "center" }}>
-    <div class="qcm-container">
+      <div class="qcm-container">
         {props.value.map((j, inex) => (
           <div key={inex} class="themequestion">
-            <p className="titre">Sélectionnez la bonne réponse :</p>
+            <p className="titre">
+              Sélectionnez la/les erreur(s) de la phrase suivante :
+            </p>
             {j.enonce.debut.split(" ").map((k, indexk) => (
               <button
                 id="questions"
                 name={j.idq}
-                type="radio"
+                className="boutonEnonce"
                 value={indexk}
                 onClick={(e) => {
                   reponses[inex] = parseInt(e.target.value);
+                  console.log(e.target.value);
                 }}
               >
-                <p className="contenu">{k}</p>
+                {/* <p
+                value={indexk}
+                  onClick={(e) => {
+                    reponses[inex] = parseInt(e.target.value);
+                    console.log(e.target.value);
+                  }}
+                > */}
+                {k}
+                {/* </p> */}
               </button>
             ))}
-          {/*
-          {j.answers.map((k, indexk) => (
+            {/* {j.answers.map((k, indexk) => (
               <p
                 name={j.idq}
                 value={indexk}
@@ -86,8 +98,7 @@ export default function EnonceFautif(props) {
               >
                 {k}
               </p>
-            ))}
-          */}
+            ))} */}
             {buttonValider ? (
               <p
                 id="regle"
@@ -96,11 +107,9 @@ export default function EnonceFautif(props) {
             ) : (
               <p></p>
             )}
-            <button
-              id="pasdefaute"
-              className="square-button">
-                Pas de faute
-              </button>
+            <button id="pasdefaute" className="square-button">
+              Pas de faute
+            </button>
           </div>
         ))}
       </div>
