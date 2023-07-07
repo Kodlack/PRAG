@@ -11,13 +11,13 @@ const ResultatInterro = () => {
         <div className='content-resultat-interro'>
             <div className='upper-resultat'>
                 <div className='resultat-score'>
-                    <h1>Félicitation !</h1>
+                    <h1>Félicitations !</h1>
                     <p className='score-final'>Votre score : 16/20</p>
-                    <p className='score-time'>en 10 min et 24 secondes</p>
+                    <p className='score-time'>en 10 minutes et 24 secondes</p>
                 </div>
                 <div className='upper-conseil'>
                     <p>
-                        N’hésite pas à consulter mes annotations si tu veux des conseils pour améliorer ton score.
+                        N’hésitez pas à consulter mes annotations si vous voulez des conseils pour améliorer votre score.
                     </p>
                 </div>
             </div>

@@ -43,19 +43,19 @@ const CardEntrainement = ({ activeButton, setActiveButton }) => {
           id="feContent"
           className={activeButton === "feContent" ? "active-content" : ""}
         >
-          Le mode Facile vous propose des exercice de niveau 1.
+          Le mode Facile vous propose des exercices de niveau 1.
         </p>
         <p
           id="meContent"
           className={activeButton === "meContent" ? "active-content" : ""}
         >
-          Le mode Moyen vous propose des exercice de niveau 2.
+          Le mode Moyen vous propose des exercices de niveau 2.
         </p>
         <p
           id="deContent"
           className={activeButton === "deContent" ? "active-content" : ""}
         >
-          Le mode Moyen vous propose des exercice de niveau 3.
+          Le mode Difficile vous propose des exercices de niveau 3.
         </p>
       </div>
     </div>

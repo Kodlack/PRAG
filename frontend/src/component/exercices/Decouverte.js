@@ -92,7 +92,7 @@ export default function Decouverte() {
           ) : (
             <div>
               <p id="texterichelieu1">
-                Très bien tu peux t'exercer maintenant !
+                Très bien, tu peux t'exercer maintenant !
               </p>
               <img src={pose1} alt="pose1" id="richelieu1" />
             </div>

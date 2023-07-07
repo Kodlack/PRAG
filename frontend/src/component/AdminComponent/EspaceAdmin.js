@@ -23,7 +23,7 @@ function EspaceAdmin() {
   }, []);
 
   return (
-    <div>
+    <div className="content-admin">
       <p id="titre">Espace admin</p>
       <br />
       <AjoutCategorie />
