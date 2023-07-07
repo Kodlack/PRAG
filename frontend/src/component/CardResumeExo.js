@@ -18,9 +18,9 @@ const CardResumeExo = () => {
                     <span class="resultat-question">3</span>
                     <span class="resultat-question">4</span>
                 </div>
-                <button className='plus-btn'>Voire plus</button>
+                <button className='plus-btn'>Voir plus</button>
                 <div className='resume-conseil'>
-                    <p>Tu devrais peut-être réviser cette notion, n’hésite pas à t’entraîner.</p>
+                    <p>Vous devriez peut-être réviser cette notion, n’hésitez pas à vous entraîner.</p>
                     <button className=''>Je veux m'entraîner</button>
                 </div>
             </div>

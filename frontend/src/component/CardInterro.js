@@ -7,9 +7,9 @@ const CardInterro = ({ activeButton, setActiveButton }) => {
 
   return (
     <div className="card-interro">
-      <h2>Mode interrgation</h2>
+      <h2>Mode interrogation</h2>
       <p>
-        Sélectionner la difficulté souhaitée et vous confronter 
+        Sélectionnez la difficulté souhaitée et confrontez-vous
         à un nombre prédéfini d'exercices. À la fin de la session, 
         un affichage des résultats mettra en évidence vos performances 
         globales.

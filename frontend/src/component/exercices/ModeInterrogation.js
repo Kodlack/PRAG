@@ -171,7 +171,7 @@ export default function ModeInterrogation(props) {
       {indexExo == param.length ? (
         <p>
           Vous avez {(bonneReponses * 100) / (5 * param.length)}% de bonnes
-          réponses sur cette série d'exercice.
+          réponses sur cette série d'exercices.
         </p>
       ) : (
         ""

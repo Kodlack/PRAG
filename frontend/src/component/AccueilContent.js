@@ -29,7 +29,7 @@ const AccueilContent = () => {
         </p>
         <a href="/notions">
           <button className="round-button">
-            Choisir les notions que je souhaites étudier
+            Choisir les notions que je souhaite étudier
           </button>
         </a>
       </div>

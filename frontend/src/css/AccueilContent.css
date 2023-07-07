@@ -18,7 +18,7 @@ hr{
     color: #FFFFFF;
     background-color: #376F98;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 15px;
+    font-size: 16px;
     border-radius: 25px;
     height: 30px;
     width: 400px;
@@ -46,6 +46,7 @@ hr{
 .content-decouvrir p{
     margin-top: 0;
     margin-bottom: 3%;
+    font-size: 18px;
 }
 
 .content-decouvrir img{
@@ -77,6 +78,7 @@ hr{
 .content-choisir p{
     margin-top: 0;
     margin-bottom: 3%;
+    font-size: 18px;
 }
 
 .content-choisir img{

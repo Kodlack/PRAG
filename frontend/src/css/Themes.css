@@ -117,7 +117,6 @@ input:focus {
   color: #6a6a6a;
   font-family: "Cormorant Garamond", serif;
   font-size: 18px;
-  font-weight: lighter;
 }
 
 .column {
@@ -147,5 +146,5 @@ input:focus {
 
 .middle-theme p{
   margin: 0;
-  font-size: 18px;
+  font-size: 20px;
 }

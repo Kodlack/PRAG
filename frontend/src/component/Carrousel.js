@@ -22,7 +22,7 @@ const Carrousel = () => {
                 <div id="slides-2" class="slide">
                     <h1>Richelieu vous accompagne !</h1>
                     <p>
-                        Vous ne savez pas par quoi commencez ? <br/>
+                        Vous ne savez pas par quoi commencer ? <br/>
                         Découvrez le mode découverte et laissez vous accompagner par Richelieu en personne au travers des différents exercices disponibles.
                     </p>
                     <a href="/decouverte">
@@ -32,7 +32,7 @@ const Carrousel = () => {
                 <div id="slides-3" class="slide">
                     <h1>Ciblez vos lacunes</h1>
                     <p>
-                        Ne perdez pas plus de temps et travaillez les notions qui vous intérresssent vraiment !
+                        Ne perdez pas plus de temps et travaillez les notions qui vous intéresssent vraiment !
                     </p>
                     <a href="/notions">
                         <button class="round-button-org">Je veux découvrir</button>
