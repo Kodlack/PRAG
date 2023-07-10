@@ -5,8 +5,7 @@ const jokes = JSON.parse(testbd);
 const { MongoClient } = require("mongodb");
 const mongoose = require("mongoose");
 
-const url =
-  "mongodb+srv://admin:SDq6U1eTSGypImn5@testacad.a4jfm6i.mongodb.net/?retryWrites=true&w=majority";
+const url = process.env.CLEMONGODB;
 const client = new MongoClient(url);
 
 mongoose
