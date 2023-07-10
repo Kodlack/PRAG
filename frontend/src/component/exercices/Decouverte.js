@@ -30,8 +30,10 @@ export default function Decouverte() {
     }
   }
 
+  //les exercices par défaut
   var param = [{ ide: 1 }, { ide: 2 }];
 
+  //récupère des exercices
   function getExo(ideExo) {
     axios
       .post("http://localhost:3000/exercice/:ide", ideExo)
@@ -52,9 +54,7 @@ export default function Decouverte() {
         .post("http://localhost:3000/exercice/:ide", param[0])
         .then((res) => {
           setExos(res.data);
-          console.log(res.data);
           setQuestions(res.data[0].questions);
-          console.log(questions);
         })
         .catch((err) => {
           console.log(err);

@@ -5,6 +5,7 @@ import pose7 from "../../photo/Pose7.png";
 import "../../css/richelieu.css";
 import "../../css/Infobulle.css";
 
+//composant qui affiche les explications d'un exercice dans une bulle d'information
 export default function Infobulle(props) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => {
@@ -31,18 +32,20 @@ export default function Infobulle(props) {
         onClose={handleClose}
       >
         <div className="content-infobulle">
-            <Container>
-                <h2>Explication de la régle</h2>
-                <div className="content-texte">
-                    {props.lienExo != undefined ? (
-                        <p
-                            dangerouslySetInnerHTML={{ __html: props.value + props.lienExo }}
-                        ></p>
-                    ) : (
-                        <p dangerouslySetInnerHTML={{ __html: props.value }}></p>
-                    )}
-                </div>
-            </Container>
+          <Container>
+            <h2>Explication de la régle</h2>
+            <div className="content-texte">
+              {props.lienExo != undefined ? (
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: props.value + props.lienExo,
+                  }}
+                ></p>
+              ) : (
+                <p dangerouslySetInnerHTML={{ __html: props.value }}></p>
+              )}
+            </div>
+          </Container>
         </div>
       </Modal>
     </div>

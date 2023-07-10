@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+//création d'un schéma d'un exercice
 const ExoSchema = mongoose.Schema({
   ide: Number,
   theme: String,

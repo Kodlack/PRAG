@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+//création d'un schéma d'une question d'un exercice
 const questionSchema = mongoose.Schema({
   idq: Number,
   subtheme: String,

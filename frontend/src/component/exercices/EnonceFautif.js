@@ -4,15 +4,19 @@ import { useEffect, useState } from "react";
 export default function EnonceFautif(props) {
   const [reponses, setReponses] = useState([null, null, null, null, null]);
   const [buttonValider, setButtonValider] = useState(false);
-  const [enonce, setEnonce] = useState([]);
-  const [activeButton, setActiveButton] = useState([false, false, false, false, false]);
+  const [activeButton, setActiveButton] = useState([
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
   const [activeMot, setActiveMot] = useState([null, null, null, null, null]);
-
 
   const handleClick = (j) => {
     //if (buttonValider) return; // Ne pas gérer le clic si le bouton "Valider" a été cliqué
     const newActiveButton = [...activeButton];
-    newActiveButton[j] = (newActiveButton[j] == true ? false : true);
+    newActiveButton[j] = newActiveButton[j] == true ? false : true;
     setActiveButton(newActiveButton);
     //setActiveButton(activeButton == j ? null : j);
     const newActiveMot = [...activeMot];
@@ -59,8 +63,6 @@ export default function EnonceFautif(props) {
       listerep = [];
     }
 
-    console.log(reponses);
-    console.log(listeQuestionRep);
     //comparer questions afficher avec ceux de la base de données pour afficher les bonnes et mauvaises réponse
     for (let i = 0; i < 5; i++) {
       for (let j = 0; j < props.value[i].answers.length; j++) {
@@ -101,13 +103,14 @@ export default function EnonceFautif(props) {
                 id="questions"
                 name={j.idq}
                 className={
-                  (activeMot != null && activeMot[inex] == indexk)  ? "boutonEnonce2" : "boutonEnonce"
+                  activeMot != null && activeMot[inex] == indexk
+                    ? "boutonEnonce2"
+                    : "boutonEnonce"
                 }
                 value={indexk}
                 onClick={(e) => {
                   handleClickMot(inex, indexk);
                   reponses[inex] = parseInt(e.target.value);
-                  console.log(e.target.value);
                 }}
               >
                 {k}
@@ -121,11 +124,12 @@ export default function EnonceFautif(props) {
             ) : (
               <p></p>
             )}
-            <button id="pasdefaute" 
-            onClick={(e) => handleClick(inex)}
-            className={
-              activeButton[inex] == true ? "active" : "square-button"
-            }
+            <button
+              id="pasdefaute"
+              onClick={(e) => handleClick(inex)}
+              className={
+                activeButton[inex] == true ? "active" : "square-button"
+              }
             >
               Pas de faute
             </button>

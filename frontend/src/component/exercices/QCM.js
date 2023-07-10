@@ -45,7 +45,7 @@ export default function QCM(props) {
     let bonneReponse = 0;
     let listerep = [];
 
-    // Création d'une indexation pour pouvoir comparer les index des questions
+    // Création d'une indexation pour pouvoir comparer les index des questions affichées
     for (let i = 0; i < 5; i++) {
       for (let j = 0; j < props.value[i].answers.length; j++) {
         listerep.push(j);
@@ -116,7 +116,9 @@ export default function QCM(props) {
                 value={indexk}
                 onClick={(e) => handleClick(inex, indexk)}
                 className={
-                  activeButtonQuestion[inex] == indexk ? "active" : "square-button"
+                  activeButtonQuestion[inex] == indexk
+                    ? "active"
+                    : "square-button"
                 }
               >
                 {k}

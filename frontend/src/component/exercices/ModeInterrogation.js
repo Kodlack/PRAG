@@ -39,9 +39,7 @@ export default function ModeInterrogation(props) {
       .post("http://localhost:3000/exercice/:ide", ideExo)
       .then((res) => {
         setExos(res.data);
-        console.log(exos);
         setQuestions(res.data[0].questions);
-        console.log(questions);
       })
       .catch((err) => {
         console.log(err);

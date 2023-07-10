@@ -18,7 +18,8 @@ const ChoixTheme = (props) => {
   const handleClick = (i, content) => {
     //if (buttonValider) return; // Ne pas gérer le clic si le bouton "Valider" a été cliqué
     const newActiveButtonQuestion = [...activeButtonQuestion];
-    newActiveButtonQuestion[i][content] = newActiveButtonQuestion[i][content] == true ? false : true;
+    newActiveButtonQuestion[i][content] =
+      newActiveButtonQuestion[i][content] == true ? false : true;
     setActiveButtonQuestion(newActiveButtonQuestion);
   };
 
@@ -45,36 +46,6 @@ const ChoixTheme = (props) => {
     fetchData().catch(console.error);
   }, [props.choix]);
 
-  const handleChange1 = (event) => {
-    checked.push(event.target.checked);
-  };
-
-  const handleChange2 = (event) => {
-    setChecked([event.target.checked, checked[1], checked[2]]);
-  };
-
-  const handleChange3 = (event) => {
-    setChecked([checked[0], event.target.checked, checked[2]]);
-  };
-
-  const handleChange4 = (event) => {
-    setChecked([checked[0], checked[1], event.target.checked]);
-  };
-
-  const [checkedState, setCheckedState] = useState(
-    new Array(13).fill(true)
-  );
-
-  const handleOnChange = (position) => {
-    const updatedCheckedState = checkedState.map((item, index) =>
-      index === position ? !item : item
-    );
-
-    setCheckedState(updatedCheckedState);
-  };
-
-  
-
   return (
     <div class="bga" style={{ textAlign: "center" }}>
       <div>
@@ -83,8 +54,8 @@ const ChoixTheme = (props) => {
             Choisissez les notions que vous souhaitez exercer
           </h1>
           <p class="stext">
-            Plongez dans une expérience d'apprentissage personnalisée 
-            grâce à la possibilité de sélectionner les notions qui vous intéressent.
+            Plongez dans une expérience d'apprentissage personnalisée grâce à la
+            possibilité de sélectionner les notions qui vous intéressent.
           </p>
         </div>
       </div>
@@ -94,25 +65,7 @@ const ChoixTheme = (props) => {
         <div class="grid-container">
           {["Syntaxe", "Lexique", "Morphologie"].map((j, jdex) => (
             <div class="theme">
-              <h1 class="titre">
-  {/* 
-  <FormControlLabel
-                  control={
-                    <Checkbox
-                      sx={{ "& .MuiSvgIcon-root": { fontSize: 36 } }}
-                      checked={activeButtonQuestion[jdex][0] && activeButtonQuestion[jdex][1] && activeButtonQuestion[jdex][2]}
-                      // indeterminate={
-                      //   (checked[0] || checked[1] || checked[2]) &&
-                      //   !(checked[0] && checked[1] && checked[2])
-                      // }
-                      // onChange={handleChange1}
-                    />
-                  }
-                />
-  */}
-            
-                {j}
-              </h1>
+              <h1 class="titre">{j}</h1>
               {categorie.map((i, index) => (
                 <p class="contenu">
                   {i.theme == j ? (
@@ -128,38 +81,23 @@ const ChoixTheme = (props) => {
                       }}
                     />*/
                     <button
-                          //name={i.theme}
-                          style={{width:"300px"}}
-                          onClick={(e) => handleClick(jdex, index)}
-                          className={
-                            activeButtonQuestion[jdex][index] == true ? "active2" : "square-button"
-                          }
-                          //disabled={boutonsDesactives} // Désactiver les boutons de réponse
-                      >
-                        {i.subtheme}
-                      </button>
+                      //name={i.theme}
+                      style={{ width: "300px" }}
+                      onClick={(e) => handleClick(jdex, index)}
+                      className={
+                        activeButtonQuestion[jdex][index] == true
+                          ? "active2"
+                          : "square-button"
+                      }
+                      //disabled={boutonsDesactives} // Désactiver les boutons de réponse
+                    >
+                      {i.subtheme}
+                    </button>
                   ) : (
                     <></>
                   )}
-                  
                 </p>
               ))}
-              {/* <p class="contenu">
-              <FormControlLabel
-                control={
-                  <Checkbox checked={checked[1]} onChange={handleChange3} />
-                }
-              />
-              Lorem Ipsum is simply dummy Lorem Ipsum is simply dummy
-            </p>
-            <p class="contenu">
-              <FormControlLabel
-                control={
-                  <Checkbox checked={checked[2]} onChange={handleChange4} />
-                }
-              />
-              Lorem Ipsum is simply dummy Lorem Ipsum is simply dummy
-            </p> */}
             </div>
           ))}
         </div>

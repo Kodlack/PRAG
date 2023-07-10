@@ -15,9 +15,4 @@ const fs = require("fs");
 const testbd = fs.readFileSync("./server/test.json");
 const jokes = JSON.parse(testbd);
 
-router.get("/exercices", (req, res) => {
-  console.log("bd");
-  //   res.send(jokes);
-});
-
 module.exports = router;

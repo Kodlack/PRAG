@@ -2,6 +2,7 @@ const categorieModel = require("../models/categorie");
 var express = require("express");
 const router = express.Router();
 
+//route pour créer une catégorie sur l'espace administrateur
 router.post("/admin/cate", async (req, res) => {
   delete req.body._id;
   const { theme, subtheme } = req.body;
@@ -20,6 +21,7 @@ router.post("/admin/cate", async (req, res) => {
   }
 });
 
+//route pour récupérer une catégorie spécifique
 router.post("/categorie", (req, res) => {
   console.log(req.body.length);
   categorieModel
@@ -31,6 +33,7 @@ router.post("/categorie", (req, res) => {
     .catch((error) => res.status(404).json({ error }));
 });
 
+//route pour récupérer toutes les catégories
 router.get("/categorie", (req, res) => {
   categorieModel
     .find()
@@ -38,6 +41,7 @@ router.get("/categorie", (req, res) => {
     .catch((error) => res.status(404).json({ error }));
 });
 
+//route pour supprimer une catégorie
 router.delete("/categorie", (req, res) => {
   categorieModel
     .deleteOne({ subtheme: req.body.subtheme })
@@ -45,6 +49,7 @@ router.delete("/categorie", (req, res) => {
     .catch((error) => res.status(400).json({ error }));
 });
 
+//route pour modifier une catégorie
 router.put("/categorie", (req, res) => {
   categorieModel
     .updateOne(
